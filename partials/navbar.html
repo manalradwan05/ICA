@@ -1,0 +1,45 @@
+<!-- ====================================================================
+     NAVBAR PARTIAL
+     - Loaded into every page via main.js.
+     - href values are written WITHOUT a leading slash so the JS path
+       resolver can prepend the correct base path on inner pages.
+     - data-page attributes are read by main.js to mark the active link.
+     ==================================================================== -->
+
+<nav class="navbar" aria-label="القائمة الرئيسية">
+  <a class="nav-brand" href="index.html" data-page="home" aria-label="الذهاب إلى الصفحة الرئيسية">
+    <!-- REPLACE: swap the gold square for your real logo SVG -->
+    <span class="nav-logo" aria-hidden="true">ICA</span>
+    <span class="nav-brand-text">
+      <span class="nav-brand-name">أكاديمية المسار الذكي</span>
+      <span class="nav-brand-en">Intelligent Career Academy</span>
+    </span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="pages/services.html"      data-page="services">خدماتنا</a></li>
+    <li><a href="pages/courses.html"       data-page="courses">الدورات</a></li>
+    <li><a href="pages/conferences.html"   data-page="conferences">المؤتمرات</a></li>
+    <li><a href="pages/designs.html"       data-page="designs">التصاميم</a></li>
+    <li><a href="pages/labs.html"          data-page="labs">المختبرات</a></li>
+    <li><a href="pages/coming-soon.html?from=competitions" data-page="competitions">المسابقات</a></li>
+  </ul>
+
+  <a class="nav-cta" href="pages/consultation.html" data-page="consultation">طلب استشارة</a>
+
+  <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" aria-hidden="true">
+  <a href="index.html" data-page="home">الرئيسية</a>
+  <a href="pages/services.html"      data-page="services">خدماتنا</a>
+  <a href="pages/courses.html"       data-page="courses">الدورات</a>
+  <a href="pages/conferences.html"   data-page="conferences">المؤتمرات</a>
+  <a href="pages/designs.html"       data-page="designs">التصاميم</a>
+  <a href="pages/labs.html"          data-page="labs">المختبرات</a>
+  <a href="pages/coming-soon.html?from=competitions" data-page="competitions">المسابقات</a>
+  <a class="nav-cta" href="pages/consultation.html" data-page="consultation">طلب استشارة</a>
+</div>

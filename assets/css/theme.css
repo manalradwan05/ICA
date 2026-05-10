@@ -1,0 +1,122 @@
+/* =========================================================================
+   ICA — THEME / DESIGN TOKENS
+   This file is the single source of truth for the entire design system.
+   When the brand .md files arrive, update values here ONLY.
+   Component CSS must reference these custom properties — never raw hex.
+   ========================================================================= */
+
+:root {
+  /* ── Brand Colors ─────────────────────────────────────────────────────── */
+  --gold:            #C9A84C;
+  --gold-light:      #E8C97A;
+  --gold-dark:       #8B6914;
+  --gold-soft:       rgba(201, 168, 76, 0.12);
+  --gold-mid:        rgba(201, 168, 76, 0.30);
+
+  --cream:           #FAF7F0;
+  --cream-dark:      #F0EBE0;
+  --cream-mid:       #F5F1E5;
+
+  --ink:             #1A1610;
+  --ink-mid:         #3D3425;
+  --ink-soft:        #6B5D45;
+  --ink-faint:       #9A8B6E;
+
+  --white:           #FFFFFF;
+
+  --teal:            #0F6E56;
+  --teal-light:      #1A9A78;
+  --teal-soft:       #E1F5EE;
+  --teal-mid:        rgba(15, 110, 86, 0.18);
+
+  /* ── Semantic ─────────────────────────────────────────────────────────── */
+  --color-bg:        var(--cream);
+  --color-surface:   var(--white);
+  --color-text:      var(--ink);
+  --color-text-soft: var(--ink-soft);
+  --color-primary:   var(--gold);
+  --color-accent:    var(--teal);
+  --color-border:    rgba(201, 168, 76, 0.18);
+  --color-border-soft: rgba(26, 22, 16, 0.08);
+
+  /* ── Radius ───────────────────────────────────────────────────────────── */
+  --radius-xs:       6px;
+  --radius-sm:       8px;
+  --radius:          16px;
+  --radius-lg:       24px;
+  --radius-pill:     100px;
+  --radius-full:     9999px;
+
+  /* ── Spacing ──────────────────────────────────────────────────────────── */
+  --space-xxs:       4px;
+  --space-xs:        8px;
+  --space-sm:        12px;
+  --space-md:        16px;
+  --space-lg:        24px;
+  --space-xl:        40px;
+  --space-2xl:       64px;
+  --space-3xl:       96px;
+  --space-section:   96px;
+
+  /* ── Layout ───────────────────────────────────────────────────────────── */
+  --container-max:   1200px;
+  --container-narrow:1000px;
+  --nav-height:      78px;
+  --nav-padding:     48px;
+
+  /* ── Typography ───────────────────────────────────────────────────────── */
+  --font-body:       'Tajawal', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display:    'Cairo', 'Tajawal', sans-serif;
+
+  --fs-xs:           12px;
+  --fs-sm:           13px;
+  --fs-base:         15px;
+  --fs-md:           16px;
+  --fs-lg:           18px;
+  --fs-xl:           20px;
+  --fs-h3:           clamp(20px, 2.4vw, 26px);
+  --fs-h2:           clamp(28px, 4vw, 44px);
+  --fs-h1:           clamp(36px, 6vw, 68px);
+
+  /* ── Shadows ──────────────────────────────────────────────────────────── */
+  --shadow-xs:       0 1px 2px rgba(26, 22, 16, 0.04);
+  --shadow-sm:       0 4px 12px rgba(26, 22, 16, 0.06);
+  --shadow:          0 10px 30px rgba(26, 22, 16, 0.08);
+  --shadow-lg:       0 20px 50px rgba(26, 22, 16, 0.12);
+  --shadow-gold:     0 12px 32px rgba(201, 168, 76, 0.30);
+  --shadow-gold-lg:  0 18px 48px rgba(201, 168, 76, 0.40);
+  --shadow-teal:     0 12px 32px rgba(15, 110, 86, 0.25);
+
+  /* ── Motion ───────────────────────────────────────────────────────────── */
+  --ease:            cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:   180ms;
+  --duration:        260ms;
+  --duration-slow:   480ms;
+
+  /* ── Z-index Scale ────────────────────────────────────────────────────── */
+  --z-base:          1;
+  --z-elevated:      10;
+  --z-nav:           100;
+  --z-modal:         500;
+  --z-overlay:       1000;
+}
+
+/* =========================================================================
+   THEME VARIANT — TEAL  (used on آزار landing page only)
+   To use: add  data-theme="teal"  to the <body> tag.
+   This swaps brand-primary tokens without changing component CSS.
+   ========================================================================= */
+[data-theme="teal"] {
+  --gold:            #0F6E56;
+  --gold-light:      #1A9A78;
+  --gold-dark:       #0A4D3C;
+  --gold-soft:       rgba(15, 110, 86, 0.10);
+  --gold-mid:        rgba(15, 110, 86, 0.28);
+
+  --color-primary:   #0F6E56;
+  --color-border:    rgba(15, 110, 86, 0.20);
+
+  --shadow-gold:     0 12px 32px rgba(15, 110, 86, 0.28);
+  --shadow-gold-lg:  0 18px 48px rgba(15, 110, 86, 0.38);
+}

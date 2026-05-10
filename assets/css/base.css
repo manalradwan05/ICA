@@ -1,0 +1,170 @@
+/* =========================================================================
+   ICA — BASE  (reset, typography, body, RTL utilities)
+   ========================================================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+  direction: rtl;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+/* ── Headings ─────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+h1 { font-size: var(--fs-h1); line-height: 1.15; letter-spacing: -1px; }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); font-weight: 700; }
+
+p { color: var(--ink-soft); }
+
+a {
+  color: var(--gold-dark);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+a:hover { color: var(--gold); }
+
+ul, ol { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+/* ── Skip-to-content (Accessibility) ──────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  right: 0;
+  background: var(--ink);
+  color: var(--cream);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 0 0 var(--radius-sm) 0;
+  z-index: var(--z-overlay);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+}
+.skip-link:focus { top: 0; color: var(--gold-light); }
+
+/* ── Focus Styles ─────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+button:focus-visible, a:focus-visible { outline-offset: 4px; }
+
+/* ── Selection ────────────────────────────────────────────────────────── */
+::selection { background: var(--gold); color: var(--ink); }
+
+/* ── Section Wrapper ──────────────────────────────────────────────────── */
+section { padding: var(--space-section) var(--nav-padding); position: relative; }
+.container { max-width: var(--container-max); margin: 0 auto; }
+.container-narrow { max-width: var(--container-narrow); margin: 0 auto; }
+
+/* ── Section Heading System ───────────────────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gold-dark);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+.section-head .section-label { justify-content: center; }
+.section-head h2 { margin-bottom: var(--space-md); }
+.section-head p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: var(--fs-lg);
+  color: var(--ink-soft);
+}
+.section-head h2 span { color: var(--gold-dark); }
+
+/* ── Utility Classes ──────────────────────────────────────────────────── */
+.text-center { text-align: center; }
+.text-gradient {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Decorative Helpers ───────────────────────────────────────────────── */
+.bg-decor {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── Responsive Section Padding ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --space-section: 64px;
+    --nav-padding: 20px;
+    --nav-height: 64px;
+  }
+  body { font-size: var(--fs-base); }
+  .section-head { margin-bottom: var(--space-xl); }
+}
+
+/* ── Reduced Motion ───────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

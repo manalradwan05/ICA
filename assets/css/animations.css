@@ -1,0 +1,123 @@
+/* =========================================================================
+   ICA — ANIMATIONS  (keyframes + scroll reveal classes)
+   ========================================================================= */
+
+/* ── Keyframes ────────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes spin-rev {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+@keyframes blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%      { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* ── Initial Animation On Load (use sparingly) ────────────────────────── */
+.animate-on-load {
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease-out) forwards;
+}
+.delay-1 { animation-delay: 0.10s; }
+.delay-2 { animation-delay: 0.20s; }
+.delay-3 { animation-delay: 0.30s; }
+.delay-4 { animation-delay: 0.45s; }
+.delay-5 { animation-delay: 0.60s; }
+.delay-6 { animation-delay: 0.75s; }
+
+/* ── Scroll Reveal (managed by animations.js) ─────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-right { transform: translateX(-32px); }
+.reveal-right.in-view { transform: translateX(0); }
+.reveal-left { transform: translateX(32px); }
+.reveal-left.in-view { transform: translateX(0); }
+.reveal-scale { transform: scale(0.95); }
+.reveal-scale.in-view { transform: scale(1); }
+
+.reveal-stagger-1 { transition-delay: 0.08s; }
+.reveal-stagger-2 { transition-delay: 0.16s; }
+.reveal-stagger-3 { transition-delay: 0.24s; }
+.reveal-stagger-4 { transition-delay: 0.32s; }
+.reveal-stagger-5 { transition-delay: 0.40s; }
+.reveal-stagger-6 { transition-delay: 0.48s; }
+
+/* ── Floating Decorative Shapes ───────────────────────────────────────── */
+.shape-blob {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-soft) 0%, rgba(201, 168, 76, 0.20) 100%);
+  filter: blur(40px);
+  animation: blob 18s ease-in-out infinite, float 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.shape-ring {
+  position: absolute;
+  border: 1px solid var(--gold-mid);
+  border-radius: 50%;
+  animation: spin-slow 40s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.shape-ring::before {
+  content: '';
+  position: absolute;
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  top: -6px; left: 50%;
+  transform: translateX(-50%);
+}
+.shape-ring-rev { animation: spin-rev 32s linear infinite; }
+
+.float-1 { animation: float 6s ease-in-out infinite; }
+.float-2 { animation: float 7.5s ease-in-out infinite; animation-delay: -2s; }
+.float-3 { animation: float 9s ease-in-out infinite; animation-delay: -4s; }
