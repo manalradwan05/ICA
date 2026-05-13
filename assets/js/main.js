@@ -45,7 +45,7 @@
       let html = await res.text();
 
       // Rewrite hrefs that came from the partial as bare paths
-      // (e.g. href="pages/services.html") into URLs relative to current page.
+      // (e.g. href="pages/courses.html") into URLs relative to current page.
       html = html.replace(/href="(?!https?:|mailto:|tel:|#|\/)([^"]+)"/g, (m, p1) => {
         const resolved = new URL(basePath() + p1, window.location.href).href;
         return 'href="' + resolved + '"';
@@ -77,7 +77,6 @@
             </span>
           </a>
           <ul class="nav-links">
-            <li><a href="${bp}pages/services.html" data-page="services">خدماتنا</a></li>
             <li><a href="${bp}pages/courses.html" data-page="courses">الدورات</a></li>
             <li><a href="${bp}pages/conferences.html" data-page="conferences">المؤتمرات</a></li>
             <li><a href="${bp}pages/designs.html" data-page="designs">التصاميم</a></li>
@@ -91,7 +90,6 @@
         </nav>
         <div class="mobile-menu" aria-hidden="true">
           <a href="${bp}index.html" data-page="home">الرئيسية</a>
-          <a href="${bp}pages/services.html" data-page="services">خدماتنا</a>
           <a href="${bp}pages/courses.html" data-page="courses">الدورات</a>
           <a href="${bp}pages/conferences.html" data-page="conferences">المؤتمرات</a>
           <a href="${bp}pages/designs.html" data-page="designs">التصاميم</a>
@@ -173,8 +171,7 @@
   function markActiveNavLink() {
     const path = window.location.pathname;
     let pageId = 'home';
-    if (path.includes('services')) pageId = 'services';
-    else if (path.includes('courses')) pageId = 'courses';
+    if (path.includes('courses')) pageId = 'courses';
     else if (path.includes('conferences')) pageId = 'conferences';
     else if (path.includes('designs')) pageId = 'designs';
     else if (path.includes('labs')) pageId = 'labs';
@@ -218,7 +215,6 @@
       conferences: 'المؤتمرات',
       labs: 'المختبرات',
       designs: 'التصاميم',
-      services: 'الخدمات',
       afaq: 'برنامج آفاق',
       azar: 'برنامج آزار'
     };
