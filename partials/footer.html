@@ -1,105 +1,275 @@
 <!-- ====================================================================
      FOOTER PARTIAL
      - Loaded into every page via main.js.
-     - REPLACE: real social URLs, phone, email, address.
+     - href values are written WITHOUT a leading slash so the JS path
+       resolver can prepend the correct base path on inner pages.
+     - Includes the four legal policy pages in a dedicated column.
      ==================================================================== -->
 
 <footer class="footer" role="contentinfo">
   <div class="footer-inner">
+
+    <!-- Top: brand + columns -->
     <div class="footer-grid">
 
       <!-- Brand column -->
       <div class="footer-brand">
-        <div class="footer-logo">
-          <span class="nav-logo" aria-hidden="true">ICA</span>
-          <span class="footer-brand-name">أكاديمية المسار الذكي</span>
+        <div class="footer-brand-row">
+          <span class="footer-logo" aria-hidden="true">ICA</span>
+          <div>
+            <p class="footer-brand-name">أكاديمية المسار الذكي</p>
+            <p class="footer-brand-en">Intelligent Career Academy</p>
+          </div>
         </div>
-        <p>
-          نقدّم حلولاً متكاملة لتعليم الذكاء الاصطناعي للمعلمين والطلاب،
-          ونصمّم مختبرات علمية ومؤتمرات متخصصة ومواد تدريبية بأعلى معايير الجودة.
+        <p class="footer-tagline">
+          نصمّم مستقبل التعليم بأدوات الذكاء الاصطناعي — حلول متكاملة
+          للمعلمين، الطلاب، والمؤسسات التعليمية.
         </p>
-        <div class="footer-socials" aria-label="حساباتنا على وسائل التواصل">
-          <!-- REPLACE: real social URLs -->
-          <a href="#" aria-label="فيسبوك" title="فيسبوك">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.78 8.43-4.94 8.43-9.94z"/>
-            </svg>
-          </a>
-          <a href="#" aria-label="إنستغرام" title="إنستغرام">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
-          </a>
-          <a href="mailto:info@ica-academy.com" aria-label="البريد الإلكتروني" title="البريد الإلكتروني">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="m2 7 10 7 10-7"/>
-            </svg>
-          </a>
-          <a href="tel:+962700000000" aria-label="اتصل بنا" title="اتصل بنا">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </a>
-        </div>
+        <a class="footer-email" href="mailto:intelligentcareeracademy@gmail.com">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          intelligentcareeracademy@gmail.com
+        </a>
       </div>
 
-      <!-- Quick links column -->
-      <div>
-        <h4>روابط سريعة</h4>
+      <!-- Navigation column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">روابط الموقع</h4>
         <ul class="footer-links">
-          <li><a href="pages/services.html">خدماتنا</a></li>
+          <li><a href="index.html">الرئيسية</a></li>
           <li><a href="pages/courses.html">الدورات</a></li>
           <li><a href="pages/conferences.html">المؤتمرات</a></li>
           <li><a href="pages/designs.html">التصاميم</a></li>
           <li><a href="pages/labs.html">المختبرات</a></li>
-          <li><a href="pages/consultation.html">طلب استشارة</a></li>
+          <li><a href="pages/coming-soon.html?from=competitions">المسابقات</a></li>
         </ul>
       </div>
 
-      <!-- Contact column -->
-      <div>
-        <h4>تواصل معنا</h4>
-        <div class="footer-contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </span>
-          <span>عمّان — الأردن<!-- REPLACE: real address --></span>
-        </div>
-        <div class="footer-contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </span>
-          <span dir="ltr">+962 7 0000 0000<!-- REPLACE: real phone --></span>
-        </div>
-        <div class="footer-contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          </span>
-          <span>info@ica-academy.com<!-- REPLACE: real email --></span>
-        </div>
+      <!-- Legal / policies column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">السياسات القانونية</h4>
+        <ul class="footer-links">
+          <li><a href="pages/payment-policy.html">سياسة الدفع</a></li>
+          <li><a href="pages/privacy-policy.html">سياسة الخصوصية</a></li>
+          <li><a href="pages/terms-and-conditions.html">الشروط والأحكام</a></li>
+          <li><a href="pages/return-cancellation-policy.html">سياسة الإرجاع والإلغاء</a></li>
+        </ul>
       </div>
+
+      <!-- Contact / CTA column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">تواصل معنا</h4>
+        <p class="footer-cta-text">
+          لديك سؤال أو ترغب بمعرفة المزيد عن خدماتنا؟ تواصل معنا الآن.
+        </p>
+        <a href="pages/consultation.html" class="footer-cta-btn">
+          طلب استشارة
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+        </a>
+      </div>
+
     </div>
 
-    <!-- Bottom -->
+    <!-- Bottom: copyright -->
     <div class="footer-bottom">
-      <span>© <span id="footer-year">2025</span> أكاديمية المسار الذكي. جميع الحقوق محفوظة.</span>
-      <ul class="footer-policies">
-        <li><a href="pages/coming-soon.html?from=privacy">سياسة الخصوصية</a></li>
-        <li><a href="pages/coming-soon.html?from=terms">الشروط والأحكام</a></li>
-        <li><a href="pages/coming-soon.html?from=payment">سياسة الدفع</a></li>
-        <li><a href="pages/coming-soon.html?from=returns">سياسة الإرجاع والإلغاء</a></li>
-      </ul>
+      <p class="footer-copy">
+        © <span id="footer-year">2026</span> أكاديمية المسار الذكي — Intelligent Career Academy. جميع الحقوق محفوظة.
+      </p>
+      <p class="footer-copy footer-copy-en">
+        © Copyrights by Intelligent Career Academy. All Rights Reserved.
+      </p>
     </div>
   </div>
 </footer>
 
+<!-- Footer styles (scoped so they don't conflict with whatever's in components.css).
+     Inline so the partial is fully self-contained — drop in and it works. -->
+<style>
+  .footer {
+    background: var(--ink, #1A1610);
+    color: rgba(255, 255, 255, 0.78);
+    padding: clamp(50px, 7vw, 80px) 0 0;
+    margin-top: clamp(40px, 6vw, 80px);
+    font-family: "Tajawal", sans-serif;
+    position: relative;
+  }
+  .footer::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold, #C9A84C) 0%, #A8893A 100%);
+  }
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: clamp(28px, 4vw, 56px);
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+  @media (max-width: 880px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 540px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Brand column */
+  .footer-brand-row {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 16px;
+  }
+  .footer-logo {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--gold, #C9A84C);
+    color: var(--ink, #1A1610);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Cairo", sans-serif;
+    font-size: 0.95rem; font-weight: 900;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+  }
+  .footer-brand-name {
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.3;
+  }
+  .footer-brand-en {
+    margin: 2px 0 0;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.02em;
+  }
+  .footer-tagline {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+    margin: 0 0 18px;
+    max-width: 360px;
+  }
+  .footer-email {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.88rem;
+    text-decoration: none;
+    direction: ltr;
+    transition: all 0.25s ease;
+  }
+  .footer-email:hover {
+    background: var(--gold, #C9A84C);
+    color: var(--ink, #1A1610);
+    border-color: var(--gold, #C9A84C);
+    transform: translateY(-1px);
+  }
+
+  /* Link columns */
+  .footer-col-title {
+    font-family: "Cairo", sans-serif;
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--gold, #C9A84C);
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    letter-spacing: -0.005em;
+  }
+  .footer-links {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .footer-links li { margin-bottom: 8px; }
+  .footer-links a {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: color 0.2s ease, padding-right 0.25s ease;
+    display: inline-block;
+    position: relative;
+  }
+  .footer-links a::before {
+    content: "←";
+    color: var(--gold, #C9A84C);
+    margin-left: 6px;
+    opacity: 0;
+    transform: translateX(-4px);
+    display: inline-block;
+    transition: opacity 0.2s ease, transform 0.25s ease;
+  }
+  .footer-links a:hover {
+    color: #ffffff;
+  }
+  .footer-links a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* CTA column */
+  .footer-cta-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.65);
+    margin: 0 0 18px;
+  }
+  .footer-cta-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 20px;
+    background: var(--gold, #C9A84C);
+    color: var(--ink, #1A1610);
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .footer-cta-btn:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201,168,76,0.3);
+  }
+
+  /* Bottom strip */
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-copy {
+    margin: 0;
+    font-size: 0.84rem;
+    color: rgba(255,255,255,0.55);
+  }
+  .footer-copy-en {
+    direction: ltr;
+    font-family: "Tajawal", sans-serif;
+    letter-spacing: 0.01em;
+  }
+  @media (max-width: 640px) {
+    .footer-bottom { justify-content: center; text-align: center; }
+  }
+</style>
+
 <script>
-  // Auto-update copyright year (runs after partial injection)
+  // Auto-update copyright year
   (function () {
-    var y = document.getElementById('footer-year');
-    if (y) y.textContent = new Date().getFullYear();
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
   })();
 </script>
