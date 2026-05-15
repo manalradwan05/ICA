@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إلهام بلاس للجامعات — التحول الأكاديمي للمحاضر الجامعي</title>
+<meta name="description" content="برنامج إلهام بلاس للجامعات — التحول الأكاديمي للمحاضر الجامعي باستخدام الذكاء الاصطناعي. 40 ساعة تدريبية، 20 محاضرة، شهادة احترافية معتمدة.">
+<meta name="theme-color" content="#FAF7F0">
+
+<!-- Open Graph -->
+<meta property="og:title" content="إلهام بلاس للجامعات — التحول الأكاديمي للمحاضر الجامعي">
+<meta property="og:description" content="برنامج إلهام بلاس للجامعات — التحول الأكاديمي للمحاضر الجامعي باستخدام الذكاء الاصطناعي. 40 ساعة تدريبية، 20 محاضرة، شهادة احترافية معتمدة.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<!-- Site stylesheets -->
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23C9A84C'/%3E%3Ctext x='50' y='66' font-family='Cairo, sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%231A1610'%3EICA%3C/text%3E%3C/svg%3E">
+
+<style>
+
+  /* ════════════════════════════════════════════════════════════════
+     LANDING PAGE — page-scoped under .landing-v2
+     Built on top of site's existing theme tokens with safe fallbacks.
+     ════════════════════════════════════════════════════════════════ */
+  .landing-v2 {
+    --c-cream:    var(--cream,    #FAF7F0);
+    --c-paper:    var(--paper,    #ffffff);
+    --c-ink:      var(--ink,      #1A1610);
+    --c-ink-soft: var(--ink-soft, #4a4135);
+    --c-mute:     var(--mute,     #7a6f5e);
+    --c-gold:     var(--gold,     #C9A84C);
+    --c-gold-deep:var(--gold-deep,#A8893A);
+    --c-gold-soft:var(--gold-soft,#F5EBC8);
+    --c-line:     var(--line,     #E8DFC7);
+    --c-line-soft:var(--line-soft,#EFE7D2);
+  }
+
+  /* ─────── HERO ─────── */
+  .landing-v2-hero {
+    position: relative;
+    padding: clamp(70px, 10vw, 130px) 0 clamp(48px, 7vw, 80px);
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+  }
+  .landing-v2-hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.14), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 100% 100%, rgba(201,168,76,0.06), transparent 60%);
+    z-index: -2;
+  }
+  .landing-v2-hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.5), transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.5), transparent 75%);
+    pointer-events: none; z-index: -1;
+  }
+  .landing-v2-hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .landing-v2-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 18px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.86rem; font-weight: 600;
+    color: var(--c-ink-soft);
+    box-shadow: 0 2px 8px rgba(26,22,16,0.04);
+    margin-bottom: 24px;
+  }
+  .landing-v2-badge-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--c-gold);
+    box-shadow: 0 0 0 4px rgba(201,168,76,0.18);
+    animation: landing-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes landing-pulse {
+    0%,100% { box-shadow: 0 0 0 4px rgba(201,168,76,0.18); }
+    50%     { box-shadow: 0 0 0 8px rgba(201,168,76,0); }
+  }
+  .landing-v2-hero h1 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--c-ink);
+    margin: 0 0 20px;
+    letter-spacing: -0.02em;
+  }
+  .landing-v2-hero h1 .accent {
+    color: var(--c-gold);
+    position: relative; display: inline-block;
+  }
+  .landing-v2-hero h1 .accent::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0.08em;
+    height: 0.18em;
+    background: rgba(201,168,76,0.22);
+    border-radius: 2px; z-index: -1;
+  }
+  .landing-v2-hero .lead {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: var(--c-ink-soft);
+    line-height: 1.8;
+    margin: 0 auto 32px;
+    max-width: 680px;
+  }
+  .landing-v2-hero-actions {
+    display: inline-flex; flex-wrap: wrap; justify-content: center;
+    gap: 12px;
+  }
+  .landing-v2-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 30px; border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem; font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .landing-v2-btn-primary {
+    background: var(--c-ink); color: var(--c-gold);
+    box-shadow: 0 6px 20px rgba(26,22,16,0.2);
+  }
+  .landing-v2-btn-primary:hover {
+    background: var(--c-gold); color: var(--c-ink);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(201,168,76,0.4);
+  }
+  .landing-v2-btn-ghost {
+    background: var(--c-paper); color: var(--c-ink);
+    border: 1px solid var(--c-line);
+  }
+  .landing-v2-btn-ghost:hover {
+    background: var(--c-gold-soft); border-color: var(--c-gold);
+    transform: translateY(-3px);
+  }
+  .landing-v2-btn svg { width: 14px; height: 14px; }
+
+  /* ─────── SECTION FRAME ─────── */
+  .landing-v2-section {
+    padding: clamp(56px, 8vw, 100px) 0;
+    position: relative;
+    scroll-margin-top: 80px;
+  }
+  .landing-v2-section + .landing-v2-section {
+    border-top: 1px solid var(--c-line-soft);
+  }
+  .landing-v2-section--cream { background: linear-gradient(180deg, transparent, rgba(201,168,76,0.025), transparent); }
+  .landing-v2-container {
+    width: 100%; max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .landing-v2-section-head {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+  .landing-v2-section-num {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: "Cairo", sans-serif;
+    font-size: 0.78rem; font-weight: 700;
+    color: var(--c-gold);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .landing-v2-section-num::before,
+  .landing-v2-section-num::after {
+    content: ""; width: 28px; height: 1px;
+    background: var(--c-gold); opacity: 0.5;
+  }
+  .landing-v2-section-head h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--c-ink);
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  .landing-v2-section-head h2 .accent { color: var(--c-gold); }
+  .landing-v2-section-head .desc {
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-ink-soft);
+    font-size: clamp(1rem, 1.8vw, 1.12rem);
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ─────── PROBLEM (challenges) GRID ─────── */
+  .landing-v2-challenges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .landing-v2-challenge {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 22px 24px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .landing-v2-challenge:hover {
+    transform: translateY(-3px);
+    border-color: var(--c-gold);
+    box-shadow: 0 14px 32px rgba(26,22,16,0.06);
+  }
+  .landing-v2-challenge-icon {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Cairo", sans-serif; font-weight: 800;
+    font-size: 0.95rem;
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+  .landing-v2-challenge p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: var(--c-ink-soft);
+  }
+
+  /* ─────── SOLUTION BLOCK ─────── */
+  .landing-v2-solution {
+    text-align: center;
+    background: linear-gradient(135deg, var(--c-gold-soft) 0%, var(--c-cream) 100%);
+    border: 1px solid var(--c-line);
+    border-radius: 24px;
+    padding: clamp(36px, 6vw, 64px) clamp(28px, 5vw, 56px);
+    position: relative;
+    overflow: hidden;
+  }
+  .landing-v2-solution::before {
+    content: "";
+    position: absolute; top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201,168,76,0.15), transparent 65%);
+    border-radius: 50%;
+    transform: translate(60px, -60px);
+  }
+  .landing-v2-solution-eyebrow {
+    display: inline-block;
+    font-family: "Cairo", sans-serif;
+    font-size: 0.95rem; font-weight: 800;
+    color: var(--c-gold-deep);
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .landing-v2-solution h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--c-ink);
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+  .landing-v2-solution p {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    color: var(--c-ink-soft);
+    line-height: 1.85;
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* ─────── AUDIENCE LIST ─────── */
+  .landing-v2-audience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .landing-v2-audience-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 18px 22px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  .landing-v2-audience-item:hover {
+    border-color: var(--c-gold);
+    background: var(--c-gold-soft);
+  }
+  .landing-v2-audience-icon {
+    flex-shrink: 0;
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+  .landing-v2-audience-icon svg { width: 20px; height: 20px; }
+  .landing-v2-audience-item span {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 600;
+    color: var(--c-ink);
+    font-size: 0.98rem;
+  }
+
+  /* ─────── CURRICULUM (modules) ─────── */
+  .landing-v2-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: clamp(18px, 2.4vw, 26px);
+  }
+  .landing-v2-module {
+    position: relative;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 18px;
+    padding: 28px 26px;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.35s cubic-bezier(0.22,1,0.36,1),
+                border-color 0.25s ease;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .landing-v2-module::before {
+    content: "";
+    position: absolute; top: 0; right: 0;
+    width: 0; height: 4px;
+    background: linear-gradient(-90deg, var(--c-gold), var(--c-gold-deep));
+    transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
+    z-index: 2;
+  }
+  .landing-v2-module:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(26,22,16,0.08);
+    border-color: var(--c-gold);
+  }
+  .landing-v2-module:hover::before { width: 100%; }
+  .landing-v2-module-head {
+    display: flex; align-items: flex-start; gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed var(--c-line);
+  }
+  .landing-v2-module-num {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--c-gold);
+    color: var(--c-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Cairo", sans-serif; font-weight: 900;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(201,168,76,0.25);
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .landing-v2-module:hover .landing-v2-module-num {
+    transform: rotate(-6deg) scale(1.05);
+  }
+  .landing-v2-module-icon {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    color: var(--c-gold-deep); opacity: 0.7;
+  }
+  .landing-v2-module-icon svg { width: 100%; height: 100%; }
+  .landing-v2-module h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.18rem; font-weight: 800;
+    color: var(--c-ink);
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    flex: 1;
+  }
+  .landing-v2-module ul {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  .landing-v2-module li {
+    position: relative;
+    padding: 8px 22px 8px 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.95rem;
+    color: var(--c-ink-soft);
+    line-height: 1.7;
+  }
+  .landing-v2-module li::before {
+    content: "";
+    position: absolute;
+    right: 0; top: 16px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--c-gold);
+    border-right: 2px solid var(--c-gold);
+    transform: rotate(45deg);
+  }
+  .landing-v2-module p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.95rem;
+    color: var(--c-ink-soft);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* ─────── DETAILS GRID ─────── */
+  .landing-v2-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+  .landing-v2-detail {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .landing-v2-detail:hover {
+    transform: translateY(-3px);
+    border-color: var(--c-gold);
+    box-shadow: 0 12px 28px rgba(26,22,16,0.06);
+  }
+  .landing-v2-detail-icon {
+    width: 48px; height: 48px;
+    margin: 0 auto 14px;
+    border-radius: 14px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+  .landing-v2-detail-icon svg { width: 24px; height: 24px; }
+  .landing-v2-detail-label {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.82rem; font-weight: 600;
+    color: var(--c-mute);
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+  .landing-v2-detail-value {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.05rem; font-weight: 800;
+    color: var(--c-ink);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  /* ─────── OUTCOMES (what you'll get) ─────── */
+  .landing-v2-outcomes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 16px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .landing-v2-outcome {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 22px 26px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+  }
+  .landing-v2-outcome:hover {
+    transform: translateY(-3px);
+    border-color: var(--c-gold);
+    box-shadow: 0 12px 28px rgba(26,22,16,0.06);
+  }
+  .landing-v2-outcome-check {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    color: var(--c-ink);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .landing-v2-outcome-check svg { width: 18px; height: 18px; }
+  .landing-v2-outcome p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: var(--c-ink);
+    font-weight: 500;
+  }
+
+  /* ─────── FAQ ─────── */
+  .landing-v2-faqs {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(26,22,16,0.04);
+  }
+  .landing-v2-faq {
+    border-bottom: 1px solid var(--c-line-soft);
+  }
+  .landing-v2-faq:last-child { border-bottom: none; }
+  .landing-v2-faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 26px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px;
+    font-family: "Cairo", sans-serif;
+    font-size: 1.02rem; font-weight: 700;
+    color: var(--c-ink);
+    transition: background 0.2s ease;
+  }
+  .landing-v2-faq summary::-webkit-details-marker { display: none; }
+  .landing-v2-faq summary:hover { background: var(--c-cream); }
+  .landing-v2-faq-icon {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--c-line);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--c-ink-soft);
+    font-size: 1.2rem; font-weight: 400;
+    transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .landing-v2-faq[open] .landing-v2-faq-icon {
+    transform: rotate(45deg);
+    background: var(--c-gold);
+    color: var(--c-ink);
+    border-color: var(--c-gold);
+    box-shadow: 0 0 0 4px var(--c-gold-soft);
+  }
+  .landing-v2-faq-body {
+    padding: 0 26px 22px;
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-ink-soft);
+    line-height: 1.8;
+    font-size: 0.98rem;
+    animation: landing-faq-slide 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  @keyframes landing-faq-slide {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─────── FINAL CTA ─────── */
+  .landing-v2-cta {
+    padding: clamp(60px, 8vw, 100px) 0;
+    text-align: center;
+    background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-gold-soft) 100%);
+    border-top: 1px solid var(--c-line-soft);
+  }
+  .landing-v2-cta h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 900;
+    color: var(--c-ink);
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  .landing-v2-cta p {
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-ink-soft);
+    font-size: 1.05rem;
+    margin: 0 auto 28px;
+    max-width: 560px;
+    line-height: 1.75;
+  }
+
+  /* ─────── SCROLL REVEAL ─────── */
+  .landing-v2-reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .landing-v2-reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .landing-v2-stagger > * {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+                transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  .landing-v2-stagger.is-visible > *           { opacity: 1; transform: translateY(0); }
+  .landing-v2-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+  .landing-v2-stagger.is-visible > *:nth-child(2) { transition-delay: 70ms; }
+  .landing-v2-stagger.is-visible > *:nth-child(3) { transition-delay: 140ms; }
+  .landing-v2-stagger.is-visible > *:nth-child(4) { transition-delay: 210ms; }
+  .landing-v2-stagger.is-visible > *:nth-child(5) { transition-delay: 280ms; }
+  .landing-v2-stagger.is-visible > *:nth-child(6) { transition-delay: 350ms; }
+  .landing-v2-stagger.is-visible > *:nth-child(7) { transition-delay: 420ms; }
+  .landing-v2-stagger.is-visible > *:nth-child(8) { transition-delay: 490ms; }
+  .landing-v2-stagger.is-visible > *:nth-child(n+9) { transition-delay: 560ms; }
+
+  /* ─────── RESPONSIVE ─────── */
+  @media (max-width: 768px) {
+    .landing-v2-hero-actions { flex-direction: column; align-items: stretch; }
+    .landing-v2-hero-actions .landing-v2-btn { justify-content: center; }
+    .landing-v2-module { padding: 24px 22px; }
+    .landing-v2-faq summary { padding: 18px 20px; font-size: 0.96rem; }
+    .landing-v2-faq-body { padding: 0 20px 18px; }
+  }
+  @media (max-width: 480px) {
+    .landing-v2-challenges,
+    .landing-v2-audience,
+    .landing-v2-modules,
+    .landing-v2-details,
+    .landing-v2-outcomes { grid-template-columns: 1fr; }
+  }
+
+  /* ─────── REDUCED MOTION ─────── */
+  @media (prefers-reduced-motion: reduce) {
+    .landing-v2 *, .landing-v2 *::before, .landing-v2 *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .landing-v2-reveal, .landing-v2-stagger > * {
+      opacity: 1 !important; transform: none !important;
+    }
+  }
+
+</style>
+</head>
+<body class="landing-v2">
+
+<a href="#main" class="skip-link">انتقل إلى المحتوى الرئيسي</a>
+<div data-include="navbar"></div>
+
+<main id="main">
+
+  <section class="landing-v2-hero">
+    <div class="landing-v2-hero-inner">
+      <span class="landing-v2-badge">
+        <span class="landing-v2-badge-dot" aria-hidden="true"></span>
+        إلهام بلاس للجامعات
+      </span>
+      <h1>التحول الأكاديمي للمحاضر الجامعي باستخدام <span class="accent">الذكاء الاصطناعي</span></h1>
+      <p class="lead">طوّر أسلوبك الأكاديمي من التدريس التقليدي إلى تجربة جامعية ذكية، تفاعلية، متقدمة، تواكب مستقبل التعليم العالي.</p>
+      <div class="landing-v2-hero-actions">
+        <a href="#modules" class="landing-v2-btn landing-v2-btn-primary">
+          محاور البرنامج <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </a>
+        <a href="../pages/consultation.html?from=ilham" class="landing-v2-btn landing-v2-btn-ghost">
+          سجّل الآن
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-v2-section" id="problem">
+    <div class="landing-v2-container">
+      <header class="landing-v2-section-head landing-v2-reveal">
+        <span class="landing-v2-section-num">القسم 01</span>
+        <h2>هل تواجه هذه التحديات في <span class="accent">بيئتك الأكاديمية؟</span></h2>
+      </header>
+      <div class="landing-v2-challenges landing-v2-stagger">
+        <div class="landing-v2-challenge">
+          <span class="landing-v2-challenge-icon">01</span>
+          <p>هل يستنزفك إعداد المحتوى الجامعي لساعات طويلة؟</p>
+        </div>
+        <div class="landing-v2-challenge">
+          <span class="landing-v2-challenge-icon">02</span>
+          <p>هل تجد صعوبة في تقديم محتوى أكاديمي عميق بأسلوب مشوّق وتفاعلي؟</p>
+        </div>
+        <div class="landing-v2-challenge">
+          <span class="landing-v2-challenge-icon">03</span>
+          <p>هل تحتاج إلى إنتاج اختبارات وأوراق تقييم متنوعة بسرعة وجودة عالية؟</p>
+        </div>
+        <div class="landing-v2-challenge">
+          <span class="landing-v2-challenge-icon">04</span>
+          <p>هل تواجه ضغطًا مستمرًا في التواصل مع الطلبة والرد على استفساراتهم؟</p>
+        </div>
+        <div class="landing-v2-challenge">
+          <span class="landing-v2-challenge-icon">05</span>
+          <p>هل ترغب في تطوير مقررك الأكاديمي رقميًا لكنك لا تعرف من أين تبدأ؟</p>
+        </div>
+        <div class="landing-v2-challenge">
+          <span class="landing-v2-challenge-icon">06</span>
+          <p>هل تشعر أن الأدوات التقليدية لم تعد كافية لمتطلبات التعليم الجامعي الحديث؟</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-v2-section landing-v2-section--cream" id="solution">
+    <div class="landing-v2-container">
+      <div class="landing-v2-solution landing-v2-reveal">
+        <span class="landing-v2-solution-eyebrow">لقد وصلت إلى المكان الصحيح</span>
+        <h2>إلهام بلاس للجامعات — منظومة تدريس جامعية ذكية متكاملة</h2>
+        <p>برنامج احترافي متقدم صُمم خصيصًا لتمكين المحاضر الجامعي من بناء منظومة تدريس ذكية متكاملة باستخدام أحدث أدوات الذكاء الاصطناعي. سيمكنك البرنامج من أتمتة التخطيط الأكاديمي، تطوير المحتوى التفاعلي، رفع جودة التقييم، وتحويل مقرراتك الجامعية إلى تجربة تعليمية رقمية متقدمة.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-v2-section" id="audience">
+    <div class="landing-v2-container">
+      <header class="landing-v2-section-head landing-v2-reveal">
+        <span class="landing-v2-section-num">القسم 02</span>
+        <h2>لمن هذا <span class="accent">البرنامج؟</span></h2>
+        <p class="desc">البرنامج موجّه لكل من يسعى إلى توظيف الذكاء الاصطناعي في التعليم العالي.</p>
+      </header>
+      <div class="landing-v2-audience landing-v2-stagger">
+        <div class="landing-v2-audience-item">
+          <span class="landing-v2-audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg></span>
+          <span>المحاضرون الجامعيون</span>
+        </div>
+        <div class="landing-v2-audience-item">
+          <span class="landing-v2-audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/><path d="M14 20v-1a4 4 0 0 1 7-2.8"/></svg></span>
+          <span>أعضاء الهيئة التدريسية</span>
+        </div>
+        <div class="landing-v2-audience-item">
+          <span class="landing-v2-audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <span>مطوّرو المناهج الجامعية</span>
+        </div>
+        <div class="landing-v2-audience-item">
+          <span class="landing-v2-audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+          <span>الباحثون والأكاديميون</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-v2-section landing-v2-section--cream" id="modules">
+    <div class="landing-v2-container">
+      <header class="landing-v2-section-head landing-v2-reveal">
+        <span class="landing-v2-section-num">القسم 03</span>
+        <h2>محاور <span class="accent">البرنامج</span></h2>
+        <p class="desc">ثمانية محاور متكاملة تنقلك من التخطيط الأكاديمي إلى الأتمتة الكاملة لمنظومتك التدريسية.</p>
+      </header>
+      <div class="landing-v2-modules landing-v2-stagger">
+        <article class="landing-v2-module">
+          <div class="landing-v2-module-head">
+            <span class="landing-v2-module-num">01</span>
+            <h3>التخطيط الأكاديمي الذكي</h3>
+          </div>
+          <ul><li>التخطيط التلقائي للمقررات والخطط الفصلية والأسبوعية</li><li>بناء المخرجات التعليمية وربطها بالأهداف الأكاديمية</li><li>تلخيص المحتوى وتحويله إلى خرائط معرفية احترافية</li></ul>
+        </article>
+        <article class="landing-v2-module">
+          <div class="landing-v2-module-head">
+            <span class="landing-v2-module-num">02</span>
+            <h3>المحتوى الجامعي التفاعلي</h3>
+          </div>
+          <ul><li>تصميم عروض أكاديمية تفاعلية احترافية</li><li>إنشاء أوراق تقييم وفق Bloom &amp; SOLO لمراعاة الفروق الفردية والتدرج في مستويات وعمق التفكير</li><li>بناء اختبارات تفاعلية ذكية</li><li>تحويل الوحدات العلمية إلى ألعاب تعليمية جامعية</li></ul>
+        </article>
+        <article class="landing-v2-module">
+          <div class="landing-v2-module-head">
+            <span class="landing-v2-module-num">03</span>
+            <h3>إنتاج المحتوى البصري المتقدم</h3>
+          </div>
+          <ul><li>توليد صور أكاديمية دقيقة مرتبطة بالتخصص</li><li>إنتاج فيديوهات تعليمية بشخصيات رقمية مخصصة</li><li>إنشاء شروحات مرئية احترافية للمفاهيم المعقدة</li></ul>
+        </article>
+        <article class="landing-v2-module">
+          <div class="landing-v2-module-head">
+            <span class="landing-v2-module-num">04</span>
+            <h3>التأليف الأكاديمي الذكي</h3>
+          </div>
+          <ul><li>تأليف سيناريوهات تعليمية تخصصية</li><li>تحويل النظريات المعقدة إلى قصص معرفية تفاعلية</li><li>إنتاج محتوى بصري مخصص لكل مقرر</li></ul>
+        </article>
+        <article class="landing-v2-module">
+          <div class="landing-v2-module-head">
+            <span class="landing-v2-module-num">05</span>
+            <h3>اللغة الأكاديمية الذكية</h3>
+          </div>
+          <ul><li>الترجمة الفورية بين جميع اللغات</li><li>التدقيق الأكاديمي الاحترافي</li><li>التشكيل العربي التلقائي</li><li>تحسين الصياغة العلمية</li></ul>
+        </article>
+        <article class="landing-v2-module">
+          <div class="landing-v2-module-head">
+            <span class="landing-v2-module-num">06</span>
+            <h3>الأتمتة الجامعية</h3>
+          </div>
+          <ul><li>تصميم روبوت أكاديمي ذكي لكل محاضر</li><li>الرد التلقائي على استفسارات الطلبة</li><li>تنظيم التواصل الأكاديمي دون تدخل مباشر</li><li>تقليل الضغط الإداري والاتصالي</li></ul>
+        </article>
+        <article class="landing-v2-module">
+          <div class="landing-v2-module-head">
+            <span class="landing-v2-module-num">07</span>
+            <h3>التصحيح الإلكتروني للامتحانات</h3>
+          </div>
+          <p>يوفر تصحيحًا تلقائيًا داخل المستندات مع ملاحظات ذكية فورية، وتصحيحًا جماعيًا للأسئلة المتشابهة، وقراءة للإجابات اليدوية، وإنشاء معايير تقييم ذكية، وتحليل أداء الطلبة لكل سؤال، مع تقارير دقيقة توفر الوقت وترفع جودة ودقة التقييم الأكاديمي.</p>
+        </article>
+        <article class="landing-v2-module">
+          <div class="landing-v2-module-head">
+            <span class="landing-v2-module-num">08</span>
+            <h3>اللوح الإلكتروني الذكي</h3>
+          </div>
+          <ul><li>إدارة المحاضرات من الهاتف المحمول</li><li>الكتابة والعرض والتفاعل المباشر</li><li>تشغيل بيئة تعليمية ذكية من أي مكان</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-v2-section" id="details">
+    <div class="landing-v2-container">
+      <header class="landing-v2-section-head landing-v2-reveal">
+        <span class="landing-v2-section-num">القسم 04</span>
+        <h2>تفاصيل <span class="accent">البرنامج</span></h2>
+      </header>
+      <div class="landing-v2-details landing-v2-stagger">
+        <div class="landing-v2-detail">
+          <div class="landing-v2-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="landing-v2-detail-label">عدد الساعات</div>
+          <div class="landing-v2-detail-value">40 ساعة تدريبية</div>
+        </div>
+        <div class="landing-v2-detail">
+          <div class="landing-v2-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
+          <div class="landing-v2-detail-label">عدد المحاضرات</div>
+          <div class="landing-v2-detail-value">20 محاضرة</div>
+        </div>
+        <div class="landing-v2-detail">
+          <div class="landing-v2-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M17 2v4.172a2 2 0 0 1-.586 1.414L12 12 7.586 7.586A2 2 0 0 1 7 6.172V2"/></svg></div>
+          <div class="landing-v2-detail-label">مدة المحاضرة</div>
+          <div class="landing-v2-detail-value">ساعتان</div>
+        </div>
+        <div class="landing-v2-detail">
+          <div class="landing-v2-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="landing-v2-detail-label">نمط التدريب</div>
+          <div class="landing-v2-detail-value">عملي تطبيقي + مشاريع جامعية</div>
+        </div>
+        <div class="landing-v2-detail">
+          <div class="landing-v2-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div class="landing-v2-detail-label">أسلوب التنفيذ</div>
+          <div class="landing-v2-detail-value">بناء نظام تدريس جامعي ذكي</div>
+        </div>
+        <div class="landing-v2-detail">
+          <div class="landing-v2-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="landing-v2-detail-label">مكان التنفيذ</div>
+          <div class="landing-v2-detail-value">حضوري أو منصة تفاعلية</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-v2-section landing-v2-section--cream" id="outcomes">
+    <div class="landing-v2-container">
+      <header class="landing-v2-section-head landing-v2-reveal">
+        <span class="landing-v2-section-num">القسم 05</span>
+        <h2>ماذا ستحصل بعد <span class="accent">البرنامج؟</span></h2>
+        <p class="desc">بنهاية البرنامج ستكون قادرًا على:</p>
+      </header>
+      <div class="landing-v2-outcomes landing-v2-stagger">
+        <div class="landing-v2-outcome">
+          <span class="landing-v2-outcome-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>بناء منظومة أكاديمية ذكية متكاملة</p>
+        </div>
+        <div class="landing-v2-outcome">
+          <span class="landing-v2-outcome-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>تقليل وقت إعداد المحاضرات بنسبة كبيرة</p>
+        </div>
+        <div class="landing-v2-outcome">
+          <span class="landing-v2-outcome-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>إنتاج محتوى أكاديمي احترافي خلال دقائق</p>
+        </div>
+        <div class="landing-v2-outcome">
+          <span class="landing-v2-outcome-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>رفع التفاعل داخل المحاضرات الجامعية</p>
+        </div>
+        <div class="landing-v2-outcome">
+          <span class="landing-v2-outcome-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>تطوير مقرراتك وفق معايير التعليم الذكي الحديثة</p>
+        </div>
+        <div class="landing-v2-outcome">
+          <span class="landing-v2-outcome-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>امتلاك مساعد أكاديمي ذكي يعمل معك باستمرار</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-v2-section" id="faqs">
+    <div class="landing-v2-container">
+      <header class="landing-v2-section-head landing-v2-reveal">
+        <span class="landing-v2-section-num">القسم 06</span>
+        <h2>الأسئلة <span class="accent">الشائعة</span></h2>
+      </header>
+      <div class="landing-v2-faqs landing-v2-reveal">
+        <details class="landing-v2-faq">
+          <summary>
+            <span>هل يحتاج البرنامج إلى خبرة تقنية؟</span>
+            <span class="landing-v2-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="landing-v2-faq-body">لا، يبدأ من الأساسيات ويصلك للاحتراف.</div>
+        </details>
+        <details class="landing-v2-faq">
+          <summary>
+            <span>هل الأدوات مدفوعة؟</span>
+            <span class="landing-v2-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="landing-v2-faq-body">معظم الأدوات مجانية أو تقدم نسخًا كافية للتطبيق الكامل.</div>
+        </details>
+        <details class="landing-v2-faq">
+          <summary>
+            <span>هل البرنامج عملي؟</span>
+            <span class="landing-v2-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="landing-v2-faq-body">نعم، يعتمد على التطبيق المباشر وبناء مشاريع أكاديمية حقيقية.</div>
+        </details>
+        <details class="landing-v2-faq">
+          <summary>
+            <span>هل يناسب جميع التخصصات الجامعية؟</span>
+            <span class="landing-v2-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="landing-v2-faq-body">نعم، قابل للتخصيص لجميع المجالات الأكاديمية.</div>
+        </details>
+        <details class="landing-v2-faq">
+          <summary>
+            <span>هل يراعي البرنامج الفروقات الفردية بين الطلاب؟</span>
+            <span class="landing-v2-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="landing-v2-faq-body">نعم، لأنه يصمم محتوىً تفاعليًا متدرجًا يناسب قدرات كل طالب بمستويات متعددة وفق تصنيفات بلوم وسولو.</div>
+        </details>
+        <details class="landing-v2-faq">
+          <summary>
+            <span>هل يمكن تطبيقه مباشرة داخل الجامعة؟</span>
+            <span class="landing-v2-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="landing-v2-faq-body">نعم، جميع المخرجات قابلة للتطبيق الفوري.</div>
+        </details>
+        <details class="landing-v2-faq">
+          <summary>
+            <span>هل توجد شهادة؟</span>
+            <span class="landing-v2-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="landing-v2-faq-body">نعم، شهادة احترافية معتمدة بعد الإتمام.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-v2-cta landing-v2-reveal">
+    <div class="landing-v2-container">
+      <h2>جاهز للانضمام إلى إلهام بلاس للجامعات؟</h2>
+      <p>تواصل معنا الآن لمعرفة مواعيد الدفعة القادمة أو لتفصيل البرنامج لجامعتك.</p>
+      <a href="../pages/consultation.html?from=ilham" class="landing-v2-btn landing-v2-btn-primary">
+        تواصل معنا الآن <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  // Scroll-reveal for landing-v2 elements
+  (function () {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = document.querySelectorAll('.landing-v2-reveal, .landing-v2-stagger');
+    if (reduced || !('IntersectionObserver' in window)) {
+      targets.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(el => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>
