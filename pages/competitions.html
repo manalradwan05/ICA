@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مسابقة عدسة العلوم الذكية SIL — أكاديمية المسار الذكي</title>
+<meta name="description" content="مسابقة عدسة العلوم الذكية: تدريب علمي مفتوح للجميع ينتهي بمسابقة لأجمل فيديو وثائقي يثبت مبدأً علمياً ويربطه بالحياة. 20 ساعة تدريبية، شهادات مشاركة.">
+<meta name="theme-color" content="#FAF7F0">
+
+<meta property="og:title" content="مسابقة عدسة العلوم الذكية SIL">
+<meta property="og:description" content="حين تتحول التجربة إلى قصة تُشاهد — صنع فيديو وثائقي يثبت مبدأً علمياً.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23C9A84C'/%3E%3Ctext x='50' y='66' font-family='Cairo, sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%231A1610'%3EICA%3C/text%3E%3C/svg%3E">
+
+<!-- ════════════════════════════════════════════════════════════════
+     PAGE-SCOPED STYLES — prefix .comp-page
+     ════════════════════════════════════════════════════════════════ -->
+<style>
+  .comp-page {
+    --c-cream:    var(--cream,    #FAF7F0);
+    --c-paper:    var(--paper,    #ffffff);
+    --c-ink:      var(--ink,      #1A1610);
+    --c-ink-soft: var(--ink-soft, #4a4135);
+    --c-mute:     var(--mute,     #7a6f5e);
+    --c-gold:     var(--gold,     #C9A84C);
+    --c-gold-deep:var(--gold-deep,#A8893A);
+    --c-gold-soft:var(--gold-soft,#F5EBC8);
+    --c-line:     var(--line,     #E8DFC7);
+    --c-line-soft:var(--line-soft,#EFE7D2);
+    --c-teal:     var(--teal,     #0F6E56);
+    --c-teal-light:var(--teal-light,#1A9A78);
+    --c-teal-soft:var(--teal-soft, #E1F5EE);
+  }
+
+  /* ═══════════════════ HERO ═══════════════════ */
+  .comp-hero {
+    position: relative;
+    padding: clamp(64px, 10vw, 120px) 0 clamp(48px, 7vw, 80px);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .comp-hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 0%, rgba(201,168,76,0.14), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 0% 100%, rgba(15,110,86,0.08), transparent 60%);
+    z-index: -2;
+  }
+  .comp-hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.4), transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.4), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .comp-hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+    text-align: center;
+  }
+  .comp-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 18px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--c-ink-soft);
+    box-shadow: 0 2px 8px rgba(26,22,16,0.04);
+    margin-bottom: 24px;
+  }
+  .comp-badge-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--c-gold);
+    box-shadow: 0 0 0 4px rgba(201,168,76,0.18);
+    animation: comp-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes comp-pulse {
+    0%,100% { box-shadow: 0 0 0 4px rgba(201,168,76,0.18); }
+    50%     { box-shadow: 0 0 0 8px rgba(201,168,76,0); }
+  }
+  .comp-hero-tag {
+    display: inline-block;
+    font-family: "Cairo", sans-serif;
+    font-size: 0.85rem; font-weight: 800;
+    color: var(--c-gold-deep);
+    background: var(--c-gold-soft);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+    letter-spacing: 0.04em;
+  }
+  .comp-hero h1 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    font-weight: 900; line-height: 1.15;
+    color: var(--c-ink);
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  .comp-hero h1 .accent {
+    color: var(--c-gold);
+    position: relative; display: inline-block;
+  }
+  .comp-hero h1 .accent::after {
+    content: ""; position: absolute;
+    left: 0; right: 0; bottom: 0.08em;
+    height: 0.18em;
+    background: rgba(201,168,76,0.22);
+    border-radius: 2px;
+    z-index: -1;
+  }
+  .comp-hero h1 small {
+    display: block;
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+    font-weight: 700;
+    color: var(--c-gold-deep);
+    margin-top: 6px;
+    letter-spacing: 0.08em;
+  }
+  .comp-hero .tagline {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    color: var(--c-ink-soft);
+    margin: 0 auto 12px;
+    max-width: 760px;
+    line-height: 1.55;
+    font-style: italic;
+  }
+  .comp-hero .lead {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1.02rem, 1.95vw, 1.2rem);
+    color: var(--c-ink-soft);
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 760px;
+  }
+  .comp-hero-ctas {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 14px; margin-top: 36px;
+  }
+  .comp-btn-primary, .comp-btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 30px;
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem; font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .comp-btn-primary {
+    background: var(--c-ink);
+    color: var(--c-gold);
+    box-shadow: 0 6px 20px rgba(26,22,16,0.2);
+  }
+  .comp-btn-primary:hover {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(201,168,76,0.4);
+  }
+  .comp-btn-secondary {
+    background: var(--c-paper);
+    color: var(--c-ink);
+    border: 1px solid var(--c-line);
+  }
+  .comp-btn-secondary:hover {
+    border-color: var(--c-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(201,168,76,0.18);
+  }
+
+  /* ═══════════════════ KEY FACTS STRIP ═══════════════════ */
+  .comp-facts {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding: 0 clamp(20px, 5vw, 40px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .comp-fact {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 16px;
+    padding: 22px 20px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .comp-fact:hover {
+    border-color: var(--c-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(26,22,16,0.07);
+  }
+  .comp-fact-icon {
+    display: inline-flex;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    align-items: center; justify-content: center;
+    margin-bottom: 12px;
+  }
+  .comp-fact-label {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.85rem;
+    color: var(--c-mute);
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .comp-fact-value {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.05rem;
+    color: var(--c-ink);
+    font-weight: 800;
+    display: block;
+    line-height: 1.4;
+  }
+
+  /* ═══════════════════ SECTIONS ═══════════════════ */
+  .comp-section {
+    padding: clamp(60px, 9vw, 110px) 0;
+    position: relative;
+    scroll-margin-top: 80px;
+  }
+  .comp-section + .comp-section { border-top: 1px solid var(--c-line-soft); }
+  .comp-section:nth-of-type(even) {
+    background: linear-gradient(180deg, transparent, rgba(201,168,76,0.025), transparent);
+  }
+  .comp-container {
+    width: 100%; max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .comp-container.narrow { max-width: 980px; }
+
+  .comp-section-head {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 64px);
+  }
+  .comp-section-num {
+    font-family: "Cairo", sans-serif;
+    font-size: 0.78rem; font-weight: 700;
+    color: var(--c-gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .comp-section-num::before, .comp-section-num::after {
+    content: ""; width: 28px; height: 1px;
+    background: var(--c-gold); opacity: 0.5;
+  }
+  .comp-section-head h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900; line-height: 1.25;
+    color: var(--c-ink);
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+    max-width: 820px;
+  }
+  .comp-section-head h2 .accent { color: var(--c-gold); }
+  .comp-section-head .desc {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    color: var(--c-mute);
+    max-width: 720px;
+    line-height: 1.8;
+    margin: 0 auto;
+  }
+
+  /* ═══════════════════ PROBLEMS / PAIN CARDS ═══════════════════ */
+  .comp-pains {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .comp-pain {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-soft);
+    border-radius: 16px;
+    padding: 22px 22px;
+    transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .comp-pain:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-gold);
+    box-shadow: 0 14px 30px rgba(26,22,16,0.06);
+  }
+  .comp-pain-x {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(193, 60, 60, 0.10);
+    color: #b03939;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900;
+  }
+  .comp-pain p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem;
+    color: var(--c-ink);
+    line-height: 1.7;
+  }
+
+  /* ═══════════════════ REASSURANCE ═══════════════════ */
+  .comp-reassure {
+    background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-gold-soft) 100%);
+    border-top: 1px solid var(--c-line-soft);
+    border-bottom: 1px solid var(--c-line-soft);
+    padding: clamp(48px, 8vw, 80px) 0;
+    text-align: center;
+  }
+  .comp-reassure-eyebrow {
+    display: inline-block;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: var(--c-gold-deep);
+    background: var(--c-paper);
+    padding: 7px 18px;
+    border-radius: 100px;
+    border: 1px solid var(--c-line);
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+  .comp-reassure h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+    font-weight: 900;
+    color: var(--c-ink);
+    margin: 0 auto 18px;
+    max-width: 820px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .comp-reassure p {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1.02rem, 1.9vw, 1.15rem);
+    color: var(--c-ink-soft);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.85;
+  }
+
+  /* ═══════════════════ AUDIENCE ═══════════════════ */
+  .comp-audience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .comp-audience-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 18px 22px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-soft);
+    border-radius: 14px;
+    transition: all 0.25s ease;
+  }
+  .comp-audience-item:hover {
+    border-color: var(--c-gold);
+    transform: translateX(-4px);
+    box-shadow: 0 8px 20px rgba(26,22,16,0.05);
+  }
+  .comp-audience-check {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .comp-audience-item p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem; font-weight: 500;
+    color: var(--c-ink);
+    line-height: 1.5;
+  }
+  .comp-team-note {
+    max-width: 980px;
+    margin: 24px auto 0;
+    padding: 18px 24px;
+    background: var(--c-teal-soft);
+    border-inline-start: 4px solid var(--c-teal);
+    border-radius: 12px;
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-ink);
+    line-height: 1.7;
+  }
+  .comp-team-note strong {
+    color: var(--c-teal);
+    font-family: "Cairo", sans-serif;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.02rem;
+  }
+
+  /* ═══════════════════ PILLARS / TRAINING MODULES ═══════════════════ */
+  .comp-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+  }
+  .comp-pillar {
+    position: relative;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 18px;
+    padding: 28px 26px;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.35s cubic-bezier(0.22,1,0.36,1),
+                border-color 0.25s ease;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .comp-pillar::before {
+    content: "";
+    position: absolute; top: 0; right: 0;
+    width: 0; height: 4px;
+    background: linear-gradient(-90deg, var(--c-gold), var(--c-gold-deep));
+    transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
+  }
+  .comp-pillar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(26,22,16,0.08);
+    border-color: var(--c-gold);
+  }
+  .comp-pillar:hover::before { width: 100%; }
+  .comp-pillar-head {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 14px;
+  }
+  .comp-pillar-num {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Cairo", sans-serif;
+    font-size: 1.05rem; font-weight: 800;
+    border: 1px solid rgba(201,168,76,0.25);
+    transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .comp-pillar:hover .comp-pillar-num {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    transform: rotate(-6deg) scale(1.05);
+  }
+  .comp-pillar h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--c-ink);
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .comp-pillar p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.98rem;
+    color: var(--c-ink-soft);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  /* ═══════════════════ BEFORE / AFTER ═══════════════════ */
+  .comp-baf {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .comp-baf-card {
+    padding: 28px 28px;
+    border-radius: 18px;
+    border: 1px solid var(--c-line);
+    background: var(--c-paper);
+  }
+  .comp-baf-card.before {
+    border-color: rgba(193, 60, 60, 0.20);
+    background: linear-gradient(180deg, #fff 0%, rgba(193,60,60,0.03) 100%);
+  }
+  .comp-baf-card.after {
+    border-color: rgba(15, 110, 86, 0.30);
+    background: linear-gradient(180deg, #fff 0%, rgba(15,110,86,0.04) 100%);
+  }
+  .comp-baf-eyebrow {
+    display: inline-block;
+    font-family: "Cairo", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+  .comp-baf-card.before .comp-baf-eyebrow {
+    color: #b03939;
+    background: rgba(193, 60, 60, 0.10);
+  }
+  .comp-baf-card.after .comp-baf-eyebrow {
+    color: var(--c-teal);
+    background: var(--c-teal-soft);
+  }
+  .comp-baf-card h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--c-ink);
+    margin: 0 0 16px;
+  }
+  .comp-baf-list {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .comp-baf-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-ink);
+    line-height: 1.65;
+  }
+  .comp-baf-list li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-top: 9px;
+  }
+  .comp-baf-card.before li::before { background: #b03939; opacity: 0.6; }
+  .comp-baf-card.after  li::before { background: var(--c-teal); }
+
+  /* ═══════════════════ REQUIREMENTS LIST ═══════════════════ */
+  .comp-requirements {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .comp-req {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 20px 22px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-soft);
+    border-radius: 14px;
+    transition: all 0.25s ease;
+  }
+  .comp-req:hover {
+    border-color: var(--c-teal);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(26,22,16,0.06);
+  }
+  .comp-req-num {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: var(--c-teal);
+    color: var(--c-paper);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Cairo", sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(15,110,86,0.25);
+  }
+  .comp-req p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem;
+    color: var(--c-ink);
+    line-height: 1.7;
+  }
+
+  /* ═══════════════════ FIELDS / CHIPS ═══════════════════ */
+  .comp-fields {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .comp-field-chip {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 26px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 100px;
+    font-family: "Cairo", sans-serif;
+    font-weight: 700;
+    color: var(--c-ink);
+    transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .comp-field-chip:hover {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    border-color: var(--c-gold);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(201,168,76,0.32);
+  }
+  .comp-field-chip svg {
+    color: var(--c-gold-deep);
+    transition: color 0.25s ease;
+  }
+  .comp-field-chip:hover svg { color: var(--c-ink); }
+  .comp-fields-note {
+    text-align: center;
+    margin-top: 24px;
+    color: var(--c-mute);
+    font-family: "Tajawal", sans-serif;
+    font-style: italic;
+  }
+
+  /* ═══════════════════ JUDGING TABLE ═══════════════════ */
+  .comp-judging {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .comp-judge-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 18px;
+    padding: 22px 28px;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .comp-judge-row::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0; top: 0; bottom: 0;
+    width: var(--bar, 0%);
+    background: linear-gradient(90deg, var(--c-gold-soft), rgba(245,235,200,0.4));
+    transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
+    z-index: -1;
+  }
+  .comp-judge-row.is-visible::after { width: var(--bar); }
+  .comp-judge-info { display: flex; align-items: center; gap: 16px; }
+  .comp-judge-icon {
+    flex-shrink: 0;
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    background: var(--c-gold);
+    color: var(--c-ink);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(201,168,76,0.3);
+  }
+  .comp-judge-info strong {
+    display: block;
+    font-family: "Cairo", sans-serif;
+    font-size: 1.1rem;
+    color: var(--c-ink);
+    font-weight: 800;
+    line-height: 1.4;
+  }
+  .comp-judge-info span {
+    display: block;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.9rem;
+    color: var(--c-mute);
+    margin-top: 2px;
+  }
+  .comp-judge-percent {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--c-gold-deep);
+    line-height: 1;
+  }
+
+  /* ═══════════════════ FEATURES LIST ═══════════════════ */
+  .comp-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .comp-feature {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 22px 22px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-soft);
+    border-radius: 14px;
+    transition: all 0.25s ease;
+  }
+  .comp-feature:hover {
+    border-color: var(--c-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(26,22,16,0.06);
+  }
+  .comp-feature-icon {
+    flex-shrink: 0;
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    background: var(--c-gold);
+    color: var(--c-ink);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(201,168,76,0.3);
+  }
+  .comp-feature p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem;
+    color: var(--c-ink);
+    line-height: 1.65;
+  }
+
+  /* ═══════════════════ FAQ ═══════════════════ */
+  .comp-faq {
+    max-width: 880px;
+    margin: 0 auto;
+    display: grid;
+    gap: 14px;
+  }
+  .comp-faq details {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .comp-faq details[open] {
+    border-color: var(--c-gold);
+    box-shadow: 0 8px 22px rgba(26,22,16,0.06);
+  }
+  .comp-faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px;
+    font-family: "Cairo", sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--c-ink);
+    transition: background 0.2s ease;
+  }
+  .comp-faq summary::-webkit-details-marker { display: none; }
+  .comp-faq summary:hover { background: rgba(201,168,76,0.04); }
+  .comp-faq-icon {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900;
+    transition: transform 0.3s ease, background 0.25s ease;
+  }
+  .comp-faq details[open] .comp-faq-icon {
+    transform: rotate(45deg);
+    background: var(--c-gold);
+    color: var(--c-ink);
+  }
+  .comp-faq-body {
+    padding: 0 24px 22px;
+    color: var(--c-ink-soft);
+    font-family: "Tajawal", sans-serif;
+    line-height: 1.85;
+  }
+
+  /* ═══════════════════ FINAL CTA ═══════════════════ */
+  .comp-cta {
+    padding: clamp(56px, 9vw, 100px) 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--c-ink) 0%, #2a2418 100%);
+    color: var(--c-cream);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .comp-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 20%, rgba(201,168,76,0.18), transparent 50%),
+      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(15,110,86,0.15), transparent 50%);
+    z-index: -1;
+  }
+  .comp-cta h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    color: var(--c-gold);
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .comp-cta p {
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-cream);
+    font-size: clamp(1.05rem, 2vw, 1.18rem);
+    margin: 0 auto 32px;
+    max-width: 700px;
+    line-height: 1.85;
+    opacity: 0.92;
+  }
+  .comp-cta .comp-btn-primary {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    font-size: 1.05rem;
+    padding: 16px 36px;
+    box-shadow: 0 12px 32px rgba(201,168,76,0.35);
+  }
+  .comp-cta .comp-btn-primary:hover {
+    background: var(--c-cream);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(250,247,240,0.25);
+  }
+
+  /* ═══════════════════ SCROLL REVEAL ═══════════════════ */
+  .comp-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .comp-reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .comp-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+                transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  .comp-stagger.is-visible > *           { opacity: 1; transform: translateY(0); }
+  .comp-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+  .comp-stagger.is-visible > *:nth-child(2) { transition-delay: 70ms; }
+  .comp-stagger.is-visible > *:nth-child(3) { transition-delay: 140ms; }
+  .comp-stagger.is-visible > *:nth-child(4) { transition-delay: 210ms; }
+  .comp-stagger.is-visible > *:nth-child(5) { transition-delay: 280ms; }
+  .comp-stagger.is-visible > *:nth-child(6) { transition-delay: 350ms; }
+  .comp-stagger.is-visible > *:nth-child(7) { transition-delay: 420ms; }
+  .comp-stagger.is-visible > *:nth-child(8) { transition-delay: 490ms; }
+  .comp-stagger.is-visible > *:nth-child(n+9) { transition-delay: 560ms; }
+
+  /* ═══════════════════ RESPONSIVE ═══════════════════ */
+  @media (max-width: 768px) {
+    .comp-baf { grid-template-columns: 1fr; }
+    .comp-pillar { padding: 24px 20px; }
+    .comp-judge-row { padding: 18px 22px; grid-template-columns: 1fr auto; gap: 16px; }
+    .comp-judge-percent { font-size: 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    .comp-hero-ctas { flex-direction: column; align-items: stretch; }
+    .comp-btn-primary, .comp-btn-secondary { justify-content: center; }
+    .comp-faq summary { padding: 16px 18px; font-size: 0.98rem; }
+    .comp-faq-body { padding: 0 18px 18px; }
+    .comp-judge-info { gap: 12px; }
+    .comp-judge-icon { width: 38px; height: 38px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .comp-page *, .comp-page *::before, .comp-page *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .comp-reveal, .comp-stagger > * { opacity: 1 !important; transform: none !important; }
+    .comp-judge-row::after { width: var(--bar) !important; }
+  }
+</style>
+</head>
+<body class="comp-page">
+
+<a href="#main" class="skip-link">انتقل إلى المحتوى الرئيسي</a>
+
+<div data-include="navbar"></div>
+
+<main id="main">
+
+  <!-- ═══════════════════════════════════════════════════════════════ HERO ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-hero">
+    <div class="comp-hero-inner">
+      <span class="comp-badge">
+        <span class="comp-badge-dot" aria-hidden="true"></span>
+        المسابقات — أكاديمية المسار الذكي
+      </span>
+      <span class="comp-hero-tag">SIL — Smart Imaging Lens</span>
+      <h1>
+        مسابقة <span class="accent">عدسة العلوم الذكية</span>
+      </h1>
+      <p class="tagline">حين تتحول التجربة إلى قصة تُشاهد</p>
+      <p class="lead">
+        تدريب علمي مفتوح للجميع، ينتهي بمسابقة لأجمل فيديو وثائقي يثبت مبدأً علمياً،
+        يربطه بالحياة، ويزينه بإبداعك.
+      </p>
+      <div class="comp-hero-ctas">
+        <a href="consultation.html?from=sil-competition" class="comp-btn-primary">
+          🎯 سجل معنا وابدأ رحلة العلوم الممتعة
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </a>
+        <a href="#details" class="comp-btn-secondary">تفاصيل المسابقة</a>
+      </div>
+    </div>
+
+    <!-- KEY FACTS STRIP -->
+    <div class="comp-facts comp-stagger">
+      <div class="comp-fact">
+        <span class="comp-fact-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </span>
+        <span class="comp-fact-label">التواريخ</span>
+        <span class="comp-fact-value">1 شباط — 16 أيار 2026</span>
+      </div>
+      <div class="comp-fact">
+        <span class="comp-fact-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </span>
+        <span class="comp-fact-label">عدد الساعات</span>
+        <span class="comp-fact-value">20 ساعة تدريبية</span>
+      </div>
+      <div class="comp-fact">
+        <span class="comp-fact-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </span>
+        <span class="comp-fact-label">مدة الفيديو</span>
+        <span class="comp-fact-value">3 — 5 دقائق</span>
+      </div>
+      <div class="comp-fact">
+        <span class="comp-fact-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="comp-fact-label">نمط التدريب</span>
+        <span class="comp-fact-value">أونلاين عن بُعد</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 01 — THE PROBLEM ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="problem">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 01</span>
+        <h2>معاناة طلاب <span class="accent">مختبر العلوم</span></h2>
+        <p class="desc">
+          يعاني كثير من الطلاب من التشتت وضعف الفهم في مادة العلوم العملية بسبب الأسلوب التقليدي في الشرح،
+          وقلة التطبيق العملي، وغياب الربط بين التجربة والحياة اليومية.
+        </p>
+      </header>
+      <div class="comp-pains comp-stagger">
+        <div class="comp-pain">
+          <span class="comp-pain-x" aria-hidden="true">✕</span>
+          <p>عدم توفر المواد والأدوات المناسبة للتجربة.</p>
+        </div>
+        <div class="comp-pain">
+          <span class="comp-pain-x" aria-hidden="true">✕</span>
+          <p>ضعف الانتباه أثناء الشرح العملي.</p>
+        </div>
+        <div class="comp-pain">
+          <span class="comp-pain-x" aria-hidden="true">✕</span>
+          <p>نسيان ما تم تعلمه بعد انتهاء الحصة.</p>
+        </div>
+        <div class="comp-pain">
+          <span class="comp-pain-x" aria-hidden="true">✕</span>
+          <p>صعوبة ربط المفاهيم النظرية بالتطبيق العملي.</p>
+        </div>
+        <div class="comp-pain">
+          <span class="comp-pain-x" aria-hidden="true">✕</span>
+          <p>قلة الحماس نحو مادة العلوم.</p>
+        </div>
+        <div class="comp-pain">
+          <span class="comp-pain-x" aria-hidden="true">✕</span>
+          <p>افتقار المحتوى العلمي إلى الإبداع الفني والجمالي.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ REASSURANCE ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-reassure comp-reveal">
+    <div class="comp-container narrow">
+      <span class="comp-reassure-eyebrow">لقد وجدت الفرصة المناسبة</span>
+      <h2>أكثر من مسابقة — إنها تدريب علمي إبداعي متكامل</h2>
+      <p>
+        مسابقة عدسة العلوم الذكية هي تدريب متكامل يقودك خطوة بخطوة لإنتاج فيديو وثائقي احترافي.
+        سنعلمك كيف تختار فكرتك، تصوغ سيناريو علمياً، تصور وتنتج باستخدام هاتفك فقط،
+        وتشارك في مسابقة تحتفل بالعلم والإبداع معاً.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 02 — TARGET AUDIENCE ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="audience">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 02</span>
+        <h2>لمن هذه <span class="accent">المسابقة</span>؟</h2>
+        <p class="desc">المسابقة مفتوحة للجميع، ومناسبة بشكل خاص لـ:</p>
+      </header>
+
+      <div class="comp-audience comp-stagger">
+        <div class="comp-audience-item">
+          <span class="comp-audience-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>طلبة الصفوف (الخامس – العاشر) في المدارس الحكومية والخاصة</p>
+        </div>
+        <div class="comp-audience-item">
+          <span class="comp-audience-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>المعلمون والمعلمات في المجالات العلمية</p>
+        </div>
+        <div class="comp-audience-item">
+          <span class="comp-audience-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>الأكاديميون والمشرفون التربويون</p>
+        </div>
+        <div class="comp-audience-item">
+          <span class="comp-audience-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>الفرق المدرسية العلمية والمختبرات</p>
+        </div>
+        <div class="comp-audience-item">
+          <span class="comp-audience-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>الطلبة المهتمون بالتصوير وصناعة المحتوى العلمي</p>
+        </div>
+        <div class="comp-audience-item">
+          <span class="comp-audience-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>أولياء الأمور الراغبون في تنمية مهارات أبنائهم</p>
+        </div>
+      </div>
+
+      <div class="comp-team-note comp-reveal">
+        <strong>تكوين الفريق</strong>
+        يتكون الفريق من: عضو جونيور أو سينيور + طالب أو طالبين من المدرسة. يمكن المشاركة فردياً أو ضمن فريق (من 1 إلى 3 أشخاص).
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 03 — TRAINING PILLARS ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="pillars">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 03</span>
+        <h2>محاور <span class="accent">التدريب</span></h2>
+        <p class="desc">
+          تسعة محاور تطبيقية تنقلك من اختيار الفكرة إلى نشر فيديو احترافي يحتفي بالعلم والإبداع.
+        </p>
+      </header>
+
+      <div class="comp-pillars comp-stagger">
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">01</span>
+            <h3>اقتراح الأفكار وصياغة المحتوى</h3>
+          </div>
+          <p>كيف تختار مبدأً علمياً وتقدمه بوضوح وإثارة، مع كتابة سيناريو علمي مبسط ودقيق ومنظم.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">02</span>
+            <h3>كتابة السيناريو العلمي</h3>
+          </div>
+          <p>تحويل المبدأ العلمي إلى نص مبسط ودقيق ومنظم، يصلح للتصوير والإخراج بسهولة.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">03</span>
+            <h3>الربط بين العلم والحياة</h3>
+          </div>
+          <p>ربط المبدأ العلمي بتطبيق أو أكثر من تطبيقات الحياة الواقعية، لتترسخ المعلومة وتصبح ذات معنى.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">04</span>
+            <h3>التصوير الوثائقي بالهاتف</h3>
+          </div>
+          <p>تقنيات تصوير احترافية باستخدام هاتفك المحمول فقط، مع أساسيات السلامة داخل المختبر.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">05</span>
+            <h3>المونتاج وإعداد الفيديو</h3>
+          </div>
+          <p>تحرير الفيديو بجودة عالية باستخدام أدوات مجانية، مع إضافة النصوص والمؤثرات الجذابة.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">06</span>
+            <h3>دمج الشعر العربي</h3>
+          </div>
+          <p>اقتباس من الشعر أو النثر العربي يرتبط بالمبدأ العلمي، ليجمع الفيديو بين العلم والأدب.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">07</span>
+            <h3>النمذجة الحسية والبرمجية</h3>
+          </div>
+          <p>تمثيل المبدأ العلمي عبر نموذج مادي يدوي أو نموذج برمجي تفاعلي يحقق هدف الفيديو.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">08</span>
+            <h3>تسجيل الصوت الاحترافي</h3>
+          </div>
+          <p>تقنيات التسجيل الصوتي وإضافته على الفيديو، للوصول إلى جودة صوت احترافية تليق بالمحتوى.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num">09</span>
+            <h3>النشر على وسائل التواصل</h3>
+          </div>
+          <p>كيفية النشر على صفحات التواصل الاجتماعي لتحقيق محتوى هادف ذي استدامة وأثر طويل.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 04 — BEFORE / AFTER ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="transformation">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 04</span>
+        <h2>الطالب <span class="accent">قبل وبعد</span> المسابقة</h2>
+        <p class="desc">تحوّل ملموس في فهم العلوم، مهارات الإنتاج، والثقة بالنفس.</p>
+      </header>
+
+      <div class="comp-baf">
+        <div class="comp-baf-card before comp-reveal">
+          <span class="comp-baf-eyebrow">قبل المسابقة</span>
+          <h3>تعلم تقليدي محدود</h3>
+          <ul class="comp-baf-list">
+            <li>يرى التجربة كخطوات جامدة</li>
+            <li>يصعب عليه شرح المفهوم</li>
+            <li>يعتمد على الحفظ</li>
+            <li>لا يمتلك مهارات تصوير أو توثيق</li>
+          </ul>
+        </div>
+
+        <div class="comp-baf-card after comp-reveal">
+          <span class="comp-baf-eyebrow">بعد المسابقة</span>
+          <h3>منتج علمي مبدع</h3>
+          <ul class="comp-baf-list">
+            <li>يفهم المبدأ العلمي بعمق</li>
+            <li>يستطيع شرح التجربة بثقة</li>
+            <li>يوثق التجربة بالفيديو باحتراف</li>
+            <li>يربط العلم بالحياة اليومية</li>
+            <li>ينتج محتوى علمي هادفاً وملهماً</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 05 — DETAILS ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="details">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 05</span>
+        <h2>تفاصيل <span class="accent">المسابقة</span></h2>
+      </header>
+
+      <div class="comp-pillars comp-stagger">
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </span>
+            <h3>التاريخ</h3>
+          </div>
+          <p>من 1 شباط 2026 إلى 16 أيار 2026.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <h3>الوقت</h3>
+          </div>
+          <p>20 ساعة تدريبية عن بُعد، دروس مسجلة ومرفوعة على منصة المسابقة، يمكن مشاهدتها وفق وقتك.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <h3>المكان</h3>
+          </div>
+          <p>عن بُعد عبر منصة Google Meet، والتصفيات النهائية حضورياً (يُحدد لاحقاً).</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </span>
+            <h3>مدة الفيديو</h3>
+          </div>
+          <p>من 3 إلى 5 دقائق، فيديو وثائقي يثبت مبدأً علمياً بأسلوب مبتكر وجذاب.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3>المشاركة</h3>
+          </div>
+          <p>فردية أو ضمن فرق (من 1 إلى 3 أشخاص)، مع إمكانية الانضمام بفريق من المدرسة.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </span>
+            <h3>الرسوم</h3>
+          </div>
+          <p>تحدد من قِبل الجهة المنظمة (مثال: 10 دنانير للطالب، أو مجانية للمدارس المشاركة).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 06 — PROJECT REQUIREMENTS ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="requirements">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 06</span>
+        <h2>متطلبات <span class="accent">المشروع</span></h2>
+        <p class="desc">يجب أن يشمل الفيديو التعليمي العناصر التالية ليكون مؤهلاً للتحكيم.</p>
+      </header>
+
+      <div class="comp-requirements comp-stagger">
+        <div class="comp-req">
+          <span class="comp-req-num">1</span>
+          <p>المبدأ العلمي المراد إثباته بوضوح.</p>
+        </div>
+        <div class="comp-req">
+          <span class="comp-req-num">2</span>
+          <p>تجربة عملية تثبت المبدأ العلمي خطوة بخطوة.</p>
+        </div>
+        <div class="comp-req">
+          <span class="comp-req-num">3</span>
+          <p>اقتباس من الشعر أو النثر العربي مرتبط بالمبدأ.</p>
+        </div>
+        <div class="comp-req">
+          <span class="comp-req-num">4</span>
+          <p>رابط بتطبيق حياتي (تطبيق واحد على الأقل).</p>
+        </div>
+        <div class="comp-req">
+          <span class="comp-req-num">5</span>
+          <p>نموذج مادي أو برمجي يحقق هدف الفيديو.</p>
+        </div>
+        <div class="comp-req">
+          <span class="comp-req-num">6</span>
+          <p>تطبيق لمنهجية STREAM (علوم، تقنية، هندسة، فن، رياضيات).</p>
+        </div>
+        <div class="comp-req">
+          <span class="comp-req-num">7</span>
+          <p>استخدام أداة ذكاء اصطناعي تخدم التجربة (إن أمكن).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 07 — COMPETITION FIELDS ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="fields">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 07</span>
+        <h2>مجالات <span class="accent">المسابقة</span></h2>
+        <p class="desc">اختر مبدأً علمياً من المجالات التالية لإنتاج فيديو وثائقي عنه.</p>
+      </header>
+
+      <div class="comp-fields comp-stagger">
+        <span class="comp-field-chip">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-45 12 12)"/></svg>
+          الفيزياء
+        </span>
+        <span class="comp-field-chip">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-5.5 9.5a2 2 0 0 0 1.73 3h13.54a2 2 0 0 0 1.73-3L15 9V3"/><line x1="9" y1="3" x2="15" y2="3"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
+          الكيمياء
+        </span>
+        <span class="comp-field-chip">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 12l8 10 8-10z"/><circle cx="12" cy="12" r="3"/></svg>
+          الأحياء
+        </span>
+        <span class="comp-field-chip">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          علوم الأرض والفلك
+        </span>
+        <span class="comp-field-chip">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          علوم الغذاء
+        </span>
+      </div>
+      <p class="comp-fields-note comp-reveal">المواضيع مستمدة من مناهج العلوم العالمية المعتمدة.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 08 — JUDGING CRITERIA ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="judging">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 08</span>
+        <h2>آلية <span class="accent">التحكيم</span></h2>
+        <p class="desc">تحكيم ثلاثي عادل وشفاف يجمع الخبرة البشرية، الذكاء الاصطناعي، وصوت الجمهور.</p>
+      </header>
+
+      <div class="comp-judging">
+        <div class="comp-judge-row comp-reveal" style="--bar: 70%;">
+          <div class="comp-judge-info">
+            <span class="comp-judge-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div>
+              <strong>لجنة الحكام</strong>
+              <span>متخصصون في العلوم والإعلام التربوي</span>
+            </div>
+          </div>
+          <div class="comp-judge-percent">70%</div>
+        </div>
+
+        <div class="comp-judge-row comp-reveal" style="--bar: 20%;">
+          <div class="comp-judge-info">
+            <span class="comp-judge-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16h8"/></svg>
+            </span>
+            <div>
+              <strong>تطبيقات الذكاء الاصطناعي</strong>
+              <span>تحليل تلقائي لجودة المحتوى والإخراج</span>
+            </div>
+          </div>
+          <div class="comp-judge-percent">20%</div>
+        </div>
+
+        <div class="comp-judge-row comp-reveal" style="--bar: 10%;">
+          <div class="comp-judge-info">
+            <span class="comp-judge-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </span>
+            <div>
+              <strong>آراء الجمهور</strong>
+              <span>التفاعل على وسائل التواصل الاجتماعي</span>
+            </div>
+          </div>
+          <div class="comp-judge-percent">10%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 09 — VALUE PROPS / FEATURES ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="features">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 09</span>
+        <h2>القيمة <span class="accent">المضافة</span></h2>
+        <p class="desc">ما الذي يميز عدسة العلوم الذكية عن غيرها من المسابقات.</p>
+      </header>
+
+      <div class="comp-features comp-stagger">
+        <div class="comp-feature">
+          <span class="comp-feature-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>تدريب متكامل مجاني</strong> قبل المسابقة يمنحك كل ما تحتاجه لإنتاج فيديو احترافي.</p>
+        </div>
+        <div class="comp-feature">
+          <span class="comp-feature-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>استخدام الهاتف فقط</strong> — لا تحتاج إلى أجهزة احترافية للتصوير والمونتاج.</p>
+        </div>
+        <div class="comp-feature">
+          <span class="comp-feature-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>دمج العلم بالفن والأدب</strong> — منهجية STREAM متكاملة تجمع كل التخصصات.</p>
+        </div>
+        <div class="comp-feature">
+          <span class="comp-feature-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>دعم الذكاء الاصطناعي</strong> — تشجيع على استخدام أدوات الذكاء الاصطناعي.</p>
+        </div>
+        <div class="comp-feature">
+          <span class="comp-feature-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>تحكيم عادل وشفاف</strong> — لجنة مختصة + ذكاء اصطناعي + جمهور.</p>
+        </div>
+        <div class="comp-feature">
+          <span class="comp-feature-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>فرصة للنشر والظهور</strong> — إمكانية نشر الفيديو على وسائل التواصل الاجتماعي.</p>
+        </div>
+        <div class="comp-feature">
+          <span class="comp-feature-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>شهادات مشاركة</strong> لجميع المشاركين معتمدة من الجهة المنظمة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 10 — FAQ ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="faq">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 10</span>
+        <h2>الأسئلة <span class="accent">الشائعة</span></h2>
+      </header>
+
+      <div class="comp-faq comp-reveal">
+        <details>
+          <summary>
+            هل المسابقة فردية أم جماعية؟
+            <span class="comp-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="comp-faq-body">
+            يمكن المشاركة فردياً أو ضمن فرق. يتكون الفريق من عضو جونيور أو سينيور مع طالب أو طالبين من المدرسة، بحدّ أقصى 3 أشخاص للفريق.
+          </div>
+        </details>
+        <details>
+          <summary>
+            هل أحتاج إلى خبرة في التصوير أو المونتاج؟
+            <span class="comp-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="comp-faq-body">
+            لا. التدريب يغطي كل شيء من البداية — التصوير بالهاتف والمونتاج باستخدام أدوات مجانية، خطوة بخطوة.
+          </div>
+        </details>
+        <details>
+          <summary>
+            هل الفيديو إلزامي أن يكون باللغة العربية؟
+            <span class="comp-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="comp-faq-body">
+            نعم، مع إمكانية دمج اقتباس من الشعر أو النثر العربي يرتبط بالمبدأ العلمي ضمن متطلبات المشروع.
+          </div>
+        </details>
+        <details>
+          <summary>
+            هل يمكنني استخدام الذكاء الاصطناعي في مشروعي؟
+            <span class="comp-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="comp-faq-body">
+            نعم، بل هو محفز ومطلوب (إن أمكن) ضمن متطلبات المشروع، وله 20% من درجة التحكيم.
+          </div>
+        </details>
+        <details>
+          <summary>
+            ما هي منهجية STREAM؟
+            <span class="comp-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="comp-faq-body">
+            هي منهجية تدمج العلوم (Science)، التكنولوجيا (Technology)، الهندسة (Engineering)، الفن (Art)، والرياضيات (Mathematics) في مشروع واحد متكامل، مع إضافة بُعد القراءة والكتابة العلمية.
+          </div>
+        </details>
+        <details>
+          <summary>
+            هل سأحصل على شهادة؟
+            <span class="comp-faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="comp-faq-body">
+            نعم، جميع المشاركين يحصلون على شهادات مشاركة معتمدة من الجهة المنظمة.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FINAL CTA ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-cta comp-reveal">
+    <div class="comp-container">
+      <h2>SIGN UP NOW &amp; JOIN US!</h2>
+      <p>
+        انضم الآن إلى عدسة العلوم الذكية واصنع تجربتك… بعدسة تفهم العلم وتُحبه ❤️🔬🎥
+        <br>
+        لا تفوت فرصة تحويل شغفك بالعلم إلى عمل إبداعي يشاركه العالم.
+      </p>
+      <a href="consultation.html?from=sil-competition" class="comp-btn-primary">
+        🎯 سجل معنا وابدأ رحلة العلوم الممتعة
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<div data-include="footer"></div>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/animations.js"></script>
+
+<!-- Page-scoped scroll-reveal observer -->
+<script>
+  (function () {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = document.querySelectorAll('.comp-reveal, .comp-stagger');
+    if (reduced || !('IntersectionObserver' in window)) {
+      targets.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(el => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>

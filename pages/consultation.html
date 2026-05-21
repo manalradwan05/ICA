@@ -86,7 +86,21 @@
       </aside>
 
       <!-- Form column -->
-      <form class="consultation-form reveal reveal-left" onsubmit="event.preventDefault(); alert('تم استلام طلبك بنجاح! سنتواصل معك خلال 24 ساعة.');">
+      <form id="consultation-form" class="consultation-form reveal reveal-left" action="https://api.web3forms.com/submit" method="POST">
+
+        <!-- ═══ Web3Forms hidden fields ═══ -->
+        <!-- Replace YOUR_ACCESS_KEY_HERE with the key from web3forms.com -->
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+        <!-- Subject line that will appear in YOUR inbox -->
+        <input type="hidden" name="subject" value="طلب استشارة جديد — أكاديمية المسار الذكي">
+
+        <!-- From name shown in your email client -->
+        <input type="hidden" name="from_name" value="موقع أكاديمية المسار الذكي">
+
+        <!-- Honeypot anti-spam field — must remain empty -->
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
         <h3>أرسل طلبك</h3>
         <p style="color:var(--ink-soft);margin-bottom:var(--space-lg);">سيتواصل معك أحد مستشارينا في أقرب وقت ممكن.</p>
 
@@ -113,11 +127,10 @@
         </div>
 
         <div class="form-field">
-          <label for="subject">موضوع الاستشارة <span style="color:var(--gold-dark);">*</span></label>
-          <select id="subject" name="subject" required>
+          <label for="subject-select">موضوع الاستشارة <span style="color:var(--gold-dark);">*</span></label>
+          <select id="subject-select" name="consultation_subject" required>
             <option value="">— اختر موضوعاً —</option>
             <option value="afaq">برنامج آفاق</option>
-            <option value="azar">برنامج آزار</option>
             <option value="courses">الدورات التدريبية</option>
             <option value="conferences">تنظيم مؤتمر</option>
             <option value="designs">خدمات التصميم</option>
@@ -131,9 +144,17 @@
           <textarea id="message" name="message" required placeholder="أخبرنا بأكبر قدر من التفاصيل عن مشروعك أو سؤالك..."></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
-          إرسال الطلب
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <!-- Feedback area for success / error messages -->
+        <div id="form-feedback" role="status" aria-live="polite" style="display:none;margin-bottom:var(--space-md);padding:14px 18px;border-radius:12px;font-family:'Tajawal',sans-serif;font-weight:600;line-height:1.6;"></div>
+
+        <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width:100%;justify-content:center;">
+          <span class="btn-label">إرسال الطلب</span>
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <svg class="btn-spinner" width="18" height="18" viewBox="0 0 50 50" style="display:none;" aria-hidden="true">
+            <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="80 200" transform="rotate(-90 25 25)">
+              <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.9s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
         </button>
       </form>
 
@@ -146,5 +167,93 @@
 
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/animations.js"></script>
+
+<!-- ═══════════════ Web3Forms submission handler ═══════════════ -->
+<script>
+  (function () {
+    const form     = document.getElementById('consultation-form');
+    if (!form) return;
+    const btn      = document.getElementById('form-submit-btn');
+    const feedback = document.getElementById('form-feedback');
+    const label    = btn.querySelector('.btn-label');
+    const icon     = btn.querySelector('.btn-icon');
+    const spinner  = btn.querySelector('.btn-spinner');
+
+    // Pre-fill the subject from a ?from= URL param (e.g. consultation.html?from=qiyad-plus)
+    const params = new URLSearchParams(window.location.search);
+    const fromParam = params.get('from');
+    if (fromParam) {
+      const select = form.querySelector('#subject-select');
+      const fromToOption = {
+        'qiyad-plus': 'courses', 'arabic-teachers': 'courses', 'foreign-language-teachers': 'courses',
+        'computer-teachers': 'courses', 'science-teachers': 'courses', 'digital-art-teachers': 'courses',
+        'islamic-studies-teachers': 'courses', 'math-teachers': 'courses', 'prompt-engineering': 'courses',
+        'google-workspace': 'courses', 'afaq-research': 'afaq', 'sil-competition': 'other',
+      };
+      if (fromToOption[fromParam] && select) select.value = fromToOption[fromParam];
+
+      // Pass the original course/source as a hidden field too so it lands in your inbox
+      const hidden = document.createElement('input');
+      hidden.type  = 'hidden';
+      hidden.name  = 'source_page';
+      hidden.value = fromParam;
+      form.appendChild(hidden);
+    }
+
+    function showFeedback(message, kind) {
+      feedback.style.display = 'block';
+      feedback.textContent = message;
+      if (kind === 'success') {
+        feedback.style.background = '#E1F5EE';
+        feedback.style.color      = '#0F6E56';
+        feedback.style.border     = '1px solid rgba(15, 110, 86, 0.25)';
+      } else {
+        feedback.style.background = 'rgba(193, 60, 60, 0.08)';
+        feedback.style.color      = '#b03939';
+        feedback.style.border     = '1px solid rgba(193, 60, 60, 0.22)';
+      }
+    }
+
+    function setLoading(loading) {
+      btn.disabled = loading;
+      btn.style.opacity = loading ? '0.75' : '1';
+      btn.style.cursor  = loading ? 'wait' : '';
+      label.textContent = loading ? 'جارٍ الإرسال...' : 'إرسال الطلب';
+      icon.style.display    = loading ? 'none' : '';
+      spinner.style.display = loading ? '' : 'none';
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      feedback.style.display = 'none';
+      setLoading(true);
+
+      const formData = new FormData(form);
+      const payload  = Object.fromEntries(formData);
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          showFeedback('✓ تم استلام طلبك بنجاح! سنتواصل معك خلال 24 ساعة.', 'success');
+          form.reset();
+          // scroll feedback into view
+          feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          showFeedback('تعذّر إرسال الطلب: ' + (data.message || 'يرجى المحاولة لاحقاً.'), 'error');
+        }
+      } catch (err) {
+        showFeedback('حدث خطأ في الاتصال. تأكد من اتصالك بالإنترنت وحاول مجدداً.', 'error');
+      } finally {
+        setLoading(false);
+      }
+    });
+  })();
+</script>
 </body>
 </html>
