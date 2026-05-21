@@ -89,8 +89,7 @@
       <form id="consultation-form" class="consultation-form reveal reveal-left" action="https://api.web3forms.com/submit" method="POST">
 
         <!-- ═══ Web3Forms hidden fields ═══ -->
-        <!-- Replace YOUR_ACCESS_KEY_HERE with the key from web3forms.com -->
-        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" name="access_key" value="551aaf08-1d57-489b-aab2-b7ac8a7e0e79">
 
         <!-- Subject line that will appear in YOUR inbox -->
         <input type="hidden" name="subject" value="طلب استشارة جديد — أكاديمية المسار الذكي">
@@ -229,13 +228,11 @@
       setLoading(true);
 
       const formData = new FormData(form);
-      const payload  = Object.fromEntries(formData);
 
       try {
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
+          body: formData
         });
         const data = await res.json();
 
