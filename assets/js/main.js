@@ -44,11 +44,28 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       let html = await res.text();
 
-      // Rewrite hrefs that came from the partial as bare paths
-      // (e.g. href="pages/courses.html") into URLs relative to current page.
-      html = html.replace(/href="(?!https?:|mailto:|tel:|#|\/)([^"]+)"/g, (m, p1) => {
-        const resolved = new URL(basePath() + p1, window.location.href).href;
-        return 'href="' + resolved + '"';
+      // Rewrite hrefs, src, and srcset values that came from the partial as
+      // bare paths (e.g. href="pages/courses.html" or src="assets/img/logo.png")
+      // into URLs relative to the current page.
+      const rewrite = (p) => new URL(basePath() + p, window.location.href).href;
+
+      // href + src — single URL value
+      html = html.replace(/(href|src)="(?!https?:|mailto:|tel:|#|\/|data:)([^"]+)"/g,
+        (m, attr, p1) => attr + '="' + rewrite(p1) + '"');
+
+      // srcset — multiple URLs with descriptors, e.g. "x.png 1x, y.png 2x"
+      html = html.replace(/srcset="([^"]+)"/g, (m, value) => {
+        const rewritten = value.split(',').map(entry => {
+          const trimmed = entry.trim();
+          // Split into URL + optional descriptor
+          const parts = trimmed.split(/\s+/);
+          const url = parts[0];
+          const descriptor = parts.slice(1).join(' ');
+          // Skip absolute URLs and data URIs
+          if (/^(https?:|mailto:|tel:|#|\/|data:)/.test(url)) return trimmed;
+          return rewrite(url) + (descriptor ? ' ' + descriptor : '');
+        }).join(', ');
+        return 'srcset="' + rewritten + '"';
       });
       target.innerHTML = html;
     } catch (err) {
@@ -70,18 +87,18 @@
       target.innerHTML = `
         <nav class="navbar" aria-label="القائمة الرئيسية">
           <a class="nav-brand" href="${bp}index.html" data-page="home">
-            <span class="nav-logo" aria-hidden="true">ICA</span>
+            <img class="nav-logo-img" src="${bp}assets/img/logo-nav@1x.png" srcset="${bp}assets/img/logo-nav@1x.png 1x, ${bp}assets/img/logo-nav@2x.png 2x" alt="ICA" width="72" height="48" decoding="async">
             <span class="nav-brand-text">
               <span class="nav-brand-name">أكاديمية المسار الذكي</span>
               <span class="nav-brand-en">Intelligent Career Academy</span>
             </span>
           </a>
           <ul class="nav-links">
-            <li><a href="${bp}pages/courses.html" data-page="courses">الدورات</a></li>
-            <li><a href="${bp}pages/conferences.html" data-page="conferences">المؤتمرات</a></li>
-            <li><a href="${bp}pages/designs.html" data-page="designs">التصاميم</a></li>
-            <li><a href="${bp}pages/labs.html" data-page="labs">المختبرات</a></li>
-            <li><a href="${bp}pages/coming-soon.html?from=competitions" data-page="competitions">المسابقات</a></li>
+            <li><a href="${bp}pages/courses.html"      data-page="courses">الدورات</a></li>
+            <li><a href="${bp}pages/conferences.html"  data-page="conferences">المؤتمرات</a></li>
+            <li><a href="${bp}pages/designs.html"      data-page="designs">التصاميم</a></li>
+            <li><a href="${bp}pages/labs.html"         data-page="labs">المختبرات</a></li>
+            <li><a href="${bp}pages/competitions.html" data-page="competitions">المسابقات</a></li>
           </ul>
           <a class="nav-cta" href="${bp}pages/consultation.html" data-page="consultation">طلب استشارة</a>
           <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">
@@ -89,12 +106,12 @@
           </button>
         </nav>
         <div class="mobile-menu" aria-hidden="true">
-          <a href="${bp}index.html" data-page="home">الرئيسية</a>
-          <a href="${bp}pages/courses.html" data-page="courses">الدورات</a>
-          <a href="${bp}pages/conferences.html" data-page="conferences">المؤتمرات</a>
-          <a href="${bp}pages/designs.html" data-page="designs">التصاميم</a>
-          <a href="${bp}pages/labs.html" data-page="labs">المختبرات</a>
-          <a href="${bp}pages/coming-soon.html?from=competitions" data-page="competitions">المسابقات</a>
+          <a href="${bp}index.html"                              data-page="home">الرئيسية</a>
+          <a href="${bp}pages/courses.html"                      data-page="courses">الدورات</a>
+          <a href="${bp}pages/conferences.html"                  data-page="conferences">المؤتمرات</a>
+          <a href="${bp}pages/designs.html"                      data-page="designs">التصاميم</a>
+          <a href="${bp}pages/labs.html"                         data-page="labs">المختبرات</a>
+          <a href="${bp}pages/competitions.html"                 data-page="competitions">المسابقات</a>
           <a class="nav-cta" href="${bp}pages/consultation.html" data-page="consultation">طلب استشارة</a>
         </div>
       `;
@@ -175,6 +192,7 @@
     else if (path.includes('conferences')) pageId = 'conferences';
     else if (path.includes('designs')) pageId = 'designs';
     else if (path.includes('labs')) pageId = 'labs';
+    else if (path.includes('competitions')) pageId = 'competitions';
     else if (path.includes('consultation')) pageId = 'consultation';
     else if (path.includes('afaq')) pageId = 'afaq';
     else if (path.includes('azar')) pageId = 'azar';
@@ -215,6 +233,7 @@
       conferences: 'المؤتمرات',
       labs: 'المختبرات',
       designs: 'التصاميم',
+      competitions: 'المسابقات',
       afaq: 'برنامج آفاق',
       azar: 'برنامج آزار'
     };
