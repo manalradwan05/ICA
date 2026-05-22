@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مختبر الأبحاث الرطبة المتكامل — أكاديمية المسار الذكي</title>
+<meta name="description" content="مختبر أبحاث رطبة متكامل (Wet Lab) للكليات الطبية والحيوية — من الفكرة العلمية حتى النشر الدولي، عبر بنية تحتية متقدمة تجمع التجريب الحيوي والتحليل الرقمي والكتابة الأكاديمية.">
+<meta name="theme-color" content="#FAF7F0">
+
+<meta property="og:title" content="مختبر الأبحاث الرطبة المتكامل — Wet Lab">
+<meta property="og:description" content="بيئة بحثية احترافية مصممة للكليات الطبية والحيوية لتأهيل الباحثين من الفكرة العلمية حتى النشر الدولي.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23C9A84C'/%3E%3Ctext x='50' y='66' font-family='Cairo, sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%231A1610'%3EICA%3C/text%3E%3C/svg%3E">
+
+<!-- ════════════════════════════════════════════════════════════════
+     PAGE-SCOPED STYLES — .lab-page prefix
+     ════════════════════════════════════════════════════════════════ -->
+<style>
+  .lab-page {
+    --c-cream:    var(--cream,    #FAF7F0);
+    --c-paper:    var(--paper,    #ffffff);
+    --c-ink:      var(--ink,      #1A1610);
+    --c-ink-soft: var(--ink-soft, #4a4135);
+    --c-mute:     var(--mute,     #7a6f5e);
+    --c-gold:     var(--gold,     #C9A84C);
+    --c-gold-deep:var(--gold-deep,#A8893A);
+    --c-gold-soft:var(--gold-soft,#F5EBC8);
+    --c-line:     var(--line,     #E8DFC7);
+    --c-line-soft:var(--line-soft,#EFE7D2);
+    --c-teal:     var(--teal,     #0F6E56);
+    --c-teal-soft:var(--teal-soft, #E1F5EE);
+  }
+
+  /* ═══════════════════ HERO ═══════════════════ */
+  .lab-hero {
+    position: relative;
+    padding: clamp(64px, 10vw, 120px) 0 clamp(48px, 7vw, 80px);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .lab-hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 0%, rgba(201,168,76,0.14), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 0% 100%, rgba(201,168,76,0.07), transparent 60%);
+    z-index: -2;
+  }
+  .lab-hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.4), transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.4), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .lab-hero-inner {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+    text-align: center;
+  }
+  .lab-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 18px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--c-ink-soft);
+    box-shadow: 0 2px 8px rgba(26,22,16,0.04);
+    margin-bottom: 22px;
+  }
+  .lab-badge-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--c-gold);
+    box-shadow: 0 0 0 4px rgba(201,168,76,0.18);
+    animation: lab-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes lab-pulse {
+    0%,100% { box-shadow: 0 0 0 4px rgba(201,168,76,0.18); }
+    50%     { box-shadow: 0 0 0 8px rgba(201,168,76,0); }
+  }
+  .lab-hero h1 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(2.1rem, 5vw, 3.6rem);
+    font-weight: 900; line-height: 1.2;
+    color: var(--c-ink);
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  .lab-hero h1 .accent {
+    color: var(--c-gold);
+    position: relative; display: inline-block;
+  }
+  .lab-hero h1 .accent::after {
+    content: ""; position: absolute;
+    left: 0; right: 0; bottom: 0.08em;
+    height: 0.18em;
+    background: rgba(201,168,76,0.22);
+    border-radius: 2px;
+    z-index: -1;
+  }
+  .lab-hero .en-subtitle {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    font-weight: 700;
+    color: var(--c-gold-deep);
+    letter-spacing: 0.04em;
+    margin: 0 0 22px;
+    direction: ltr;
+  }
+  .lab-hero .lead {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: var(--c-ink-soft);
+    line-height: 1.85;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  .lab-hero-ctas {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 14px; margin-top: 36px;
+  }
+  .lab-btn-primary, .lab-btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 30px;
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem; font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .lab-btn-primary {
+    background: var(--c-ink);
+    color: var(--c-gold);
+    box-shadow: 0 6px 20px rgba(26,22,16,0.2);
+  }
+  .lab-btn-primary:hover {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(201,168,76,0.4);
+  }
+  .lab-btn-secondary {
+    background: var(--c-paper);
+    color: var(--c-ink);
+    border: 1px solid var(--c-line);
+  }
+  .lab-btn-secondary:hover {
+    border-color: var(--c-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(201,168,76,0.18);
+  }
+
+  /* ═══════════════════ "WHY THIS LAB" CHECKLIST ═══════════════════ */
+  .lab-why {
+    padding: clamp(48px, 7vw, 80px) 0;
+    background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-gold-soft) 100%);
+    border-top: 1px solid var(--c-line-soft);
+    border-bottom: 1px solid var(--c-line-soft);
+  }
+  .lab-why-head {
+    text-align: center;
+    margin-bottom: clamp(28px, 4vw, 44px);
+  }
+  .lab-why-head h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+    font-weight: 900;
+    color: var(--c-ink);
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  .lab-why-head p {
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-ink-soft);
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .lab-checks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .lab-check {
+    display: flex; align-items: center; gap: 14px;
+    padding: 18px 22px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-soft);
+    border-radius: 14px;
+    transition: all 0.25s ease;
+  }
+  .lab-check:hover {
+    border-color: var(--c-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(26,22,16,0.06);
+  }
+  .lab-check-icon {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: var(--c-gold);
+    color: var(--c-ink);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(201,168,76,0.3);
+  }
+  .lab-check p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--c-ink);
+    line-height: 1.5;
+  }
+
+  /* ═══════════════════ SECTIONS ═══════════════════ */
+  .lab-section {
+    padding: clamp(60px, 9vw, 110px) 0;
+    position: relative;
+    scroll-margin-top: 80px;
+  }
+  .lab-section + .lab-section { border-top: 1px solid var(--c-line-soft); }
+  .lab-section:nth-of-type(even) {
+    background: linear-gradient(180deg, transparent, rgba(201,168,76,0.025), transparent);
+  }
+  .lab-container {
+    width: 100%; max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .lab-container.narrow { max-width: 980px; }
+  .lab-section-head {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 64px);
+  }
+  .lab-section-num {
+    font-family: "Cairo", sans-serif;
+    font-size: 0.78rem; font-weight: 700;
+    color: var(--c-gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .lab-section-num::before, .lab-section-num::after {
+    content: ""; width: 28px; height: 1px;
+    background: var(--c-gold); opacity: 0.5;
+  }
+  .lab-section-head h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900; line-height: 1.25;
+    color: var(--c-ink);
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+    max-width: 820px;
+  }
+  .lab-section-head h2 .accent { color: var(--c-gold); }
+  .lab-section-head .desc {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    color: var(--c-mute);
+    max-width: 720px;
+    line-height: 1.8;
+    margin: 0 auto;
+  }
+
+  /* ═══════════════════ FEATURE GRID (simple items) ═══════════════════ */
+  .lab-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .lab-feature {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 20px 22px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-soft);
+    border-radius: 14px;
+    transition: all 0.25s ease;
+  }
+  .lab-feature:hover {
+    border-color: var(--c-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(26,22,16,0.06);
+  }
+  .lab-feature-icon {
+    flex-shrink: 0;
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(201,168,76,0.25);
+    font-family: "Cairo", sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
+  .lab-feature p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem;
+    color: var(--c-ink);
+    line-height: 1.65;
+  }
+
+  /* ═══════════════════ NUMBERED PILLARS (rich sections) ═══════════════════ */
+  .lab-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+  }
+  .lab-pillar {
+    position: relative;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 18px;
+    padding: 28px 26px;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.35s cubic-bezier(0.22,1,0.36,1),
+                border-color 0.25s ease;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .lab-pillar::before {
+    content: "";
+    position: absolute; top: 0; right: 0;
+    width: 0; height: 4px;
+    background: linear-gradient(-90deg, var(--c-gold), var(--c-gold-deep));
+    transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
+  }
+  .lab-pillar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(26,22,16,0.08);
+    border-color: var(--c-gold);
+  }
+  .lab-pillar:hover::before { width: 100%; }
+  .lab-pillar-head {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 14px;
+  }
+  .lab-pillar-num {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Cairo", sans-serif;
+    font-size: 1.05rem; font-weight: 800;
+    border: 1px solid rgba(201,168,76,0.25);
+    transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .lab-pillar:hover .lab-pillar-num {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    transform: rotate(-6deg) scale(1.05);
+  }
+  .lab-pillar h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--c-ink);
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .lab-pillar > p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.98rem;
+    color: var(--c-ink-soft);
+    line-height: 1.8;
+    margin: 0 0 12px;
+  }
+  .lab-pillar ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    gap: 6px;
+  }
+  .lab-pillar ul li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.96rem;
+    color: var(--c-ink);
+    line-height: 1.6;
+  }
+  .lab-pillar ul li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    margin-top: 9px;
+  }
+  .lab-pillar ul.en-list li {
+    direction: ltr;
+    text-align: left;
+    font-family: "Cairo", sans-serif;
+    font-size: 0.92rem;
+    color: var(--c-ink-soft);
+  }
+  .lab-pillar ul.en-list li::before {
+    background: var(--c-teal);
+  }
+
+  /* ═══════════════════ OUTCOMES (graduated researcher) ═══════════════════ */
+  .lab-outcomes {
+    background: linear-gradient(135deg, var(--c-ink) 0%, #2a2418 100%);
+    color: var(--c-cream);
+    padding: clamp(60px, 9vw, 100px) 0;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .lab-outcomes::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 20%, rgba(201,168,76,0.18), transparent 50%),
+      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(15,110,86,0.15), transparent 50%);
+    z-index: -1;
+  }
+  .lab-outcomes-head {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+  .lab-outcomes-head h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 900;
+    color: var(--c-gold);
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .lab-outcomes-head p {
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-cream);
+    opacity: 0.9;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  .lab-outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .lab-outcome {
+    display: flex; align-items: center; gap: 14px;
+    padding: 20px 22px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 14px;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+  }
+  .lab-outcome:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--c-gold);
+    transform: translateY(-3px);
+  }
+  .lab-outcome-check {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: var(--c-gold);
+    color: var(--c-ink);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .lab-outcome p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem;
+    color: var(--c-cream);
+    line-height: 1.55;
+    font-weight: 500;
+  }
+
+  /* ═══════════════════ FINAL CTA ═══════════════════ */
+  .lab-cta {
+    padding: clamp(56px, 8vw, 88px) 0;
+    text-align: center;
+    background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-gold-soft) 100%);
+    border-top: 1px solid var(--c-line-soft);
+  }
+  .lab-cta h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 900;
+    color: var(--c-ink);
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  .lab-cta p {
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-ink-soft);
+    font-size: 1.05rem;
+    margin: 0 auto 28px;
+    max-width: 720px;
+    line-height: 1.85;
+  }
+
+  /* ═══════════════════ STANDARDS BADGES ═══════════════════ */
+  .lab-standards {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 14px;
+    max-width: 900px;
+    margin: 28px auto 0;
+  }
+  .lab-standard {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 22px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 100px;
+    font-family: "Cairo", sans-serif;
+    font-weight: 700;
+    color: var(--c-ink);
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .lab-standard:hover {
+    background: var(--c-gold);
+    border-color: var(--c-gold);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(201,168,76,0.3);
+  }
+  .lab-standard-icon {
+    color: var(--c-gold-deep);
+    transition: color 0.25s ease;
+  }
+  .lab-standard:hover .lab-standard-icon { color: var(--c-ink); }
+
+  /* ═══════════════════ SCROLL REVEAL ═══════════════════ */
+  .lab-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .lab-reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .lab-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+                transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  .lab-stagger.is-visible > *           { opacity: 1; transform: translateY(0); }
+  .lab-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+  .lab-stagger.is-visible > *:nth-child(2) { transition-delay: 70ms; }
+  .lab-stagger.is-visible > *:nth-child(3) { transition-delay: 140ms; }
+  .lab-stagger.is-visible > *:nth-child(4) { transition-delay: 210ms; }
+  .lab-stagger.is-visible > *:nth-child(5) { transition-delay: 280ms; }
+  .lab-stagger.is-visible > *:nth-child(6) { transition-delay: 350ms; }
+  .lab-stagger.is-visible > *:nth-child(7) { transition-delay: 420ms; }
+  .lab-stagger.is-visible > *:nth-child(8) { transition-delay: 490ms; }
+  .lab-stagger.is-visible > *:nth-child(n+9) { transition-delay: 560ms; }
+
+  /* ═══════════════════ RESPONSIVE ═══════════════════ */
+  @media (max-width: 768px) {
+    .lab-pillar { padding: 24px 20px; }
+  }
+  @media (max-width: 480px) {
+    .lab-hero-ctas { flex-direction: column; align-items: stretch; }
+    .lab-btn-primary, .lab-btn-secondary { justify-content: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lab-page *, .lab-page *::before, .lab-page *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .lab-reveal, .lab-stagger > * { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+<body class="lab-page">
+
+<a href="#main" class="skip-link">انتقل إلى المحتوى الرئيسي</a>
+<div data-include="navbar"></div>
+
+<main id="main">
+
+  <!-- ═══════════════════════════════════════════════════════════════ HERO ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-hero">
+    <div class="lab-hero-inner">
+      <span class="lab-badge">
+        <span class="lab-badge-dot" aria-hidden="true"></span>
+        ICA Labs — مختبرات متخصصة
+      </span>
+      <h1>مختبر الأبحاث <span class="accent">الرطبة المتكامل</span></h1>
+      <p class="en-subtitle">Wet Lab for Biomedical &amp; Life Sciences Research</p>
+      <p class="lead">
+        بيئة بحثية احترافية مصممة للكليات الطبية والحيوية لتأهيل الباحثين من الفكرة العلمية
+        حتى النشر الدولي، عبر بنية تحتية متقدمة تجمع التجريب الحيوي، التحليل الرقمي،
+        والكتابة الأكاديمية وفق أعلى المعايير العالمية.
+      </p>
+      <div class="lab-hero-ctas">
+        <a href="consultation.html?from=wet-lab" class="lab-btn-primary">
+          اطلب استشارة لإنشاء المختبر
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </a>
+        <a href="#sections" class="lab-btn-secondary">استكشف المختبر</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ WHY THIS LAB ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-why lab-reveal">
+    <div class="lab-container">
+      <header class="lab-why-head">
+        <h2>لماذا هذا <span style="color:var(--c-gold);">المختبر</span>؟</h2>
+        <p>يجمع المختبر بين التجريب العملي المتقدم والتدريب المنهجي والنشر الأكاديمي في منظومة واحدة متكاملة.</p>
+      </header>
+
+      <div class="lab-checks lab-stagger">
+        <div class="lab-check">
+          <span class="lab-check-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>التجريب العملي المتقدم</p>
+        </div>
+        <div class="lab-check">
+          <span class="lab-check-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>تدريب الباحث على المنهجية العلمية</p>
+        </div>
+        <div class="lab-check">
+          <span class="lab-check-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>تحليل البيانات الحيوية والإحصائية</p>
+        </div>
+        <div class="lab-check">
+          <span class="lab-check-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>الكتابة الأكاديمية المحكمة</p>
+        </div>
+        <div class="lab-check">
+          <span class="lab-check-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>النشر في المجلات الدولية</p>
+        </div>
+        <div class="lab-check">
+          <span class="lab-check-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>التوثيق الأخلاقي الكامل</p>
+        </div>
+        <div class="lab-check">
+          <span class="lab-check-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>بيئة بحثية متوافقة مع الاعتماد الأكاديمي</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="sections"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 01 — INFRASTRUCTURE ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 01</span>
+        <h2>البنية التحتية <span class="accent">البحثية</span></h2>
+        <p class="desc">مساحات عمل متخصصة مصممة لاستيعاب جميع مراحل البحث، من تحضير العينات إلى مناقشة النتائج.</p>
+      </header>
+
+      <div class="lab-features lab-stagger">
+        <div class="lab-feature">
+          <span class="lab-feature-icon">01</span>
+          <p>مساحات Wet Bench احترافية</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">02</span>
+          <p>غرف تحضير العينات</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">03</span>
+          <p>مناطق معقمة وفق المعايير الحيوية</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">04</span>
+          <p>نظام تهوية وضغط هوائي</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">05</span>
+          <p>وحدات غسيل وتعقيم</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">06</span>
+          <p>مناطق تحليل بيانات منفصلة</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">07</span>
+          <p>شبكة رقمية لحفظ البيانات البحثية</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">08</span>
+          <p>غرف اجتماعات للمناقشة البحثية</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 02 — EQUIPMENT ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container narrow">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 02</span>
+        <h2>الأجهزة <span class="accent">البحثية الأساسية</span></h2>
+        <p class="desc">
+          تجهيز متوافق مع احتياجات البحث المطلوب، يعتمد على دراسة دقيقة لمتطلبات كل تخصص
+          وعلى التنسيق مع المختبرات الموجودة داخل المؤسسة التعليمية لضمان التكامل وتجنب التكرار.
+        </p>
+      </header>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 03 — DOCUMENTATION & QUALITY ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 03</span>
+        <h2>أنظمة <span class="accent">التوثيق والجودة</span></h2>
+        <p class="desc">منظومة رقمية متكاملة تضمن دقة التوثيق، تتبع العينات، وضبط الجودة وفق المعايير الأكاديمية.</p>
+      </header>
+
+      <div class="lab-features lab-stagger">
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <p><strong>Electronic Lab Notebook (ELN)</strong> — دفاتر مختبر إلكترونية موثقة لحظياً</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </span>
+          <p><strong>Standard Operating Procedures (SOPs)</strong> — بروتوكولات تشغيل قياسية لكل تجربة</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </span>
+          <p>توثيق العينات وتسجيل بياناتها بالكامل</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <p><strong>Traceability Tracking</strong> — تتبع كامل لمسار كل عينة من البداية</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </span>
+          <p><strong>Quality Control (QC)</strong> — ضبط الجودة في كل خطوة</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          </span>
+          <p>مراجعة داخلية دورية وتقييم الأداء</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+          </span>
+          <p>أرشفة إلكترونية للنتائج والبيانات</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 04 — RESEARCH TRAINING ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 04</span>
+        <h2>التدريب على <span class="accent">البحث العلمي</span></h2>
+        <p class="desc">منهج تدريبي متكامل ينقل الباحث من السؤال البحثي إلى تحليل النتائج عبر أربع مراحل علمية.</p>
+      </header>
+
+      <div class="lab-pillars lab-stagger">
+        <article class="lab-pillar">
+          <div class="lab-pillar-head">
+            <span class="lab-pillar-num">01</span>
+            <h3>بناء السؤال البحثي</h3>
+          </div>
+          <ul>
+            <li>تحديد الفجوة العلمية</li>
+            <li>مراجعة الأدبيات السابقة</li>
+            <li>صياغة الفرضيات</li>
+          </ul>
+        </article>
+
+        <article class="lab-pillar">
+          <div class="lab-pillar-head">
+            <span class="lab-pillar-num">02</span>
+            <h3>تصميم الدراسة</h3>
+          </div>
+          <ul>
+            <li>اختيار المنهج المناسب</li>
+            <li>ضبط المتغيرات</li>
+            <li>تصميم الضوابط (Controls)</li>
+            <li>اختيار العينة وحجمها</li>
+          </ul>
+        </article>
+
+        <article class="lab-pillar">
+          <div class="lab-pillar-head">
+            <span class="lab-pillar-num">03</span>
+            <h3>تنفيذ التجربة</h3>
+          </div>
+          <ul>
+            <li>الالتزام بالبروتوكول</li>
+            <li>التوثيق الفوري للملاحظات</li>
+            <li>تقليل الخطأ التجريبي</li>
+          </ul>
+        </article>
+
+        <article class="lab-pillar">
+          <div class="lab-pillar-head">
+            <span class="lab-pillar-num">04</span>
+            <h3>تحليل النتائج</h3>
+          </div>
+          <ul class="en-list">
+            <li>Statistical Analysis</li>
+            <li>Data Interpretation</li>
+            <li>Visualization</li>
+            <li>Validation</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 05 — ACADEMIC WRITING ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 05</span>
+        <h2>الكتابة <span class="accent">العلمية الاحترافية</span></h2>
+        <p class="desc">تدريب مكثف على بناء الورقة البحثية بكل أجزائها، مع إدارة المراجع باستخدام أدوات الذكاء الاصطناعي.</p>
+      </header>
+
+      <div class="lab-pillars lab-stagger">
+        <article class="lab-pillar">
+          <div class="lab-pillar-head">
+            <span class="lab-pillar-num">01</span>
+            <h3>صياغة الورقة البحثية</h3>
+          </div>
+          <ul class="en-list">
+            <li>Title Construction</li>
+            <li>Abstract Writing</li>
+            <li>Introduction Development</li>
+            <li>Methodology Structuring</li>
+            <li>Results Presentation</li>
+            <li>Discussion &amp; Interpretation</li>
+            <li>Conclusion Writing</li>
+          </ul>
+        </article>
+
+        <article class="lab-pillar">
+          <div class="lab-pillar-head">
+            <span class="lab-pillar-num">02</span>
+            <h3>إدارة المراجع</h3>
+          </div>
+          <p>تنظيم المصادر والاستشهادات باحترافية باستخدام أدوات الذكاء الاصطناعي ومحركات بحث أكاديمية متخصصة، مع توليد قوائم المراجع بأي صيغة تنسيق دون أخطاء.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 06 — ETHICS ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 06</span>
+        <h2>أخلاقيات <span class="accent">البحث العلمي</span></h2>
+        <p class="desc">معايير صارمة تحمي نزاهة البحث وتضمن قابلية إعادة إنتاجه ومصداقيته الأكاديمية.</p>
+      </header>
+
+      <div class="lab-features lab-stagger">
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <p><strong>Research Integrity</strong> — نزاهة البحث في كل مرحلة</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <p><strong>Citation Ethics</strong> — أخلاقيات الاستشهاد العلمي</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          </span>
+          <p><strong>Plagiarism Prevention</strong> — منع الانتحال العلمي</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>Human / Animal Ethics Approval</strong> — موافقات أخلاقية معتمدة</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </span>
+          <p><strong>Conflict of Interest Disclosure</strong> — الإفصاح عن تضارب المصالح</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          </span>
+          <p><strong>Reproducibility Standards</strong> — معايير قابلية إعادة الإنتاج</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 07 — INTERNATIONAL PUBLISHING ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 07</span>
+        <h2>النشر <span class="accent">العلمي الدولي</span></h2>
+        <p class="desc">تدريب كامل على جميع مراحل النشر، من اختيار المجلة المناسبة إلى التعامل مع تعليقات المراجعين.</p>
+      </header>
+
+      <div class="lab-features lab-stagger">
+        <div class="lab-feature">
+          <span class="lab-feature-icon">01</span>
+          <p>اختيار المجلة المناسبة لمجال البحث</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">02</span>
+          <p>مطابقة Scope المجلة مع موضوع البحث</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">03</span>
+          <p>تجهيز Manuscript للإرسال (Submission)</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">04</span>
+          <p>كتابة Cover Letter احترافي</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">05</span>
+          <p>إعداد ردود المراجعين (Reviewer Response)</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">06</span>
+          <p>التعامل مع دورات المراجعة (Revision Cycles)</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">07</span>
+          <p>تجنب المجلات الوهمية (Predatory Journals)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 08 — AI & DIGITAL TRANSFORMATION ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 08</span>
+        <h2>التحول الرقمي <span class="accent">والذكاء الاصطناعي في البحث</span></h2>
+        <p class="desc">توظيف أحدث أدوات الذكاء الاصطناعي لتسريع الإنتاج البحثي ورفع جودته الأكاديمية.</p>
+      </header>
+
+      <div class="lab-features lab-stagger">
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          </span>
+          <p><strong>تحليل البيانات الذكي</strong> — معالجة آلية للنتائج الإحصائية</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <p><strong>Literature Mining</strong> — تنقيب الأدبيات تلقائياً</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </span>
+          <p><strong>AI-assisted Hypothesis Generation</strong> — توليد فرضيات بدعم الذكاء الاصطناعي</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <p><strong>Automated Referencing</strong> — توليد المراجع تلقائياً</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </span>
+          <p><strong>Research Visualization Tools</strong> — أدوات تصور البيانات البحثية</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p><strong>Manuscript Quality Enhancement</strong> — تحسين جودة المخطوطات تلقائياً</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 09 — SAFETY & MAINTENANCE ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-section">
+    <div class="lab-container">
+      <header class="lab-section-head lab-reveal">
+        <span class="lab-section-num">القسم 09</span>
+        <h2>الصيانة <span class="accent">والسلامة الحيوية</span></h2>
+        <p class="desc">معايير سلامة دولية تضمن بيئة بحث آمنة للباحثين والعينات والمعدات.</p>
+      </header>
+
+      <div class="lab-standards lab-stagger" style="margin-bottom: clamp(32px, 5vw, 48px);">
+        <span class="lab-standard">
+          <span class="lab-standard-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          </span>
+          World Health Organization (WHO)
+        </span>
+        <span class="lab-standard">
+          <span class="lab-standard-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          Centers for Disease Control (CDC)
+        </span>
+        <span class="lab-standard">
+          <span class="lab-standard-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </span>
+          International Organization for Standardization (ISO)
+        </span>
+      </div>
+
+      <div class="lab-features lab-stagger">
+        <div class="lab-feature">
+          <span class="lab-feature-icon">01</span>
+          <p>جداول Calibration لجميع الأجهزة</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">02</span>
+          <p><strong>Biosafety Monitoring</strong> — مراقبة السلامة الحيوية</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">03</span>
+          <p><strong>Equipment Validation</strong> — التحقق من صلاحية المعدات</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">04</span>
+          <p><strong>Preventive Maintenance</strong> — الصيانة الوقائية الدورية</p>
+        </div>
+        <div class="lab-feature">
+          <span class="lab-feature-icon">05</span>
+          <p><strong>Incident Reporting</strong> — توثيق وتحليل أي حادث</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FINAL OUTCOMES ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-outcomes">
+    <div class="lab-container">
+      <header class="lab-outcomes-head lab-reveal">
+        <h2>المخرجات <span style="color:var(--c-cream);">النهائية</span></h2>
+        <p>يُخرّج المختبر باحثًا قادرًا على الانتقال بثقة من الفكرة العلمية إلى النشر العالمي.</p>
+      </header>
+
+      <div class="lab-outcomes-grid lab-stagger">
+        <div class="lab-outcome">
+          <span class="lab-outcome-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>تصميم بحث أصيل من السؤال إلى الفرضية</p>
+        </div>
+        <div class="lab-outcome">
+          <span class="lab-outcome-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>تنفيذ التجارب بدقة منهجية ومخبرية</p>
+        </div>
+        <div class="lab-outcome">
+          <span class="lab-outcome-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>تحليل النتائج علميًا وإحصائيًا</p>
+        </div>
+        <div class="lab-outcome">
+          <span class="lab-outcome-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>كتابة ورقة بحثية احترافية بمعايير دولية</p>
+        </div>
+        <div class="lab-outcome">
+          <span class="lab-outcome-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>اجتياز مراجعات المجلات بثقة</p>
+        </div>
+        <div class="lab-outcome">
+          <span class="lab-outcome-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>النشر الدولي في مجلات محكمة</p>
+        </div>
+        <div class="lab-outcome">
+          <span class="lab-outcome-check" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>بناء مشروع بحثي مستقل بإشراف ذاتي</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FINAL CTA ═══════════════════════════════════════════════════════════════ -->
+  <section class="lab-cta lab-reveal">
+    <div class="lab-container">
+      <h2>من الفكرة البحثية… إلى النشر العالمي</h2>
+      <p>مختبر لا يُجري التجارب فقط، بل يصنع باحثين قادرين على إنتاج معرفة علمية حقيقية قابلة للنشر والتأثير الأكاديمي العالمي.</p>
+      <a href="consultation.html?from=wet-lab" class="lab-btn-primary">
+        اطلب استشارة لإنشاء المختبر
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<div data-include="footer"></div>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/animations.js"></script>
+
+<!-- Page-scoped scroll-reveal observer -->
+<script>
+  (function () {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = document.querySelectorAll('.lab-reveal, .lab-stagger');
+    if (reduced || !('IntersectionObserver' in window)) {
+      targets.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(el => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>
