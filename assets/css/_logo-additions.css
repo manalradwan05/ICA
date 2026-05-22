@@ -1,0 +1,33 @@
+/* ====================================================================
+   NAVBAR LOGO IMAGE
+   Add this to your existing components.css OR base.css.
+   Replaces the styling that used to apply to the gold .nav-logo square.
+   ==================================================================== */
+
+.nav-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Subtle scale on hover when wrapped in .nav-brand link */
+.nav-brand:hover .nav-logo-img {
+  transform: scale(1.05);
+}
+
+/* Shrink slightly when the navbar is in its "scrolled" compact state.
+   main.js adds .scrolled to .navbar when user scrolls > 30px. */
+.navbar.scrolled .nav-logo-img {
+  height: 40px;
+}
+
+/* On very small screens, hide the wordmark text next to the logo
+   to save horizontal space (the logo alone is enough). */
+@media (max-width: 480px) {
+  .nav-logo-img {
+    height: 40px;
+  }
+}
