@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ريّاد للطلاب — أكاديمية المسار الذكي</title>
+<meta name="description" content="ريّاد للطلاب — رحلتك الذكية نحو التفوق الدراسي والإبداع باستخدام الذكاء الاصطناعي. برنامج تدريبي متكامل (40 ساعة) لطلبة المدارس والجامعات.">
+<meta name="theme-color" content="#FAF7F0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<!-- Existing site stylesheets — keeps visual identity consistent -->
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23C9A84C'/%3E%3Ctext x='50' y='66' font-family='Cairo, sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%231A1610'%3EICA%3C/text%3E%3C/svg%3E">
+
+<!-- ════════════════════════════════════════════════════════════════
+     PAGE-SCOPED STYLES — all selectors prefixed with .riyad-v1
+     Built on top of the site's existing tokens with safe fallbacks.
+     ════════════════════════════════════════════════════════════════ -->
+<style>
+
+  .riyad-v1 {
+    --c-cream:     var(--cream,     #FAF7F0);
+    --c-cream-dk:  var(--cream-dark,#F0EBE0);
+    --c-paper:     var(--paper,     #ffffff);
+    --c-ink:       var(--ink,       #1A1610);
+    --c-ink-soft:  var(--ink-soft,  #4a4135);
+    --c-mute:      var(--mute,      #7a6f5e);
+    --c-gold:      var(--gold,      #C9A84C);
+    --c-gold-deep: var(--gold-deep, #A8893A);
+    --c-gold-soft: var(--gold-soft, #F5EBC8);
+    --c-line:      var(--line,      #E8DFC7);
+    --c-line-soft: var(--line-soft, #EFE7D2);
+  }
+
+  /* ═══════════════════ HERO ═══════════════════ */
+  .riyad-v1-hero {
+    position: relative;
+    padding: clamp(72px, 11vw, 130px) 0 clamp(56px, 8vw, 96px);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .riyad-v1-hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 85% 0%, rgba(201, 168, 76, 0.16), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 0% 100%, rgba(201, 168, 76, 0.08), transparent 60%);
+    z-index: -2;
+  }
+  .riyad-v1-hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.4), transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.4), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .riyad-v1-hero-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+    text-align: center;
+  }
+  .riyad-v1-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--c-ink-soft);
+    box-shadow: 0 2px 8px rgba(26, 22, 16, 0.04);
+    margin-bottom: 22px;
+  }
+  .riyad-v1-badge-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.18);
+    animation: riyad-v1-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes riyad-v1-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.18); }
+    50%      { box-shadow: 0 0 0 8px rgba(201, 168, 76, 0); }
+  }
+  .riyad-v1-program-tag {
+    font-family: "Cairo", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--c-gold-deep);
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .riyad-v1-hero h1 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(2.2rem, 5.2vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.18;
+    color: var(--c-ink);
+    margin: 0 0 22px;
+    letter-spacing: -0.02em;
+  }
+  .riyad-v1-hero h1 .accent {
+    color: var(--c-gold);
+    position: relative;
+    display: inline-block;
+  }
+  .riyad-v1-hero h1 .accent::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0.08em;
+    height: 0.18em;
+    background: rgba(201, 168, 76, 0.22);
+    border-radius: 2px;
+    z-index: -1;
+  }
+  .riyad-v1-hero .lead {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1.05rem, 2vw, 1.22rem);
+    color: var(--c-ink-soft);
+    line-height: 1.75;
+    margin: 0 auto;
+    max-width: 680px;
+  }
+  .riyad-v1-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px dashed var(--c-line);
+    max-width: 720px;
+    margin-inline: auto;
+  }
+  .riyad-v1-hero-meta-item {
+    text-align: center;
+  }
+  .riyad-v1-hero-meta-num {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 900;
+    color: var(--c-gold-deep);
+    line-height: 1;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .riyad-v1-hero-meta-label {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.88rem;
+    color: var(--c-mute);
+    font-weight: 600;
+  }
+
+  /* Quick-jump TOC chips */
+  .riyad-v1-toc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .riyad-v1-toc a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--c-ink-soft);
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .riyad-v1-toc a:hover {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    border-color: var(--c-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201, 168, 76, 0.25);
+  }
+
+  /* ═══════════════════ SECTIONS ═══════════════════ */
+  .riyad-v1-section {
+    padding: clamp(60px, 9vw, 110px) 0;
+    position: relative;
+    scroll-margin-top: 80px;
+  }
+  .riyad-v1-section + .riyad-v1-section {
+    border-top: 1px solid var(--c-line-soft);
+  }
+  .riyad-v1-section.alt-bg {
+    background: linear-gradient(180deg, transparent, rgba(201,168,76,0.03), transparent);
+  }
+  .riyad-v1-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .riyad-v1-container-narrow {
+    max-width: 980px;
+  }
+
+  /* Section header */
+  .riyad-v1-section-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 64px);
+  }
+  .riyad-v1-section-num {
+    font-family: "Cairo", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--c-gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .riyad-v1-section-num::before,
+  .riyad-v1-section-num::after {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--c-gold);
+    opacity: 0.5;
+  }
+  .riyad-v1-section-head h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--c-ink);
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .riyad-v1-section-head h2 .accent { color: var(--c-gold); }
+  .riyad-v1-section-head .section-desc {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.08rem);
+    color: var(--c-mute);
+    max-width: 680px;
+    line-height: 1.8;
+    margin: 0 auto;
+  }
+
+  /* ═══════════════════ PROBLEM (CHALLENGES) ═══════════════════ */
+  .riyad-v1-problems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .riyad-v1-problem {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 22px 24px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-right: 4px solid var(--c-gold);
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .riyad-v1-problem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(26, 22, 16, 0.08);
+  }
+  .riyad-v1-problem-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cairo", sans-serif;
+    font-weight: 900;
+    font-size: 0.95rem;
+    margin-top: 2px;
+  }
+  .riyad-v1-problem p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.98rem;
+    color: var(--c-ink-soft);
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  /* ═══════════════════ SOLUTION CARD ═══════════════════ */
+  .riyad-v1-solution {
+    background: linear-gradient(135deg, var(--c-ink) 0%, #2b2418 100%);
+    border-radius: 24px;
+    padding: clamp(36px, 6vw, 64px);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .riyad-v1-solution::before {
+    content: "";
+    position: absolute;
+    top: -50%; left: -10%;
+    width: 60%; height: 200%;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.18), transparent 60%);
+    z-index: -1;
+  }
+  .riyad-v1-solution::after {
+    content: "✨";
+    position: absolute;
+    top: 28px; left: 36px;
+    font-size: 2rem;
+    opacity: 0.6;
+  }
+  .riyad-v1-solution h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+    font-weight: 900;
+    color: var(--c-cream);
+    margin: 0 0 18px;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  .riyad-v1-solution h2 .accent { color: var(--c-gold); }
+  .riyad-v1-solution p {
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(1.02rem, 1.9vw, 1.15rem);
+    color: rgba(250, 247, 240, 0.85);
+    line-height: 1.85;
+    margin: 0 0 14px;
+    max-width: 780px;
+  }
+  .riyad-v1-solution p:last-child { margin-bottom: 0; }
+
+  /* ═══════════════════ AUDIENCE ═══════════════════ */
+  .riyad-v1-audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .riyad-v1-audience-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 24px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .riyad-v1-audience-card:hover {
+    border-color: var(--c-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(26, 22, 16, 0.08);
+  }
+  .riyad-v1-audience-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .riyad-v1-audience-icon svg { width: 24px; height: 24px; }
+  .riyad-v1-audience-card:hover .riyad-v1-audience-icon {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    transform: rotate(-6deg) scale(1.05);
+  }
+  .riyad-v1-audience-card p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--c-ink);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ═══════════════════ PILLARS (مَحاور) ═══════════════════ */
+  .riyad-v1-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(18px, 2.4vw, 24px);
+  }
+  .riyad-v1-pillar {
+    position: relative;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 18px;
+    padding: 28px 26px;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.25s ease;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .riyad-v1-pillar::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 0; height: 4px;
+    background: linear-gradient(-90deg, var(--c-gold), var(--c-gold-deep));
+    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 2;
+  }
+  .riyad-v1-pillar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 100% 0%, rgba(201,168,76,0.08), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .riyad-v1-pillar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(26, 22, 16, 0.10);
+    border-color: var(--c-gold);
+  }
+  .riyad-v1-pillar:hover::before { width: 100%; }
+  .riyad-v1-pillar:hover::after  { opacity: 1; }
+
+  .riyad-v1-pillar-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .riyad-v1-pillar-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cairo", sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .riyad-v1-pillar:hover .riyad-v1-pillar-num {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    transform: rotate(-6deg) scale(1.05);
+    box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
+  }
+  .riyad-v1-pillar h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--c-ink);
+    margin: 0;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .riyad-v1-pillar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .riyad-v1-pillar-list li {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.96rem;
+    color: var(--c-ink-soft);
+    line-height: 1.65;
+    padding: 8px 0 8px 0;
+    padding-right: 22px;
+    position: relative;
+  }
+  .riyad-v1-pillar-list li + li {
+    border-top: 1px dashed var(--c-line-soft);
+  }
+  .riyad-v1-pillar-list li::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 17px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    opacity: 0.7;
+  }
+
+  /* ═══════════════════ KIDS TRACK (highlight band) ═══════════════════ */
+  .riyad-v1-kids {
+    background: linear-gradient(135deg, var(--c-gold-soft) 0%, #faf2d8 100%);
+    border: 1px solid var(--c-line);
+    border-radius: 24px;
+    padding: clamp(32px, 5vw, 56px);
+    position: relative;
+    overflow: hidden;
+  }
+  .riyad-v1-kids::before {
+    content: "🎨";
+    position: absolute;
+    top: -10px; left: -10px;
+    font-size: 8rem;
+    opacity: 0.08;
+    transform: rotate(-15deg);
+  }
+  .riyad-v1-kids-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .riyad-v1-kids-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-gold);
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--c-gold-deep);
+  }
+  .riyad-v1-kids h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 900;
+    color: var(--c-ink);
+    margin: 0 0 14px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .riyad-v1-kids > p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 1.02rem;
+    color: var(--c-ink-soft);
+    line-height: 1.75;
+    margin: 0 0 24px;
+    max-width: 720px;
+  }
+  .riyad-v1-kids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+  .riyad-v1-kids-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--c-line-soft);
+    border-radius: 12px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--c-ink);
+    backdrop-filter: blur(4px);
+  }
+  .riyad-v1-kids-item-emoji {
+    font-size: 1.3rem;
+  }
+
+  /* ═══════════════════ DETAILS STRIP ═══════════════════ */
+  .riyad-v1-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    padding: clamp(28px, 4vw, 40px);
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(26, 22, 16, 0.05);
+  }
+  .riyad-v1-detail {
+    text-align: center;
+    padding: 12px;
+    position: relative;
+  }
+  .riyad-v1-detail + .riyad-v1-detail::before {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 20%; bottom: 20%;
+    width: 1px;
+    background: var(--c-line);
+  }
+  .riyad-v1-detail-icon {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 12px;
+    border-radius: 12px;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .riyad-v1-detail-icon svg { width: 22px; height: 22px; }
+  .riyad-v1-detail-value {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--c-ink);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .riyad-v1-detail-label {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.85rem;
+    color: var(--c-mute);
+    font-weight: 600;
+  }
+  @media (max-width: 640px) {
+    .riyad-v1-detail + .riyad-v1-detail::before { display: none; }
+  }
+
+  /* ═══════════════════ OUTCOMES ═══════════════════ */
+  .riyad-v1-outcomes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .riyad-v1-outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 22px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+  }
+  .riyad-v1-outcome:hover {
+    border-color: var(--c-gold);
+    background: linear-gradient(180deg, var(--c-paper), rgba(201,168,76,0.04));
+    transform: translateX(-4px);
+  }
+  .riyad-v1-outcome-check {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    color: var(--c-paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .riyad-v1-outcome-check svg { width: 16px; height: 16px; }
+  .riyad-v1-outcome p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--c-ink);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* ═══════════════════ FAQ ═══════════════════ */
+  .riyad-v1-faq {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .riyad-v1-faq-item {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .riyad-v1-faq-item:hover {
+    border-color: var(--c-gold);
+    box-shadow: 0 8px 20px rgba(26, 22, 16, 0.05);
+  }
+  .riyad-v1-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: "Cairo", sans-serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--c-ink);
+    transition: color 0.2s ease;
+  }
+  .riyad-v1-faq-item summary::-webkit-details-marker { display: none; }
+  .riyad-v1-faq-item summary:hover { color: var(--c-gold-deep); }
+  .riyad-v1-faq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--c-gold-soft);
+    color: var(--c-gold-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .riyad-v1-faq-icon svg { width: 14px; height: 14px; }
+  .riyad-v1-faq-item[open] .riyad-v1-faq-icon {
+    transform: rotate(180deg);
+    background: var(--c-gold);
+    color: var(--c-paper);
+  }
+  .riyad-v1-faq-body {
+    padding: 0 24px 22px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.98rem;
+    color: var(--c-ink-soft);
+    line-height: 1.75;
+  }
+
+  /* ═══════════════════ FINAL CTA ═══════════════════ */
+  .riyad-v1-final {
+    padding: clamp(60px, 9vw, 100px) 0;
+    text-align: center;
+    background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-gold-soft) 100%);
+    border-top: 1px solid var(--c-line-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .riyad-v1-final::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(201,168,76,0.08), transparent 40%),
+      radial-gradient(circle at 80% 50%, rgba(201,168,76,0.06), transparent 40%);
+    pointer-events: none;
+  }
+  .riyad-v1-final-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+  .riyad-v1-final-tagline {
+    font-family: "Cairo", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--c-gold-deep);
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+  }
+  .riyad-v1-final h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+    font-weight: 900;
+    color: var(--c-ink);
+    margin: 0 0 18px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .riyad-v1-final p {
+    font-family: "Tajawal", sans-serif;
+    color: var(--c-ink-soft);
+    font-size: 1.08rem;
+    margin: 0 0 32px;
+    line-height: 1.75;
+  }
+  .riyad-v1-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: var(--c-ink);
+    color: var(--c-gold);
+    border-radius: 100px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 6px 20px rgba(26, 22, 16, 0.2);
+  }
+  .riyad-v1-cta-btn:hover {
+    background: var(--c-gold);
+    color: var(--c-ink);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(201, 168, 76, 0.4);
+  }
+  .riyad-v1-cta-btn svg { width: 14px; height: 14px; }
+
+  /* ═══════════════════ SCROLL REVEAL ═══════════════════ */
+  .riyad-v1-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .riyad-v1-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .riyad-v1-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .riyad-v1-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+  .riyad-v1-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(2) { transition-delay: 70ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(3) { transition-delay: 140ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(4) { transition-delay: 210ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(5) { transition-delay: 280ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(6) { transition-delay: 350ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(7) { transition-delay: 420ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(8) { transition-delay: 490ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(9) { transition-delay: 560ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(10) { transition-delay: 630ms; }
+  .riyad-v1-stagger.is-visible > *:nth-child(n+11) { transition-delay: 700ms; }
+
+  /* ═══════════════════ RESPONSIVE ═══════════════════ */
+  @media (max-width: 768px) {
+    .riyad-v1-pillar { padding: 24px 22px; }
+    .riyad-v1-pillar h3 { font-size: 1.05rem; }
+    .riyad-v1-hero-meta { gap: 24px; }
+  }
+  @media (max-width: 480px) {
+    .riyad-v1-toc a { padding: 8px 14px; font-size: 0.84rem; }
+    .riyad-v1-problems,
+    .riyad-v1-audience-grid,
+    .riyad-v1-pillars,
+    .riyad-v1-outcomes { grid-template-columns: 1fr; }
+  }
+
+  /* ═══════════════════ REDUCED MOTION ═══════════════════ */
+  @media (prefers-reduced-motion: reduce) {
+    .riyad-v1 *,
+    .riyad-v1 *::before,
+    .riyad-v1 *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .riyad-v1-reveal,
+    .riyad-v1-stagger > * {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+</head>
+<body class="riyad-v1">
+
+<a href="#main" class="skip-link">انتقل إلى المحتوى الرئيسي</a>
+
+<!-- Site navbar (loaded by main.js includes system) -->
+<div data-include="navbar"></div>
+
+<main id="main">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-hero">
+    <div class="riyad-v1-hero-inner">
+      <span class="riyad-v1-badge">
+        <span class="riyad-v1-badge-dot" aria-hidden="true"></span>
+        برنامج تدريبي معتمد — أكاديمية المسار الذكي
+      </span>
+      <div class="riyad-v1-program-tag">ريّاد للطلاب</div>
+      <h1>رحلتك الذكية نحو <span class="accent">التفوق الدراسي</span> والإبداع باستخدام الذكاء الاصطناعي</h1>
+      <p class="lead">
+        حوّل دراستك من الحفظ التقليدي المرهق إلى تجربة تعلم ذكية، ممتعة، تفاعلية،
+        تبني مهاراتك الأكاديمية والإبداعية لمستقبل أقوى.
+      </p>
+
+      <div class="riyad-v1-hero-meta">
+        <div class="riyad-v1-hero-meta-item">
+          <span class="riyad-v1-hero-meta-num">40</span>
+          <span class="riyad-v1-hero-meta-label">ساعة تدريبية</span>
+        </div>
+        <div class="riyad-v1-hero-meta-item">
+          <span class="riyad-v1-hero-meta-num">20</span>
+          <span class="riyad-v1-hero-meta-label">جلسة تفاعلية</span>
+        </div>
+        <div class="riyad-v1-hero-meta-item">
+          <span class="riyad-v1-hero-meta-num">10</span>
+          <span class="riyad-v1-hero-meta-label">محاور رئيسية</span>
+        </div>
+        <div class="riyad-v1-hero-meta-item">
+          <span class="riyad-v1-hero-meta-num">∞</span>
+          <span class="riyad-v1-hero-meta-label">أدوات ذكية</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="riyad-v1-toc" aria-label="فهرس الصفحة">
+      <a href="#problem">التحديات</a>
+      <a href="#audience">لمن البرنامج</a>
+      <a href="#pillars">المحاور</a>
+      <a href="#kids">مسار الأطفال</a>
+      <a href="#details">التفاصيل</a>
+      <a href="#outcomes">المخرجات</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+    </nav>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PROBLEM — التحديات
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-section" id="problem">
+    <div class="riyad-v1-container">
+      <header class="riyad-v1-section-head riyad-v1-reveal">
+        <span class="riyad-v1-section-num">01 — التحديات</span>
+        <h2>هل تعاني من هذه <span class="accent">التحديات الدراسية</span>؟</h2>
+        <p class="section-desc">
+          إن كانت إجابتك "نعم" على أي من هذه الأسئلة، فأنت لست وحدك —
+          ولدينا الحل الذي يحوّلها إلى نقاط قوة.
+        </p>
+      </header>
+
+      <div class="riyad-v1-problems riyad-v1-stagger">
+        <div class="riyad-v1-problem">
+          <span class="riyad-v1-problem-icon">؟</span>
+          <p>هل تقضي ساعات طويلة في الدراسة دون نتائج واضحة؟</p>
+        </div>
+        <div class="riyad-v1-problem">
+          <span class="riyad-v1-problem-icon">؟</span>
+          <p>هل تجد صعوبة في تنظيم وقتك وخططك الدراسية؟</p>
+        </div>
+        <div class="riyad-v1-problem">
+          <span class="riyad-v1-problem-icon">؟</span>
+          <p>هل تشعر أن حفظ المعلومات صعب وتنسى بسرعة؟</p>
+        </div>
+        <div class="riyad-v1-problem">
+          <span class="riyad-v1-problem-icon">؟</span>
+          <p>هل تواجه صعوبة في إعداد المشاريع والأبحاث والعروض التقديمية؟</p>
+        </div>
+        <div class="riyad-v1-problem">
+          <span class="riyad-v1-problem-icon">؟</span>
+          <p>هل تجد بعض المواد الدراسية معقدة وصعبة الفهم؟</p>
+        </div>
+        <div class="riyad-v1-problem">
+          <span class="riyad-v1-problem-icon">؟</span>
+          <p>هل ترغب في تطوير نفسك باستخدام الذكاء الاصطناعي لكنك لا تعرف من أين تبدأ؟</p>
+        </div>
+        <div class="riyad-v1-problem">
+          <span class="riyad-v1-problem-icon">؟</span>
+          <p>هل تستخدم الإنترنت دون معرفة قواعد الأمان الرقمي؟</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SOLUTION — الحل
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-section alt-bg">
+    <div class="riyad-v1-container riyad-v1-container-narrow">
+      <div class="riyad-v1-solution riyad-v1-reveal">
+        <h2>لا تقلق، لقد وصلت إلى <span class="accent">المكان الصحيح</span></h2>
+        <p>
+          برنامج <strong style="color:var(--c-gold)">ريّاد للطلاب</strong> صُمم خصيصًا
+          ليجعل الطالب أكثر ذكاءً وتنظيمًا وإبداعًا باستخدام أدوات الذكاء الاصطناعي
+          الحديثة.
+        </p>
+        <p>
+          سيساعدك البرنامج على الدراسة بذكاء، وفهم المواد بسهولة، وتحويل أفكارك
+          إلى مشاريع مبهرة، وصناعة محتوى إبداعي يعكس شخصيتك العلمية.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       AUDIENCE — لمن هذا البرنامج
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-section" id="audience">
+    <div class="riyad-v1-container">
+      <header class="riyad-v1-section-head riyad-v1-reveal">
+        <span class="riyad-v1-section-num">02 — الجمهور المستهدف</span>
+        <h2>لمن هذا <span class="accent">البرنامج</span>؟</h2>
+        <p class="section-desc">
+          مساراتٌ مخصصة لكل مرحلة عمرية ومستوى دراسي — من الصفوف الأولى
+          إلى الجامعة، وحتى أولياء الأمور.
+        </p>
+      </header>
+
+      <div class="riyad-v1-audience-grid riyad-v1-stagger">
+        <div class="riyad-v1-audience-card">
+          <span class="riyad-v1-audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-6 9 6-9 6-9-6z"/>
+              <path d="M3 9v6l9 6 9-6V9"/>
+            </svg>
+          </span>
+          <p>طلبة المدارس بجميع مراحلهم</p>
+        </div>
+        <div class="riyad-v1-audience-card">
+          <span class="riyad-v1-audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <path d="M8 4v16M16 4v16M3 12h18"/>
+            </svg>
+          </span>
+          <p>طلبة المرحلة الثانوية</p>
+        </div>
+        <div class="riyad-v1-audience-card">
+          <span class="riyad-v1-audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/>
+            </svg>
+          </span>
+          <p>الطلبة الجامعيين</p>
+        </div>
+        <div class="riyad-v1-audience-card">
+          <span class="riyad-v1-audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l2.4 6.4L21 9.3l-4.9 4.4L17.6 21 12 17.3 6.4 21l1.5-7.3L3 9.3l6.6-.9L12 2z"/>
+            </svg>
+          </span>
+          <p>الطلاب المشاركون في المسابقات العلمية</p>
+        </div>
+        <div class="riyad-v1-audience-card">
+          <span class="riyad-v1-audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </span>
+          <p>الطلاب الراغبون في التفوق الدراسي والإبداع الرقمي</p>
+        </div>
+        <div class="riyad-v1-audience-card">
+          <span class="riyad-v1-audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </span>
+          <p>أولياء الأمور الراغبون في تطوير مهارات أبنائهم المستقبلية</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PILLARS — محاور البرنامج
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-section alt-bg" id="pillars">
+    <div class="riyad-v1-container">
+      <header class="riyad-v1-section-head riyad-v1-reveal">
+        <span class="riyad-v1-section-num">03 — المحاور</span>
+        <h2>محاور <span class="accent">البرنامج</span></h2>
+        <p class="section-desc">
+          عشرة محاور متكاملة تأخذ الطالب من الأساسيات حتى الاحتراف،
+          مع تطبيقات عملية ومشاريع حقيقية في كل محور.
+        </p>
+      </header>
+
+      <div class="riyad-v1-pillars riyad-v1-stagger">
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">01</span>
+            <h3>أساسيات الذكاء الاصطناعي للطلاب</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>فهم قواعد مخاطبة روبوتات الدردشة الذكية</li>
+            <li>كتابة أوامر احترافية للحصول على أفضل النتائج</li>
+            <li>الاستخدام الصحيح والآمن للذكاء الاصطناعي</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">02</span>
+            <h3>التخطيط الدراسي الذكي</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>التخطيط التلقائي لدراسة المواد</li>
+            <li>تنظيم الوقت والمراجعة باحتراف</li>
+            <li>بناء جداول دراسية ذكية</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">03</span>
+            <h3>التلخيص والفهم العميق</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>تحويل الدروس إلى بطاقات تعليمية Flash Cards</li>
+            <li>تلخيص المحتوى باحتراف إلى خرائط ذهنية</li>
+            <li>تحويل المادة إلى أسئلة متعددة المستويات</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">04</span>
+            <h3>المشاريع والعروض التفاعلية</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>تصميم عروض تقديمية تفاعلية للمشاريع والأبحاث</li>
+            <li>بناء ملخصات إبداعية احترافية</li>
+            <li>تحسين جودة العرض والإقناع العلمي</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">05</span>
+            <h3>صناعة المحتوى البصري</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>توليد صور تعليمية دقيقة</li>
+            <li>إنشاء فيديوهات تعليمية بشخصية الطالب</li>
+            <li>شرح الدروس بطريقة جذابة للزملاء</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">06</span>
+            <h3>الإبداع القصصي والسيناريوهات المصورة</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>كتابة قصص تعليمية إبداعية</li>
+            <li>تصميم سيناريوهات مصورة</li>
+            <li>تحويل شخصية الطالب إلى بطل معرفي داخل القصة</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">07</span>
+            <h3>اللغة والتعبير الذكي</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>الترجمة الفورية لجميع اللغات</li>
+            <li>التصحيح اللغوي الفوري</li>
+            <li>التشكيل الاحترافي للعربية</li>
+            <li>تحسين مهارات الكتابة والتعبير</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">08</span>
+            <h3>تطوير مهارات القراءة</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>استخدام أدوات الذكاء الاصطناعي لتحسين القراءة بالعربية</li>
+            <li>تطوير الفهم القرائي باللغة الإنجليزية</li>
+            <li>تسريع الاستيعاب والتحليل</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">09</span>
+            <h3>فهم الرياضيات بذكاء</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>شرح المسائل الرياضية بعدة طرق</li>
+            <li>اكتشاف نقاط الضعف ومعالجتها</li>
+            <li>تبسيط المفاهيم المعقدة</li>
+          </ul>
+        </article>
+
+        <article class="riyad-v1-pillar">
+          <div class="riyad-v1-pillar-head">
+            <span class="riyad-v1-pillar-num">10</span>
+            <h3>التعلم الآمن الرقمي</h3>
+          </div>
+          <ul class="riyad-v1-pillar-list">
+            <li>أساسيات الأمان الإلكتروني</li>
+            <li>الاستخدام الآمن للإنترنت</li>
+            <li>الحماية الذكية أثناء استخدام أدوات الذكاء الاصطناعي</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       KIDS TRACK — مسار رياض الأطفال والابتدائي
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-section" id="kids">
+    <div class="riyad-v1-container riyad-v1-container-narrow">
+      <div class="riyad-v1-kids riyad-v1-reveal">
+        <div class="riyad-v1-kids-header">
+          <span class="riyad-v1-kids-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+            مسار خاص
+          </span>
+        </div>
+        <h3>المسار الخاص لرياض الأطفال والمرحلة الابتدائية</h3>
+        <p>
+          برنامج متكامل لبناء عقل وجسم سليم باستخدام أدوات ذكاء اصطناعي مناسبة للأطفال،
+          مصمم بعناية لتنمية شخصية ذكية متوازنة منذ الصغر.
+        </p>
+
+        <div class="riyad-v1-kids-grid">
+          <div class="riyad-v1-kids-item">
+            <span class="riyad-v1-kids-item-emoji" aria-hidden="true">🧠</span>
+            <span>تعليم تنظيم وترتيب الأفكار والأشياء</span>
+          </div>
+          <div class="riyad-v1-kids-item">
+            <span class="riyad-v1-kids-item-emoji" aria-hidden="true">📚</span>
+            <span>بناء مهارات الدراسة المبكرة</span>
+          </div>
+          <div class="riyad-v1-kids-item">
+            <span class="riyad-v1-kids-item-emoji" aria-hidden="true">🔬</span>
+            <span>البحث والاستكشاف العلمي</span>
+          </div>
+          <div class="riyad-v1-kids-item">
+            <span class="riyad-v1-kids-item-emoji" aria-hidden="true">🎨</span>
+            <span>تعلم الرسم الإلكتروني الإبداعي</span>
+          </div>
+          <div class="riyad-v1-kids-item">
+            <span class="riyad-v1-kids-item-emoji" aria-hidden="true">🥗</span>
+            <span>التعرف على الغذاء الصحي</span>
+          </div>
+          <div class="riyad-v1-kids-item">
+            <span class="riyad-v1-kids-item-emoji" aria-hidden="true">🏃</span>
+            <span>ممارسة الرياضة المناسبة لأجزاء الجسم</span>
+          </div>
+          <div class="riyad-v1-kids-item">
+            <span class="riyad-v1-kids-item-emoji" aria-hidden="true">⭐</span>
+            <span>بناء شخصية ذكية متوازنة منذ الصغر</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       DETAILS — تفاصيل البرنامج
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-section alt-bg" id="details">
+    <div class="riyad-v1-container">
+      <header class="riyad-v1-section-head riyad-v1-reveal">
+        <span class="riyad-v1-section-num">04 — التفاصيل</span>
+        <h2>تفاصيل <span class="accent">البرنامج</span></h2>
+        <p class="section-desc">
+          نمط تدريبي عملي تفاعلي مباشر، يبني منظومة تعلم ذكية خاصة بكل طالب
+          عبر مشاريع تطبيقية واقعية.
+        </p>
+      </header>
+
+      <div class="riyad-v1-details riyad-v1-reveal">
+        <div class="riyad-v1-detail">
+          <div class="riyad-v1-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div class="riyad-v1-detail-value">40 ساعة</div>
+          <div class="riyad-v1-detail-label">عدد الساعات التدريبية</div>
+        </div>
+        <div class="riyad-v1-detail">
+          <div class="riyad-v1-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <path d="M3 10h18M8 4v4M16 4v4"/>
+            </svg>
+          </div>
+          <div class="riyad-v1-detail-value">20 جلسة</div>
+          <div class="riyad-v1-detail-label">عدد الجلسات</div>
+        </div>
+        <div class="riyad-v1-detail">
+          <div class="riyad-v1-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <div class="riyad-v1-detail-value">ساعتان</div>
+          <div class="riyad-v1-detail-label">مدة كل جلسة</div>
+        </div>
+        <div class="riyad-v1-detail">
+          <div class="riyad-v1-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 4l6 6-10 10H4v-6L14 4z"/>
+              <path d="M13 5l6 6"/>
+            </svg>
+          </div>
+          <div class="riyad-v1-detail-value">عملي تفاعلي</div>
+          <div class="riyad-v1-detail-label">نمط التدريب</div>
+        </div>
+        <div class="riyad-v1-detail">
+          <div class="riyad-v1-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="riyad-v1-detail-value">حضوري / أونلاين</div>
+          <div class="riyad-v1-detail-label">مكان التنفيذ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       OUTCOMES — ماذا سيحصل الطالب
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-section" id="outcomes">
+    <div class="riyad-v1-container">
+      <header class="riyad-v1-section-head riyad-v1-reveal">
+        <span class="riyad-v1-section-num">05 — المخرجات</span>
+        <h2>ماذا سيحصل الطالب <span class="accent">بعد البرنامج</span>؟</h2>
+        <p class="section-desc">
+          بنهاية البرنامج سيكون الطالب قادرًا على امتلاك منظومة دراسية ذكية متكاملة،
+          ومهارات أكاديمية ورقمية تواكب متطلبات المستقبل.
+        </p>
+      </header>
+
+      <div class="riyad-v1-outcomes riyad-v1-stagger">
+        <div class="riyad-v1-outcome">
+          <span class="riyad-v1-outcome-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>الدراسة بذكاء وتنظيم احترافي</p>
+        </div>
+        <div class="riyad-v1-outcome">
+          <span class="riyad-v1-outcome-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>تلخيص وفهم المواد بسرعة أكبر</p>
+        </div>
+        <div class="riyad-v1-outcome">
+          <span class="riyad-v1-outcome-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>تنفيذ مشاريع وأبحاث مبهرة</p>
+        </div>
+        <div class="riyad-v1-outcome">
+          <span class="riyad-v1-outcome-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>تحسين القراءة والكتابة والتعبير</p>
+        </div>
+        <div class="riyad-v1-outcome">
+          <span class="riyad-v1-outcome-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>استخدام الذكاء الاصطناعي بأمان ووعي</p>
+        </div>
+        <div class="riyad-v1-outcome">
+          <span class="riyad-v1-outcome-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>إنتاج محتوى علمي وإبداعي باسمه وشخصيته</p>
+        </div>
+        <div class="riyad-v1-outcome">
+          <span class="riyad-v1-outcome-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p>اكتساب مهارات المستقبل الأكاديمية والرقمية</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FAQ — الأسئلة الشائعة
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-section alt-bg" id="faq">
+    <div class="riyad-v1-container">
+      <header class="riyad-v1-section-head riyad-v1-reveal">
+        <span class="riyad-v1-section-num">06 — الأسئلة الشائعة</span>
+        <h2>الأسئلة <span class="accent">الشائعة</span></h2>
+        <p class="section-desc">
+          إجابات سريعة على أكثر الأسئلة التي يطرحها الطلاب وأولياء الأمور
+          قبل التسجيل في البرنامج.
+        </p>
+      </header>
+
+      <div class="riyad-v1-faq riyad-v1-stagger">
+        <details class="riyad-v1-faq-item">
+          <summary>
+            <span>هل يحتاج البرنامج خبرة مسبقة؟</span>
+            <span class="riyad-v1-faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="riyad-v1-faq-body">لا، يبدأ البرنامج من الصفر حتى الاحتراف، وهو مصمم خصيصًا للطلاب الذين لم يستخدموا أدوات الذكاء الاصطناعي من قبل.</div>
+        </details>
+
+        <details class="riyad-v1-faq-item">
+          <summary>
+            <span>هل يناسب جميع الأعمار؟</span>
+            <span class="riyad-v1-faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="riyad-v1-faq-body">نعم، يوفّر البرنامج مسارات مخصصة لكل مرحلة عمرية — من رياض الأطفال إلى المرحلة الجامعية.</div>
+        </details>
+
+        <details class="riyad-v1-faq-item">
+          <summary>
+            <span>هل التدريب عملي؟</span>
+            <span class="riyad-v1-faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="riyad-v1-faq-body">نعم، يعتمد البرنامج بالكامل على التطبيق المباشر والمشاريع الواقعية — كل جلسة تنتهي بمنتج حقيقي يصنعه الطالب بنفسه.</div>
+        </details>
+
+        <details class="riyad-v1-faq-item">
+          <summary>
+            <span>هل يحتاج أدوات مدفوعة؟</span>
+            <span class="riyad-v1-faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="riyad-v1-faq-body">معظم الأدوات المستخدمة في البرنامج مجانية أو توفّر نسخًا مجانية كافية تغطّي جميع متطلبات التدريب.</div>
+        </details>
+
+        <details class="riyad-v1-faq-item">
+          <summary>
+            <span>هل يمكن تطبيق المهارات مباشرة؟</span>
+            <span class="riyad-v1-faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="riyad-v1-faq-body">نعم، من أول جلسة يبدأ الطالب باستخدام الأدوات عمليًا على دروسه ومشاريعه الفعلية.</div>
+        </details>
+
+        <details class="riyad-v1-faq-item">
+          <summary>
+            <span>هل يحصل الطالب على شهادة؟</span>
+            <span class="riyad-v1-faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="riyad-v1-faq-body">نعم، يحصل الطالب على شهادة إتمام احترافية معتمدة من أكاديمية المسار الذكي بعد إنهاء البرنامج بنجاح.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FINAL CTA
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="riyad-v1-final riyad-v1-reveal">
+    <div class="riyad-v1-final-inner">
+      <div class="riyad-v1-final-tagline">ريّاد ليس مجرد برنامج تدريبي</div>
+      <h2>إنه نقطة انطلاق لصناعة طالب ذكي، مبدع، منظّم، وقادر على قيادة مستقبله بثقة</h2>
+      <p>سجّل الآن لمعرفة مواعيد الجلسات القادمة أو لتنسيق مسار خاص لمؤسستك التعليمية.</p>
+      <a href="contact.html" class="riyad-v1-cta-btn">
+        سجّل في البرنامج
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Site footer (loaded by main.js includes system) -->
+<div data-include="footer"></div>
+
+<!-- Existing site scripts -->
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/animations.js"></script>
+
+<!-- Page-scoped scroll-reveal observer -->
+<script>
+  (function () {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = document.querySelectorAll('.riyad-v1-reveal, .riyad-v1-stagger');
+    if (reduced || !('IntersectionObserver' in window)) {
+      targets.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(el => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>
