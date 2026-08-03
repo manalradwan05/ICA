@@ -794,6 +794,171 @@
     line-height: 1.85;
   }
 
+  /* ═══════════════════ FIRST EDITION — VIDEO SHOWCASE ═══════════════════ */
+  .comp-edition-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px;
+    margin-bottom: 16px;
+    border-radius: 100px;
+    background: var(--c-teal-soft);
+    border: 1px solid rgba(15,110,86,0.22);
+    color: var(--c-teal);
+    font-family: "Cairo", sans-serif;
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  /* Featured intro player — centred above the grid */
+  .comp-video-feature {
+    max-width: 880px;
+    margin: 0 auto clamp(32px, 5vw, 48px);
+    text-align: center;
+  }
+  .comp-video-feature .comp-video-frame {
+    border-radius: 20px;
+    border: 1px solid var(--c-line);
+    box-shadow: 0 24px 60px rgba(26,22,16,0.14);
+  }
+  .comp-video-feature-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 14px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    background: var(--c-gold-soft);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--c-gold-deep);
+    font-family: "Cairo", sans-serif;
+    font-size: 0.76rem; font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+  .comp-video-feature h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 800;
+    color: var(--c-ink);
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+  .comp-video-feature p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.98rem;
+    color: var(--c-mute);
+    line-height: 1.8;
+    margin: 0 0 22px;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+  .comp-videos-divider {
+    display: flex; align-items: center; gap: 16px;
+    max-width: 880px;
+    margin: 0 auto clamp(28px, 4vw, 40px);
+    font-family: "Cairo", sans-serif;
+    font-size: 0.86rem; font-weight: 700;
+    color: var(--c-mute);
+  }
+  .comp-videos-divider::before,
+  .comp-videos-divider::after {
+    content: ""; flex: 1; height: 1px;
+    background: var(--c-line);
+  }
+
+  .comp-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));  /* 2-up on desktop — landscape needs width */
+    gap: 22px;
+  }
+  .comp-video-card {
+    margin: 0;
+    display: flex; flex-direction: column;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.35s cubic-bezier(0.22,1,0.36,1),
+                border-color 0.25s ease;
+  }
+  .comp-video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(26,22,16,0.10);
+    border-color: var(--c-gold);
+  }
+  .comp-video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;          /* films are landscape */
+    background: var(--c-ink);
+    overflow: hidden;
+  }
+  .comp-video-frame video {
+    width: 100%; height: 100%;
+    object-fit: contain;           /* never crop — sources vary (16:9 and 3:2) */
+    display: block;
+  }
+  .comp-video-duration {
+    position: absolute;
+    top: 10px; left: 10px;        /* top, not bottom — native controls own the bottom strip */
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: rgba(26,22,16,0.82);
+    color: #fff;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.74rem; font-weight: 600;
+    direction: ltr;
+    pointer-events: none;
+  }
+  .comp-video-body {
+    padding: 18px 20px 20px;
+    display: flex; flex-direction: column;
+    flex: 1;
+  }
+  .comp-video-tag {
+    align-self: flex-start;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    background: var(--c-gold-soft);
+    border: 1px solid rgba(201,168,76,0.28);
+    color: var(--c-gold-deep);
+    font-family: "Cairo", sans-serif;
+    font-size: 0.72rem; font-weight: 700;
+  }
+  .comp-video-title {
+    font-family: "Cairo", sans-serif;
+    font-size: 1.02rem; font-weight: 800;
+    color: var(--c-ink);
+    margin: 0 0 8px;
+    line-height: 1.45;
+  }
+  .comp-video-desc {
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.9rem;
+    color: var(--c-mute);
+    line-height: 1.75;
+    margin: 0 0 14px;
+  }
+  .comp-video-link {
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.84rem; font-weight: 700;
+    color: var(--c-gold-deep);
+    text-decoration: none;
+    transition: gap 0.25s ease, color 0.2s ease;
+  }
+  .comp-video-link:hover { color: var(--c-teal); gap: 12px; }
+  .comp-videos-note {
+    margin: 26px auto 0;
+    max-width: 760px;
+    text-align: center;
+    font-family: "Tajawal", sans-serif;
+    font-size: 0.92rem;
+    color: var(--c-mute);
+    line-height: 1.8;
+  }
+  @media (max-width: 520px) {
+    .comp-videos { grid-template-columns: 1fr; }
+  }
+
   /* ═══════════════════ FINAL CTA ═══════════════════ */
   .comp-cta {
     padding: clamp(56px, 9vw, 100px) 0;
@@ -929,6 +1094,13 @@
 
     <!-- KEY FACTS STRIP -->
     <div class="comp-facts comp-stagger">
+      <div class="comp-fact">
+        <span class="comp-fact-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </span>
+        <span class="comp-fact-label">التواريخ</span>
+        <span class="comp-fact-value">1 شباط — 16 أيار 2026</span>
+      </div>
       <div class="comp-fact">
         <span class="comp-fact-icon" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1196,6 +1368,16 @@
         <article class="comp-pillar">
           <div class="comp-pillar-head">
             <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </span>
+            <h3>التاريخ</h3>
+          </div>
+          <p>من 1 شباط 2026 إلى 16 أيار 2026.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </span>
             <h3>الوقت</h3>
@@ -1231,6 +1413,16 @@
             <h3>المشاركة</h3>
           </div>
           <p>فردية أو ضمن فرق (من 1 إلى 3 أشخاص)، مع إمكانية الانضمام بفريق من المدرسة.</p>
+        </article>
+
+        <article class="comp-pillar">
+          <div class="comp-pillar-head">
+            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </span>
+            <h3>الرسوم</h3>
+          </div>
+          <p>تحدد من قِبل الجهة المنظمة (مثال: 10 دنانير للطالب، أو مجانية للمدارس المشاركة).</p>
         </article>
       </div>
     </div>
@@ -1379,7 +1571,7 @@
           <span class="comp-feature-icon" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </span>
-          <p><strong>تدريب متكامل</strong> قبل المسابقة يمنحك كل ما تحتاجه لإنتاج فيديو احترافي.</p>
+          <p><strong>تدريب متكامل مجاني</strong> قبل المسابقة يمنحك كل ما تحتاجه لإنتاج فيديو احترافي.</p>
         </div>
         <div class="comp-feature">
           <span class="comp-feature-icon" aria-hidden="true">
@@ -1485,6 +1677,159 @@
           </div>
         </details>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTION 11 — FIRST EDITION SHOWCASE ═══════════════════════════════════════════════════════════════
+       MEDIA: assets/videos/sil-v1-01-newton | 02-directions | 03-oxidation | 04-groundwater
+       (.mp4 + matching .jpg poster). Encoded for web from the camera masters:
+       720p H.264 High / AAC / +faststart, each under 25 MB so GitHub's web
+       uploader accepts them. See assets/videos/README.txt.
+       Each card also links to the matching teaser reel on Instagram.
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="comp-section" id="first-edition">
+    <div class="comp-container">
+      <header class="comp-section-head comp-reveal">
+        <span class="comp-section-num">القسم 11</span>
+        <span class="comp-edition-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          النسخة الأولى
+        </span>
+        <h2>نماذج من <span class="accent">النسخة الأولى</span></h2>
+        <p class="desc">
+          انطلقت النسخة الأولى من «عدسة العلوم الذكية» لتحويل المفاهيم العلمية إلى
+          أفلام قصيرة ملهمة. هذه نماذج مختارة من أعمال النسخة الأولى — كلها صُوّرت
+          ونُفّذت بأدوات بسيطة وهاتف محمول.
+        </p>
+      </header>
+
+      <!-- 00 — الفيديو التعريفي (يُشاهَد أولاً) -->
+      <div class="comp-video-feature comp-reveal">
+        <span class="comp-video-feature-label">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          ابدأ من هنا
+        </span>
+        <h3>الفيديو التعريفي — ما هي «عدسة العلوم الذكية»؟</h3>
+        <p>
+          تعرّف على فكرة المسابقة ومنهجية STREAM ومراحل التدريب في دقيقة ونصف،
+          قبل مشاهدة نماذج أعمال النسخة الأولى.
+        </p>
+        <div class="comp-video-frame">
+          <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-00-intro.jpg">
+            <source src="../assets/videos/sil-v1-00-intro.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          <span class="comp-video-duration">1:31</span>
+        </div>
+      </div>
+
+      <div class="comp-videos-divider comp-reveal">نماذج أعمال النسخة الأولى</div>
+
+      <div class="comp-videos comp-stagger">
+
+        <!-- 01 — الفيزياء: قانون نيوتن الأول -->
+        <figure class="comp-video-card">
+          <div class="comp-video-frame">
+            <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-01-newton.jpg">
+              <source src="../assets/videos/sil-v1-01-newton.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <span class="comp-video-duration">3:41</span>
+          </div>
+          <figcaption class="comp-video-body">
+            <span class="comp-video-tag">فيزياء</span>
+            <h3 class="comp-video-title">قانون نيوتن الأول — القصور الذاتي</h3>
+            <p class="comp-video-desc">
+              لماذا يندفع الراكب إلى الأمام عند توقّف السيارة فجأة؟ السبب ليس قوة
+              تدفعه، بل «القصور الذاتي» — ومن هنا تأتي أهمية حزام الأمان.
+            </p>
+            <a class="comp-video-link" href="https://www.instagram.com/reel/DbUiBvfsCrr/" target="_blank" rel="noopener noreferrer">
+              شاهد المقطع على انستغرام
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+          </figcaption>
+        </figure>
+
+        <!-- 02 — الفلك: تحديد الاتجاهات -->
+        <figure class="comp-video-card">
+          <div class="comp-video-frame">
+            <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-02-directions.jpg">
+              <source src="../assets/videos/sil-v1-02-directions.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <span class="comp-video-duration">4:59</span>
+          </div>
+          <figcaption class="comp-video-body">
+            <span class="comp-video-tag">فلك</span>
+            <h3 class="comp-video-title">كيف نجد طريقنا بالأجرام السماوية؟</h3>
+            <p class="comp-video-desc">
+              الشمس ونجم الشمال وأطوار القمر وظلّ العصا — علمٌ قديم يجمع الفلك بالفطنة،
+              وما زال ينقذ المسافرين حين تتوقّف التكنولوجيا.
+            </p>
+            <a class="comp-video-link" href="https://www.instagram.com/reel/DbUdQ9VsWuF/" target="_blank" rel="noopener noreferrer">
+              شاهد المقطع على انستغرام
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+          </figcaption>
+        </figure>
+
+        <!-- 03 — الكيمياء: الأكسدة والصدأ -->
+        <figure class="comp-video-card">
+          <div class="comp-video-frame">
+            <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-03-oxidation.jpg">
+              <source src="../assets/videos/sil-v1-03-oxidation.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <span class="comp-video-duration">4:59</span>
+          </div>
+          <figcaption class="comp-video-body">
+            <span class="comp-video-tag">كيمياء</span>
+            <h3 class="comp-video-title">التأكسد — لماذا تحوّلت دراجة سامر إلى صدأ؟</h3>
+            <p class="comp-video-desc">
+              قصة قصيرة تشرح الأكسدة: كيف يتّحد الأكسجين بالمعادن، ولماذا ليست الأكسدة
+              ضارّة دائماً — فهي ذاتها ما يتيح التنفّس الخلوي.
+            </p>
+            <a class="comp-video-link" href="https://www.instagram.com/reel/DbUbEdws3d8/" target="_blank" rel="noopener noreferrer">
+              شاهد المقطع على انستغرام
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+          </figcaption>
+        </figure>
+
+        <!-- 04 — علوم الأرض: المياه الجوفية -->
+        <figure class="comp-video-card">
+          <div class="comp-video-frame">
+            <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-04-groundwater.jpg">
+              <source src="../assets/videos/sil-v1-04-groundwater.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <span class="comp-video-duration">4:55</span>
+          </div>
+          <figcaption class="comp-video-body">
+            <span class="comp-video-tag">علوم الأرض</span>
+            <h3 class="comp-video-title">المياه الجوفية — الكنز المخبّأ تحت أقدامنا</h3>
+            <p class="comp-video-desc">
+              رحلة الماء من المطر إلى باطن الأرض: كيف تتكوّن الخزّانات الجوفية،
+              ولماذا يُعدّ ترشيد استهلاكها مسؤولية الجميع.
+            </p>
+            <a class="comp-video-link" href="https://www.instagram.com/reel/DbUY-z5MwvB/" target="_blank" rel="noopener noreferrer">
+              شاهد المقطع على انستغرام
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <p class="comp-videos-note">
+        جميع النماذج أعلاه من إنتاج النسخة الأولى من «عدسة العلوم الذكية» —
+        <a href="https://www.instagram.com/science_lense_competition2" target="_blank" rel="noopener noreferrer" style="color:var(--c-gold-deep);font-weight:700;">تابع الحساب على انستغرام</a>
+        لمشاهدة جميع الأعمال.
+      </p>
     </div>
   </section>
 
