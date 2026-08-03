@@ -337,14 +337,17 @@
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 12px;
+  }
+  .footer-email-grid > li {
+    display: flex;            /* lets each card fill its row height evenly */
   }
   .footer-email-card {
     display: flex;
     align-items: center;
     gap: 12px;
-    height: 100%;
+    flex: 1;
     padding: 12px 14px;
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.09);
@@ -383,11 +386,11 @@
     line-height: 1.35;
   }
   .fe-addr {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: rgba(255,255,255,0.72);
     direction: ltr;
     text-align: left;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;   /* wrap at @ / . — never mid-word */
     line-height: 1.4;
   }
   .footer-email-card:hover .fe-addr {
