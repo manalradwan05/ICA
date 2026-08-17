@@ -1,5 +1,5 @@
 /* =========================================================================
-   ICA — CAROUSEL.JS
+   ICA - CAROUSEL.JS
    Lightweight RTL-aware carousel for the courses page hero slideshow.
    Auto-advances every 5s, pauses on hover, dot navigation, keyboard.
    ========================================================================= */

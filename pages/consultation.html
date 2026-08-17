@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طلب استشارة — أكاديمية المهن الذكية</title>
+<title>طلب استشارة - أكاديمية المهن الذكية</title>
 <meta name="description" content="اطلب استشارة من فريق أكاديمية المهن الذكية حول الذكاء الاصطناعي في التعليم، تصميم المختبرات، أو تنظيم المؤتمرات.">
 <meta name="theme-color" content="#FAF7F0">
 
@@ -87,14 +87,14 @@
             <span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <div>
               <strong style="display:block;color:var(--gold-light);font-size:var(--fs-sm);margin-bottom:2px;">الموقع</strong>
-              عمّان — الأردن
+              عمّان، الأردن
             </div>
           </li>
           <li class="consultation-info-item">
             <span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
             <div>
               <strong style="display:block;color:var(--gold-light);font-size:var(--fs-sm);margin-bottom:2px;">ساعات العمل</strong>
-              الأحد — الخميس<br>9:00 ص — 5:00 م
+              الأحد إلى الخميس<br>9:00 ص إلى 5:00 م
             </div>
           </li>
         </ul>
@@ -107,12 +107,12 @@
         <input type="hidden" name="access_key" value="551aaf08-1d57-489b-aab2-b7ac8a7e0e79">
 
         <!-- Subject line that will appear in YOUR inbox -->
-        <input type="hidden" name="subject" value="طلب استشارة جديد — أكاديمية المهن الذكية">
+        <input type="hidden" name="subject" value="طلب استشارة جديد - أكاديمية المهن الذكية">
 
         <!-- From name shown in your email client -->
         <input type="hidden" name="from_name" value="موقع أكاديمية المهن الذكية">
 
-        <!-- Honeypot anti-spam field — must remain empty -->
+        <!-- Honeypot anti-spam field - must remain empty -->
         <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
 
         <h3>أرسل طلبك</h3>
@@ -140,11 +140,11 @@
           </div>
         </div>
 
-        <!-- ═══ Level 1 — Main topic (always visible) ═══ -->
+        <!-- ═══ Level 1 - Main topic (always visible) ═══ -->
         <div class="form-field">
           <label for="subject-select">موضوع الاستشارة <span style="color:var(--gold-dark);">*</span></label>
           <select id="subject-select" name="consultation_subject" required>
-            <option value="">— اختر موضوعاً —</option>
+            <option value="">اختر موضوعاً</option>
             <option value="courses">الدورات</option>
             <option value="conferences">المؤتمرات</option>
             <option value="designs">التصاميم</option>
@@ -154,11 +154,11 @@
           </select>
         </div>
 
-        <!-- ═══ Level 2 — Course category (visible only when "الدورات" is chosen) ═══ -->
+        <!-- ═══ Level 2 - Course category (visible only when "الدورات" is chosen) ═══ -->
         <div class="form-field cascade-field" id="course-category-field" hidden>
           <label for="course-category-select">فئة الدورة <span style="color:var(--gold-dark);">*</span></label>
           <select id="course-category-select" name="course_category">
-            <option value="">— اختر الفئة —</option>
+            <option value="">اختر الفئة</option>
             <option value="ai-basics">أساسيات الذكاء الاصطناعي</option>
             <option value="schools">دورات المدارس</option>
             <option value="specialized-teachers">دورات متخصصة للمعلمين</option>
@@ -166,11 +166,11 @@
           </select>
         </div>
 
-        <!-- ═══ Level 3 — Specific course (visible only when a category is chosen) ═══ -->
+        <!-- ═══ Level 3 - Specific course (visible only when a category is chosen) ═══ -->
         <div class="form-field cascade-field" id="specific-course-field" hidden>
           <label for="specific-course-select">الدورة المحددة <span style="color:var(--gold-dark);">*</span></label>
           <select id="specific-course-select" name="specific_course">
-            <option value="">— اختر الدورة —</option>
+            <option value="">اختر الدورة</option>
           </select>
         </div>
 
@@ -215,7 +215,7 @@
     const spinner  = btn.querySelector('.btn-spinner');
 
     // ═══════════════ Cascading dropdown configuration ═══════════════
-    // Specific courses per category. First option = "[category] (بشكل عام)" — fired
+    // Specific courses per category. First option = "[category] (بشكل عام)" - fired
     // when the user wants to ask about the category without committing to one course.
     const COURSE_CATEGORIES = {
       'ai-basics': {
@@ -305,7 +305,7 @@
       sel.value = '';
     }
     function resetCourseOptions() {
-      courseSelect.innerHTML = '<option value="">— اختر الدورة —</option>';
+      courseSelect.innerHTML = '<option value="">اختر الدورة</option>';
     }
     function populateCoursesFor(categoryKey) {
       resetCourseOptions();
@@ -400,8 +400,8 @@
 
       // ─── Build a descriptive email subject from the cascade selections ───
       // Examples:
-      //   "طلب استشارة — الدورات › دورات متخصصة للمعلمين › أساسيات الرياضيات بالذكاء الاصطناعي"
-      //   "طلب استشارة — المسابقات"
+      //   "طلب استشارة - الدورات › دورات متخصصة للمعلمين › أساسيات الرياضيات بالذكاء الاصطناعي"
+      //   "طلب استشارة - المسابقات"
       const topicLabels = {
         courses: 'الدورات', conferences: 'المؤتمرات', designs: 'التصاميم',
         labs: 'المختبرات', competitions: 'المسابقات', other: 'موضوع آخر'
@@ -416,7 +416,7 @@
         const courseOpt = courseSelect.options[courseSelect.selectedIndex];
         if (courseOpt && courseOpt.value) parts.push(courseOpt.textContent);
       }
-      const newSubject = 'طلب استشارة — ' + (parts.length ? parts.join(' › ') : 'أكاديمية المهن الذكية');
+      const newSubject = 'طلب استشارة - ' + (parts.length ? parts.join(' › ') : 'أكاديمية المهن الذكية');
       formData.set('subject', newSubject);
 
       try {

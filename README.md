@@ -1,6 +1,6 @@
-# أكاديمية المهن الذكية — Intelligent Career Academy (ICA)
+# أكاديمية المهن الذكية - Intelligent Career Academy (ICA)
 
-موقع شركة ICA — موقع بورتفوليو ثابت بالعربية مبنيّ بـ HTML/CSS/JS فقط، جاهز للنشر مباشرة على GitHub Pages.
+موقع شركة ICA - موقع بورتفوليو ثابت بالعربية مبنيّ بـ HTML/CSS/JS فقط، جاهز للنشر مباشرة على GitHub Pages.
 
 ---
 
@@ -20,8 +20,8 @@ ica-website/
 │   ├── labs.html                   ← المختبرات
 │   ├── consultation.html           ← طلب استشارة
 │   ├── coming-soon.html            ← قريباً (مُعاد استخدامها)
-│   ├── afaq.html                   ← Landing — آفاق (gold)
-│   └── azar.html                   ← Landing — آزار (teal)
+│   ├── afaq.html                   ← Landing - آفاق (gold)
+│   └── azar.html                   ← Landing - آزار (teal)
 │
 ├── partials/                       ← مكوّنات قابلة لإعادة الاستخدام
 │   ├── navbar.html                 ← شريط التنقّل
@@ -41,8 +41,8 @@ ica-website/
     │   ├── animations.js           ← scroll reveal + animated counters
     │   └── carousel.js             ← Courses page carousel
     │
-    ├── images/                     ← (placeholders — replace with real images)
-    └── icons/                      ← (inline SVG sprite — most icons are inline)
+    ├── images/                     ← (placeholders - replace with real images)
+    └── icons/                      ← (inline SVG sprite - most icons are inline)
 ```
 
 ---
@@ -61,7 +61,7 @@ The site uses **relative paths everywhere**, so it works whether deployed to a s
 
 ## 🎨 Design System
 
-### Theme tokens — `assets/css/theme.css`
+### Theme tokens - `assets/css/theme.css`
 **Every** color, font, spacing, radius, and shadow is a CSS custom property. To rebrand the entire site, edit only this file.
 
 ```css
@@ -77,8 +77,8 @@ The آزار landing page uses `<body data-theme="teal">` to repaint the entire 
 To make a new themed variant later: add `[data-theme="purple"] { --gold: #...; ... }` to `theme.css` and use `<body data-theme="purple">` on whichever page should use it.
 
 ### Fonts
-- **Cairo** — display headlines (h1–h3, brand wordmark)
-- **Tajawal** — body text, paragraphs, UI labels
+- **Cairo** - display headlines (h1–h3, brand wordmark)
+- **Tajawal** - body text, paragraphs, UI labels
 
 Both load from Google Fonts via `<link>` in each page's `<head>`.
 
@@ -103,18 +103,18 @@ Then `<script src="../assets/js/main.js"></script>` does the rest.
 > - VS Code: install the **Live Server** extension and click "Go Live".
 
 ### Buttons (`.btn`)
-- `.btn-primary` — gold filled (primary CTA)
-- `.btn-secondary` — outlined neutral
-- `.btn-dark` — dark filled (used on light backgrounds)
-- `.btn-ghost` — gold outlined (subtle CTAs)
+- `.btn-primary` - gold filled (primary CTA)
+- `.btn-secondary` - outlined neutral
+- `.btn-dark` - dark filled (used on light backgrounds)
+- `.btn-ghost` - gold outlined (subtle CTAs)
 
 ### Cards
-- `.card` — base card
-- `.card.card-hover` — adds lift + shadow on hover
-- `.value-card` — used on "Vision/Mission/Values"
-- `.testimonial-card` — used on testimonials grid
-- `.course-card` — used in courses list
-- `.lab-card`, `.conference-card`, `.design-card` — page-specific
+- `.card` - base card
+- `.card.card-hover` - adds lift + shadow on hover
+- `.value-card` - used on "Vision/Mission/Values"
+- `.testimonial-card` - used on testimonials grid
+- `.course-card` - used in courses list
+- `.lab-card`, `.conference-card`, `.design-card` - page-specific
 
 ### Section heading
 ```html
@@ -173,7 +173,7 @@ The card CSS already handles `<img>` correctly inside `.course-card-img`.
 - ✅ ARIA labels on interactive elements
 - ✅ Visible focus styles (`:focus-visible` outline)
 - ✅ Mobile menu closeable via Escape key
-- ✅ `prefers-reduced-motion` respected — all animations disable for users who request it
+- ✅ `prefers-reduced-motion` respected - all animations disable for users who request it
 - ✅ Touch targets ≥ 44×44px
 - ✅ RTL layout correctly applied
 
@@ -186,7 +186,7 @@ You said additional brand documents will come later. Here's the integration plan
 1. **Color palette** → update CSS variables in `assets/css/theme.css` (rows 14-46).
 2. **Typography** → update `--font-body`, `--font-display`, font sizes in `theme.css`.
 3. **Component behavior rules** → adjust component CSS in `assets/css/components.css`.
-4. **No HTML changes needed** — every component already references tokens.
+4. **No HTML changes needed** - every component already references tokens.
 
 For آفاق & آزار specifically: their differentiation lives entirely in `[data-theme="teal"]` in `theme.css`. Add additional brand variants there.
 
@@ -197,7 +197,7 @@ For آفاق & آزار specifically: their differentiation lives entirely in `[
 1. Copy any existing inner page (e.g. `pages/labs.html`) to `pages/your-page.html`.
 2. Update `<title>`, `<meta name="description">`, and the page content.
 3. Add a link to it in `partials/navbar.html` (and `partials/footer.html` if needed).
-4. Done — `main.js` auto-injects nav/footer and handles active states.
+4. Done - `main.js` auto-injects nav/footer and handles active states.
 
 ---
 
@@ -216,13 +216,13 @@ For آفاق & آزار specifically: their differentiation lives entirely in `[
 
 ## 🎯 Browser Support
 
-Modern evergreen browsers (Chrome, Firefox, Safari, Edge — last 2 versions). The site uses:
+Modern evergreen browsers (Chrome, Firefox, Safari, Edge - last 2 versions). The site uses:
 - CSS custom properties
 - IntersectionObserver
 - `fetch()` for partials
 - `backdrop-filter` (graceful fallback)
 
-For IE11 — not supported (it's been EOL since 2022).
+For IE11 - not supported (it's been EOL since 2022).
 
 ---
 

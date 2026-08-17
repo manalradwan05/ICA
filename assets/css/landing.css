@@ -1,5 +1,5 @@
 /* =========================================================================
-   ICA — PREMIUM LANDING PAGES  (آفاق + آزار)
+   ICA - PREMIUM LANDING PAGES  (آفاق + آزار)
    These pages are styled at a higher polish than other pages.
    The data-theme="teal" override in theme.css repaints the same components.
    ========================================================================= */
@@ -124,7 +124,7 @@
 }
 
 /* =========================================================================
-   LANDING — PROMISE STRIP  (dark band right below hero)
+   LANDING - PROMISE STRIP  (dark band right below hero)
    ========================================================================= */
 .promise-strip {
   background: var(--ink);
@@ -186,7 +186,7 @@
 [data-theme="teal"] .promise-text strong { color: #6ED4B0; }
 
 /* =========================================================================
-   LANDING — INTRO PARAGRAPHS
+   LANDING - INTRO PARAGRAPHS
    ========================================================================= */
 .landing-intro {
   background: var(--white);
@@ -206,7 +206,7 @@
 .landing-intro p + p { margin-top: var(--space-md); }
 
 /* =========================================================================
-   LANDING — STATS GRID  (animated counters)
+   LANDING - STATS GRID  (animated counters)
    ========================================================================= */
 .landing-stats-section {
   background: linear-gradient(135deg, var(--cream) 0%, var(--cream-mid) 100%);
@@ -307,7 +307,7 @@
 }
 
 /* =========================================================================
-   LANDING — PILLARS / FEATURES
+   LANDING - PILLARS / FEATURES
    ========================================================================= */
 .pillars-section { background: var(--white); }
 .pillars-grid {
@@ -353,7 +353,7 @@
 }
 
 /* =========================================================================
-   LANDING — PROGRAM PHASES (timeline)
+   LANDING - PROGRAM PHASES (timeline)
    ========================================================================= */
 .phases-section {
   background:
@@ -443,7 +443,7 @@
 }
 
 /* =========================================================================
-   LANDING — FINAL CTA
+   LANDING - FINAL CTA
    ========================================================================= */
 .landing-cta-section {
   background: var(--ink);
@@ -493,7 +493,7 @@
 }
 
 /* =========================================================================
-   LANDING — FORM SECTION (free sample)
+   LANDING - FORM SECTION (free sample)
    ========================================================================= */
 .landing-form-section {
   background: var(--white);

@@ -1,8 +1,8 @@
 /* =========================================================================
-   ICA — THEME / DESIGN TOKENS
+   ICA - THEME / DESIGN TOKENS
    This file is the single source of truth for the entire design system.
    When the brand .md files arrive, update values here ONLY.
-   Component CSS must reference these custom properties — never raw hex.
+   Component CSS must reference these custom properties - never raw hex.
    ========================================================================= */
 
 :root {
@@ -103,7 +103,7 @@
 }
 
 /* =========================================================================
-   THEME VARIANT — TEAL  (used on آزار landing page only)
+   THEME VARIANT - TEAL  (used on آزار landing page only)
    To use: add  data-theme="teal"  to the <body> tag.
    This swaps brand-primary tokens without changing component CSS.
    ========================================================================= */

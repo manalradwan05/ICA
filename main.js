@@ -1,5 +1,5 @@
 /* =========================================================================
-   ICA — MAIN.JS
+   ICA - MAIN.JS
    Handles: partial injection (navbar/footer), mobile menu, smooth scroll,
    navbar shrink on scroll, active nav highlighting.
    ========================================================================= */
@@ -19,7 +19,7 @@
      ─────────────────────────────────────────────────────────────────── */
   function basePath() {
     const path = window.location.pathname;
-    // Inside /pages/ — go up one level.
+    // Inside /pages/ - go up one level.
     if (/\/pages\//.test(path)) return '../';
     return './';
   }
@@ -54,14 +54,14 @@
     } catch (err) {
       console.warn('[ICA] Partial fetch failed for ' + partialName + ':', err.message);
       console.warn('[ICA] Tried URL:', partialUrl);
-      console.warn('[ICA] If you are opening the file via file:// — partials require a web server. Use GitHub Pages, or run: python3 -m http.server');
+      console.warn('[ICA] If you are opening the file via file:// - partials require a web server. Use GitHub Pages, or run: python3 -m http.server');
       // Fallback: inline minimal markup so the page is still usable.
       injectFallback(target, partialName);
     }
   }
 
   /* ─────────────────────────────────────────────────────────────────────
-     Fallback partials — used only if fetch fails (e.g. file:// protocol
+     Fallback partials - used only if fetch fails (e.g. file:// protocol
      or partials/ folder didn't deploy). Keeps the page navigable.
      ─────────────────────────────────────────────────────────────────── */
   function injectFallback(target, partialName) {

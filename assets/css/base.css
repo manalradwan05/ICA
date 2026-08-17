@@ -1,5 +1,5 @@
 /* =========================================================================
-   ICA — BASE  (reset, typography, body, RTL utilities)
+   ICA - BASE  (reset, typography, body, RTL utilities)
    ========================================================================= */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

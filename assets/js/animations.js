@@ -1,5 +1,5 @@
 /* =========================================================================
-   ICA — ANIMATIONS.JS
+   ICA - ANIMATIONS.JS
    Scroll-reveal via IntersectionObserver + animated number counters.
    ========================================================================= */
 
@@ -9,7 +9,7 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ─────────────────────────────────────────────────────────────────────
-     Scroll Reveal — adds .in-view to elements when they enter viewport.
+     Scroll Reveal - adds .in-view to elements when they enter viewport.
      ─────────────────────────────────────────────────────────────────── */
   function initScrollReveal() {
     const items = document.querySelectorAll('.reveal, .reveal-right, .reveal-left, .reveal-scale');
@@ -33,7 +33,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────────────────
-     Number Counter — animates `data-count="500"` from 0 → target.
+     Number Counter - animates `data-count="500"` from 0 → target.
      Keeps any existing suffix span (`<span class="stat-suffix">+</span>`).
      ─────────────────────────────────────────────────────────────────── */
   function initCounters() {
@@ -84,7 +84,7 @@
 
   /* ─────────────────────────────────────────────────────────────────────
      Init  (also re-init after partials load, in case any reveals are
-     inside the navbar/footer — currently there are none, but kept safe).
+     inside the navbar/footer - currently there are none, but kept safe).
      ─────────────────────────────────────────────────────────────────── */
   function init() {
     initScrollReveal();

@@ -1,5 +1,5 @@
 /* =========================================================================
-   ICA — MAIN.JS
+   ICA - MAIN.JS
    Handles: partial injection (navbar/footer), mobile menu, smooth scroll,
    navbar shrink on scroll, active nav highlighting.
    ========================================================================= */
@@ -19,7 +19,7 @@
      ─────────────────────────────────────────────────────────────────── */
   function basePath() {
     const path = window.location.pathname;
-    // Inside /pages/ — go up one level.
+    // Inside /pages/ - go up one level.
     if (/\/pages\//.test(path)) return '../';
     return './';
   }
@@ -49,11 +49,11 @@
       // into URLs relative to the current page.
       const rewrite = (p) => new URL(basePath() + p, window.location.href).href;
 
-      // href + src — single URL value
+      // href + src - single URL value
       html = html.replace(/(href|src)="(?!https?:|mailto:|tel:|#|\/|data:)([^"]+)"/g,
         (m, attr, p1) => attr + '="' + rewrite(p1) + '"');
 
-      // srcset — multiple URLs with descriptors, e.g. "x.png 1x, y.png 2x"
+      // srcset - multiple URLs with descriptors, e.g. "x.png 1x, y.png 2x"
       html = html.replace(/srcset="([^"]+)"/g, (m, value) => {
         const rewritten = value.split(',').map(entry => {
           const trimmed = entry.trim();
@@ -71,14 +71,14 @@
     } catch (err) {
       console.warn('[ICA] Partial fetch failed for ' + partialName + ':', err.message);
       console.warn('[ICA] Tried URL:', partialUrl);
-      console.warn('[ICA] If you are opening the file via file:// — partials require a web server. Use GitHub Pages, or run: python3 -m http.server');
+      console.warn('[ICA] If you are opening the file via file:// - partials require a web server. Use GitHub Pages, or run: python3 -m http.server');
       // Fallback: inline minimal markup so the page is still usable.
       injectFallback(target, partialName);
     }
   }
 
   /* ─────────────────────────────────────────────────────────────────────
-     Fallback partials — used only if fetch fails (e.g. file:// protocol
+     Fallback partials - used only if fetch fails (e.g. file:// protocol
      or partials/ folder didn't deploy). Keeps the page navigable.
      ─────────────────────────────────────────────────────────────────── */
   function injectFallback(target, partialName) {
