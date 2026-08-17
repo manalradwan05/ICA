@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طلب استشارة — أكاديمية المسار الذكي</title>
-<meta name="description" content="اطلب استشارة من فريق أكاديمية المسار الذكي حول الذكاء الاصطناعي في التعليم، تصميم المختبرات، أو تنظيم المؤتمرات.">
+<title>طلب استشارة — أكاديمية المهن الذكية</title>
+<meta name="description" content="اطلب استشارة من فريق أكاديمية المهن الذكية حول الذكاء الاصطناعي في التعليم، تصميم المختبرات، أو تنظيم المؤتمرات.">
 <meta name="theme-color" content="#FAF7F0">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,10 +107,10 @@
         <input type="hidden" name="access_key" value="551aaf08-1d57-489b-aab2-b7ac8a7e0e79">
 
         <!-- Subject line that will appear in YOUR inbox -->
-        <input type="hidden" name="subject" value="طلب استشارة جديد — أكاديمية المسار الذكي">
+        <input type="hidden" name="subject" value="طلب استشارة جديد — أكاديمية المهن الذكية">
 
         <!-- From name shown in your email client -->
-        <input type="hidden" name="from_name" value="موقع أكاديمية المسار الذكي">
+        <input type="hidden" name="from_name" value="موقع أكاديمية المهن الذكية">
 
         <!-- Honeypot anti-spam field — must remain empty -->
         <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
@@ -416,7 +416,7 @@
         const courseOpt = courseSelect.options[courseSelect.selectedIndex];
         if (courseOpt && courseOpt.value) parts.push(courseOpt.textContent);
       }
-      const newSubject = 'طلب استشارة — ' + (parts.length ? parts.join(' › ') : 'أكاديمية المسار الذكي');
+      const newSubject = 'طلب استشارة — ' + (parts.length ? parts.join(' › ') : 'أكاديمية المهن الذكية');
       formData.set('subject', newSubject);
 
       try {

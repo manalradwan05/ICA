@@ -1,4 +1,4 @@
-# أكاديمية المسار الذكي — Intelligent Career Academy (ICA)
+# أكاديمية المهن الذكية — Intelligent Career Academy (ICA)
 
 موقع شركة ICA — موقع بورتفوليو ثابت بالعربية مبنيّ بـ HTML/CSS/JS فقط، جاهز للنشر مباشرة على GitHub Pages.
 

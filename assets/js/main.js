@@ -89,7 +89,7 @@
           <a class="nav-brand" href="${bp}index.html" data-page="home">
             <img class="nav-logo-img" src="${bp}assets/img/logo-nav@1x.png" srcset="${bp}assets/img/logo-nav@1x.png 1x, ${bp}assets/img/logo-nav@2x.png 2x" alt="ICA" width="72" height="48" decoding="async">
             <span class="nav-brand-text">
-              <span class="nav-brand-name">أكاديمية المسار الذكي</span>
+              <span class="nav-brand-name">أكاديمية المهن الذكية</span>
               <span class="nav-brand-en">Intelligent Career Academy</span>
             </span>
           </a>
@@ -120,7 +120,7 @@
         <footer class="footer" role="contentinfo">
           <div class="footer-inner">
             <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:center;">
-              <span>© ${new Date().getFullYear()} أكاديمية المسار الذكي. جميع الحقوق محفوظة.</span>
+              <span>© ${new Date().getFullYear()} أكاديمية المهن الذكية. جميع الحقوق محفوظة.</span>
             </div>
           </div>
         </footer>
