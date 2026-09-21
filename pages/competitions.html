@@ -847,6 +847,34 @@
     max-width: 640px;
     margin-inline: auto;
   }
+  /* Two-language intro pair - English + Arabic side by side */
+  .comp-video-feature.is-pair { max-width: 1120px; }
+  .comp-video-pair {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   /* the two language cuts, side by side */
+    gap: 22px;
+    align-items: start;
+  }
+  .comp-video-pair figure {
+    margin: 0;
+    display: flex; flex-direction: column;
+  }
+  .comp-video-pair figcaption {
+    align-self: center;
+    display: inline-flex; align-items: center; gap: 7px;
+    margin-bottom: 12px;
+    padding: 5px 15px;
+    border-radius: 100px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    color: var(--c-ink);
+    font-family: "Cairo", sans-serif;
+    font-size: 0.78rem; font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+  @media (max-width: 760px) {
+    .comp-video-pair { grid-template-columns: 1fr; }   /* stack the two cuts on phones */
+  }
   .comp-videos-divider {
     display: flex; align-items: center; gap: 16px;
     max-width: 880px;
@@ -1681,11 +1709,13 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════ SECTION 11 - FIRST EDITION SHOWCASE ═══════════════════════════════════════════════════════════════
-       MEDIA: assets/videos/sil-v1-01-newton | 02-directions | 03-oxidation | 04-groundwater
+       MEDIA: assets/videos/sil-v1-00-intro-en + 00-intro-ar (the two-language intro
+       pair at the top), then sil-v1-01-newton | 02-directions | 03-oxidation |
+       04-groundwater | 05-zodiac | 06-skynav
        (.mp4 + matching .jpg poster). Encoded for web from the camera masters:
        720p H.264 High / AAC / +faststart, each under 25 MB so GitHub's web
        uploader accepts them. See assets/videos/README.txt.
-       Each card also links to the matching teaser reel on Instagram.
+       Cards 01-04 also link to the matching teaser reel on Instagram.
        ═══════════════════════════════════════════════════════════════ -->
   <section class="comp-section" id="first-edition">
     <div class="comp-container">
@@ -1705,8 +1735,8 @@
         </p>
       </header>
 
-      <!-- 00 - الفيديو التعريفي (يُشاهَد أولاً) -->
-      <div class="comp-video-feature comp-reveal">
+      <!-- 00 - الفيديو التعريفي بنسختيه الإنجليزية والعربية (يُشاهَد أولاً) -->
+      <div class="comp-video-feature is-pair comp-reveal">
         <span class="comp-video-feature-label">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <polygon points="5 3 19 12 5 21 5 3"/>
@@ -1715,15 +1745,34 @@
         </span>
         <h3>الفيديو التعريفي: ما هي «عدسة العلوم الذكية»؟</h3>
         <p>
-          تعرّف على فكرة المسابقة ومنهجية STREAM ومراحل التدريب في دقيقة ونصف،
-          قبل مشاهدة نماذج أعمال النسخة الأولى.
+          تعرّف على فكرة المسابقة ومنهجية STREAM ومراحل التدريب،
+          قبل مشاهدة نماذج أعمال النسخة الأولى. اختر النسخة التي تناسبك:
+          بالإنجليزية أو بالعربية.
         </p>
-        <div class="comp-video-frame">
-          <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-00-intro.jpg">
-            <source src="../assets/videos/sil-v1-00-intro.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-          </video>
-          <span class="comp-video-duration">1:31</span>
+        <div class="comp-video-pair">
+
+          <figure>
+            <figcaption dir="ltr">English</figcaption>
+            <div class="comp-video-frame">
+              <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-00-intro-en.jpg">
+                <source src="../assets/videos/sil-v1-00-intro-en.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+              <span class="comp-video-duration">2:35</span>
+            </div>
+          </figure>
+
+          <figure>
+            <figcaption>العربية</figcaption>
+            <div class="comp-video-frame">
+              <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-00-intro-ar.jpg">
+                <source src="../assets/videos/sil-v1-00-intro-ar.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+              <span class="comp-video-duration">1:31</span>
+            </div>
+          </figure>
+
         </div>
       </div>
 
@@ -1820,6 +1869,42 @@
               شاهد المقطع على انستغرام
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
             </a>
+          </figcaption>
+        </figure>
+
+        <!-- 05 - الفلك: حقيقة الأبراج -->
+        <figure class="comp-video-card">
+          <div class="comp-video-frame">
+            <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-05-zodiac.jpg">
+              <source src="../assets/videos/sil-v1-05-zodiac.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <span class="comp-video-duration">8:48</span>
+          </div>
+          <figcaption class="comp-video-body">
+            <span class="comp-video-tag">فلك</span>
+            <h3 class="comp-video-title">حقيقة الأبراج: بين الفلك والتنجيم</h3>
+            <p class="comp-video-desc">
+              الأبراج كوكبات نجمية حقيقية يرصدها الفلك ويحدّد مواقعها، لكن قراءة الحظ فيها شيء آخر. جولة في كوكبات دائرة البروج، ولماذا هناك كوكبة ثالثة عشرة اسمها الحوّاء.
+            </p>
+          </figcaption>
+        </figure>
+
+        <!-- 06 - الفلك: الاهتداء بالسماء -->
+        <figure class="comp-video-card">
+          <div class="comp-video-frame">
+            <video controls preload="metadata" playsinline poster="../assets/videos/sil-v1-06-skynav.jpg">
+              <source src="../assets/videos/sil-v1-06-skynav.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <span class="comp-video-duration">3:20</span>
+          </div>
+          <figcaption class="comp-video-body">
+            <span class="comp-video-tag">فلك</span>
+            <h3 class="comp-video-title">السماء أخبرتني أين أنا</h3>
+            <p class="comp-video-desc">
+              حكاية قصيرة عن الاهتداء بالسماء: كيف يقرأ المسافر الشمس والنجوم ليعرف موقعه واتجاهه حين لا تسعفه الأدوات الحديثة.
+            </p>
           </figcaption>
         </figure>
 
