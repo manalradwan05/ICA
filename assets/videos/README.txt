@@ -9,7 +9,7 @@ First-edition films:
   sil-v1-02-directions.mp4   تحديد الاتجاهات بالأجرام السماوية         (4:59)
   sil-v1-03-oxidation.mp4    التأكسد - دراجة سامر                      (4:59)
   sil-v1-04-groundwater.mp4  المياه الجوفية                            (4:55)
-  sil-v1-05-zodiac.mp4       حقيقة الأبراج - بين الفلك والتنجيم        (8:48)
+  sil-v1-05-zodiac.mp4       حقيقة الأبراج - بين الفلك والتنجيم        (4:59)
   sil-v1-06-skynav.mp4       السماء أخبرتني أين أنا                    (3:20)
 
 Each has a matching .jpg poster frame taken from mid-film (not the shared
