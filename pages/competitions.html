@@ -36,6 +36,7 @@
     --c-mute:     var(--mute,     #7a6f5e);
     --c-gold:     var(--gold,     #C9A84C);
     --c-gold-deep:var(--gold-deep,#A8893A);
+    --c-gold-dark:var(--gold-dark,#8B6914);
     --c-gold-soft:var(--gold-soft,#F5EBC8);
     --c-line:     var(--line,     #E8DFC7);
     --c-line-soft:var(--line-soft,#EFE7D2);
@@ -650,7 +651,7 @@
     grid-template-columns: 1fr auto;
     align-items: center;
     gap: 24px;
-    background: var(--c-paper);
+    background: #F8F0DA;               /* beige: the part of the row this share does not cover */
     border: 1px solid var(--c-line);
     border-radius: 18px;
     padding: 22px 28px;
@@ -664,7 +665,7 @@
     position: absolute;
     inset-inline-start: 0; top: 0; bottom: 0;
     width: var(--bar, 0%);
-    background: linear-gradient(90deg, var(--c-gold-soft), rgba(245,235,200,0.4));
+    background: var(--c-paper);        /* white: this share (--bar), growing from the start edge */
     transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
     z-index: -1;
   }
@@ -698,7 +699,7 @@
     font-family: "Cairo", sans-serif;
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--c-gold-deep);
+    color: var(--c-gold-dark);
     line-height: 1;
   }
 
@@ -1442,16 +1443,6 @@
           </div>
           <p>فردية أو ضمن فرق (من 1 إلى 3 أشخاص)، مع إمكانية الانضمام بفريق من المدرسة.</p>
         </article>
-
-        <article class="comp-pillar">
-          <div class="comp-pillar-head">
-            <span class="comp-pillar-num" style="background:var(--c-teal-soft);color:var(--c-teal);border-color:rgba(15,110,86,0.25);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </span>
-            <h3>الرسوم</h3>
-          </div>
-          <p>تحدد من قِبل الجهة المنظمة (مثال: 10 دنانير للطالب، أو مجانية للمدارس المشاركة).</p>
-        </article>
       </div>
     </div>
   </section>
@@ -1599,7 +1590,7 @@
           <span class="comp-feature-icon" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </span>
-          <p><strong>تدريب متكامل مجاني</strong> قبل المسابقة يمنحك كل ما تحتاجه لإنتاج فيديو احترافي.</p>
+          <p><strong>تدريب متكامل</strong> قبل المسابقة يمنحك كل ما تحتاجه لإنتاج فيديو احترافي.</p>
         </div>
         <div class="comp-feature">
           <span class="comp-feature-icon" aria-hidden="true">
