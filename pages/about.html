@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من نحن - أكاديمية المهن الذكية</title>
+<meta name="description" content="نحن فريق متخصص في تأسيس وتجهيز وتشغيل مختبرات العلوم والبحث العلمي، بخبرة تمتد لأكثر من 20 عامًا في الأردن وعدد من الدول العربية والأجنبية.">
+<meta name="theme-color" content="#FAF7F0">
+
+<meta property="og:title" content="من نحن - أكاديمية المهن الذكية">
+<meta property="og:description" content="نصمّم مستقبل التعليم بالذكاء الاصطناعي">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23C9A84C'/%3E%3Ctext x='50' y='66' font-family='Cairo, sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%231A1610'%3EICA%3C/text%3E%3C/svg%3E">
+
+<!-- ════════════════════════════════════════════════════════════════
+     PAGE-SCOPED STYLES - prefix .about-
+     Built only from theme.css tokens, so a future rebrand flows through.
+     ════════════════════════════════════════════════════════════════ -->
+<style>
+  .about-wrap { max-width: var(--container-narrow); margin: 0 auto; }
+
+  /* ── Hero: badge wraps between the two names, never inside one ───── */
+  .about-nowrap { white-space: nowrap; }
+
+  /* ── Hero: bilingual title "من نحن | About Us" ───────────────────── */
+  .about-h1-en {
+    display: inline-block;
+    direction: ltr;
+    margin-right: 0.3em;
+    font-size: 0.72em;
+    font-weight: 800;
+    letter-spacing: 0;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .about-h1-en::after {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 0.8em;
+    margin-left: 0.4em;
+    background: var(--gold);
+    border-radius: 2px;
+    vertical-align: -0.05em;
+  }
+
+  /* ── Intro + key facts ───────────────────────────────────────────── */
+  .about-intro {
+    background: var(--white);
+    padding: var(--space-2xl) var(--nav-padding) var(--space-section);
+  }
+  .about-intro-text {
+    max-width: 820px;
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+    font-size: var(--fs-lg);
+    line-height: 1.9;
+    color: var(--ink-soft);
+  }
+  .about-intro-text strong { color: var(--ink); font-weight: 800; }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+  .about-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: var(--space-lg) 28px;
+    background: var(--cream);
+    border: 1.5px solid var(--gold-mid);
+    border-radius: var(--radius);
+    transition: transform var(--duration-slow) var(--ease),
+                box-shadow var(--duration-slow) var(--ease),
+                border-color var(--duration-slow) var(--ease);
+  }
+  .about-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--gold);
+  }
+  .about-stat-num {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4vw, 44px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--gold-dark);
+  }
+  .about-stat-title {
+    font-family: var(--font-display);
+    font-size: clamp(19px, 2.2vw, 23px);
+    font-weight: 800;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .about-stat-label {
+    font-size: var(--fs-base);
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  /* ── Expertise: two columns ──────────────────────────────────────── */
+  .about-details { background: var(--cream); }
+  .about-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+  }
+  .about-col-title {
+    font-size: clamp(21px, 2.4vw, 26px);
+    padding-bottom: 14px;
+    margin-bottom: var(--space-md);
+    border-bottom: 2px solid var(--gold);
+  }
+  .about-col-title--spaced { margin-top: var(--space-2xl); }
+  .about-col p {
+    font-size: var(--fs-base);
+    line-height: 2;
+    color: var(--ink-soft);
+  }
+  .about-col p + p { margin-top: var(--space-md); }
+  .about-col .about-col-intro { margin-bottom: var(--space-md); }
+
+  .about-list { display: grid; gap: 14px; }
+  .about-list li {
+    position: relative;
+    padding-inline-start: 26px;
+    font-size: var(--fs-base);
+    line-height: 1.85;
+    color: var(--ink-mid);
+  }
+  .about-list li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 2px;
+    top: 0.62em;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .about-list--teal li::before { background: var(--teal); }
+
+  /* ── Research, vision, founder ───────────────────────────────────── */
+  .about-closing { background: var(--white); }
+  .about-stack { display: grid; gap: var(--space-lg); }
+
+  .about-research {
+    padding: clamp(24px, 4vw, 36px) clamp(22px, 4vw, 40px);
+    background: var(--cream);
+    border: 1.5px solid var(--gold-mid);
+    border-radius: var(--radius-lg);
+  }
+  .about-research h2 {
+    font-size: clamp(21px, 2.4vw, 26px);
+    margin-bottom: var(--space-sm);
+  }
+  .about-research p {
+    font-size: var(--fs-md);
+    line-height: 2;
+    color: var(--ink-soft);
+  }
+  .about-research strong { color: var(--ink); font-weight: 800; }
+
+  .about-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+  .about-chip {
+    padding: 8px 20px;
+    border: 1.5px solid var(--gold);
+    border-radius: var(--radius-pill);
+    background: var(--white);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .about-vision {
+    padding: clamp(26px, 4vw, 40px) clamp(24px, 4vw, 44px);
+    background: var(--ink);
+    border-radius: var(--radius-lg);
+    border-inline-start: 6px solid var(--gold);
+  }
+  .about-vision h2 {
+    font-size: clamp(20px, 2.2vw, 24px);
+    margin-bottom: var(--space-sm);
+    color: var(--gold-light);
+  }
+  .about-vision p {
+    font-size: clamp(16px, 1.8vw, 18px);
+    line-height: 2.05;
+    color: rgba(250, 247, 240, 0.9);
+  }
+
+  .about-founder {
+    padding: clamp(24px, 4vw, 36px) clamp(22px, 4vw, 40px);
+    background: var(--white);
+    border: 1.5px solid var(--gold-mid);
+    border-inline-start: 6px solid var(--gold);
+    border-radius: var(--radius-lg);
+  }
+  .about-founder-label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-display);
+    font-size: var(--fs-md);
+    font-weight: 800;
+    color: var(--gold-dark);
+  }
+  .about-founder h2 {
+    font-size: clamp(26px, 3.6vw, 34px);
+    margin-bottom: var(--space-sm);
+  }
+  .about-founder p {
+    font-size: var(--fs-lg);
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .about-founder .about-chip {
+    background: var(--cream);
+    border-color: var(--gold-mid);
+  }
+
+  .about-contact {
+    margin-top: var(--space-sm);
+    text-align: center;
+    font-size: var(--fs-base);
+    color: var(--ink-soft);
+  }
+  .about-contact a { color: var(--teal); font-weight: 700; }
+  .about-contact a:hover { color: var(--gold-dark); }
+
+  /* ── Responsive ──────────────────────────────────────────────────── */
+  @media (max-width: 820px) {
+    .about-stats { grid-template-columns: 1fr; }
+    .about-cols { grid-template-columns: 1fr; }
+    .about-col-title--spaced { margin-top: var(--space-xl); }
+  }
+  @media (max-width: 480px) {
+    .about-chip { padding: 7px 16px; font-size: var(--fs-sm); }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">انتقل إلى المحتوى الرئيسي</a>
+<div data-include="navbar"></div>
+
+<main id="main">
+
+  <!-- ═════════════════════ HERO ═════════════════════ -->
+  <section class="page-hero">
+    <div class="shape-blob" style="width:280px;height:280px;top:-80px;right:-80px;" aria-hidden="true"></div>
+    <div class="shape-blob" style="width:340px;height:340px;bottom:-120px;left:-100px;animation-delay:-3s;" aria-hidden="true"></div>
+
+    <div class="page-hero-inner">
+      <div class="badge animate-on-load delay-1">
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span><span class="about-nowrap">أكاديمية المهن الذكية</span> - <span class="about-nowrap" dir="ltr" lang="en">Intelligent Career Academy</span></span>
+      </div>
+      <h1 class="animate-on-load delay-2">
+        من <span>نحن</span>
+        <small class="about-h1-en" lang="en">About Us</small>
+      </h1>
+      <p class="lead animate-on-load delay-3">
+        نصمّم مستقبل التعليم بالذكاء الاصطناعي
+      </p>
+    </div>
+  </section>
+
+  <!-- ═════════════════════ INTRO + KEY FACTS ═════════════════════ -->
+  <section class="about-intro" aria-label="نبذة عن الأكاديمية">
+    <div class="about-wrap">
+      <p class="about-intro-text reveal">
+        نحن فريق متخصص في تأسيس وتجهيز وتشغيل مختبرات العلوم والبحث العلمي، بخبرة تمتد لأكثر من <strong>20 عامًا</strong> في الأردن وعدد من الدول العربية والأجنبية، منها سوريا وليبيا ومصر وتركيا وألمانيا.
+      </p>
+
+      <ul class="about-stats reveal reveal-stagger-1" role="list">
+        <li class="about-stat">
+          <span class="about-stat-num"><bdi dir="ltr">+20</bdi></span>
+          <span class="about-stat-label">عامًا من الخبرة في المختبرات والتعليم</span>
+        </li>
+        <li class="about-stat">
+          <strong class="about-stat-title">الأردن&nbsp;· سوريا&nbsp;· ليبيا&nbsp;· مصر&nbsp;· تركيا&nbsp;· ألمانيا</strong>
+          <span class="about-stat-label">خبرات في دول عربية وأجنبية</span>
+        </li>
+        <li class="about-stat">
+          <strong class="about-stat-title">محلي ودولي</strong>
+          <span class="about-stat-label">تدريب وتحكيم مسابقات الروبوت والذكاء الاصطناعي</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═════════════════════ EXPERTISE ═════════════════════ -->
+  <section class="about-details">
+    <div class="about-wrap">
+      <div class="about-cols">
+
+        <div class="about-col reveal">
+          <h2 class="about-col-title">تأسيس المختبرات وتشغيلها</h2>
+          <p class="about-col-intro">نمتلك خبرات متكاملة في تصميم وتأسيس وتشغيل:</p>
+          <ul class="about-list" role="list">
+            <li>مختبرات العلوم والبحث العلمي.</li>
+            <li>مختبرات الروبوت والذكاء الاصطناعي.</li>
+            <li>مختبرات النمذجة الهندسية والتصميم والتصنيع.</li>
+            <li>البيئات التعليمية والتطبيقية الداعمة للابتكار والاستكشاف العلمي.</li>
+          </ul>
+
+          <h2 class="about-col-title about-col-title--spaced">التعليم والتدريب الأكاديمي</h2>
+          <p>نمتلك خبرة تعليمية وتدريسية تمتد لأكثر من 20 عامًا في تدريس العلوم والمواد العلمية في المدارس والجامعات وكليات المجتمع، إلى جانب إعداد المناهج والمواد التعليمية، وتطوير استراتيجيات التدريس والتقييم، وتوظيف التكنولوجيا والذكاء الاصطناعي في التعليم والتعلم.</p>
+          <p>كما تشمل خبراتنا العمل في البيئات التعليمية بمراحلها المختلفة، والربط بين المعرفة النظرية والتطبيق العملي من خلال المختبرات والتجارب العلمية والمشروعات البحثية.</p>
+        </div>
+
+        <div class="about-col reveal reveal-stagger-1">
+          <h2 class="about-col-title">الخبرات والشهادات المهنية</h2>
+          <p class="about-col-intro">خبرات وشهادات معتمدة في التدريب والتصميم والإنتاج الرقمي:</p>
+          <ul class="about-list about-list--teal" role="list">
+            <li>تدريب المدربين (<span lang="en">Training of Trainers – ToT</span>).</li>
+            <li>التصميم الجرافيكي والتصميم الرقمي.</li>
+            <li>صناعة المحتوى التعليمي.</li>
+            <li>إنتاج الفيديو التعليمي وصناعة السيناريو.</li>
+            <li>صناعة الألعاب التعليمية والتلعيب.</li>
+            <li>المونتاج والتحرير ببرامج متعددة، بما فيها برامج <span lang="en">Adobe</span>.</li>
+            <li>التدريب على تطبيقات الذكاء الاصطناعي وتوظيفها في التعليم والبحث العلمي.</li>
+            <li>تدريب وتحكيم مسابقات الروبوت والذكاء الاصطناعي على المستويين الوطني والدولي.</li>
+            <li>مدرب علوم الفلك والفضاء.</li>
+            <li>التغذية السليمة باستخدام الذكاء الاصطناعي.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════ RESEARCH · VISION · FOUNDER ═════════════════════ -->
+  <section class="about-closing">
+    <div class="about-wrap about-stack">
+
+      <article class="about-research reveal" aria-labelledby="about-research-title">
+        <h2 id="about-research-title">البحث العلمي والنشر</h2>
+        <p>تشمل خبراتنا في البحث العلمي مجالات متعددة، منها <strong>الطب والزراعة والفلك وعلوم الفضاء</strong>، مع التركيز على تحويل المعرفة العلمية إلى تطبيقات عملية ومشروعات مبتكرة.</p>
+        <ul class="about-chips" role="list">
+          <li class="about-chip">المشاركة في مؤتمرات علمية دولية</li>
+          <li class="about-chip">تصميم البوسترات العلمية والبانرات والكتيبات</li>
+          <li class="about-chip">تأليف الكتب</li>
+        </ul>
+      </article>
+
+      <article class="about-vision reveal" aria-labelledby="about-vision-title">
+        <h2 id="about-vision-title">رؤيتنا</h2>
+        <p>بناء بيئات علمية وتعليمية ذكية، تجمع بين المختبرات المتطورة والتكنولوجيا والذكاء الاصطناعي والبحث العلمي؛ لتمكين المتعلمين والباحثين من الابتكار، وتطوير المهارات، وإنتاج المعرفة، ومواكبة متطلبات المستقبل.</p>
+      </article>
+
+      <article class="about-founder reveal" aria-labelledby="about-founder-name">
+        <span class="about-founder-label">مؤسِّسة الأكاديمية</span>
+        <h2 id="about-founder-name">م. منال خليل رضوان</h2>
+        <p>متخصصة في الهندسة الوراثية والتكنولوجيا الحيوية، وفي تأسيس المختبرات العلمية وتشغيلها.</p>
+        <ul class="about-chips" role="list">
+          <li class="about-chip">ماجستير الهندسة الوراثية والتكنولوجيا الحيوية</li>
+          <li class="about-chip">بكالوريوس التحاليل الحيوية</li>
+          <li class="about-chip">مدرّبة معتمدة من اتحاد مراكز تدريب الوطن العربي</li>
+        </ul>
+      </article>
+
+      <p class="about-contact reveal">
+        الهاتف: <a href="tel:+962780725811" dir="ltr">+962 78 072 5811</a>
+      </p>
+
+    </div>
+  </section>
+
+</main>
+
+<div data-include="footer"></div>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/animations.js"></script>
+</body>
+</html>

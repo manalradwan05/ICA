@@ -99,6 +99,7 @@
             <li><a href="${bp}pages/designs.html"      data-page="designs">التصاميم</a></li>
             <li><a href="${bp}pages/labs.html"         data-page="labs">المختبرات</a></li>
             <li><a href="${bp}pages/competitions.html" data-page="competitions">المسابقات</a></li>
+            <li><a href="${bp}pages/about.html"        data-page="about">من نحن</a></li>
           </ul>
           <a class="nav-cta" href="${bp}pages/consultation.html" data-page="consultation">طلب استشارة</a>
           <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">
@@ -112,6 +113,7 @@
           <a href="${bp}pages/designs.html"                      data-page="designs">التصاميم</a>
           <a href="${bp}pages/labs.html"                         data-page="labs">المختبرات</a>
           <a href="${bp}pages/competitions.html"                 data-page="competitions">المسابقات</a>
+          <a href="${bp}pages/about.html"                        data-page="about">من نحن</a>
           <a class="nav-cta" href="${bp}pages/consultation.html" data-page="consultation">طلب استشارة</a>
         </div>
       `;
@@ -193,6 +195,7 @@
     else if (path.includes('designs')) pageId = 'designs';
     else if (path.includes('labs')) pageId = 'labs';
     else if (path.includes('competitions')) pageId = 'competitions';
+    else if (path.includes('about')) pageId = 'about';
     else if (path.includes('consultation')) pageId = 'consultation';
     else if (path.includes('afaq')) pageId = 'afaq';
     else if (path.includes('azar')) pageId = 'azar';
